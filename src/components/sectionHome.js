@@ -8,11 +8,11 @@ import colors from '../styles/colors.js'
 
 const styles = theme => ({
 	sectionBody: {
-		fontSize: '1.5em',
+		fontSize: '1.2em',
 		color: colors.darkgrey
 	},
 	sectionTitle: {
-		fontSize: '8em',
+		fontSize: 'calc(2em + 6vw)',
 		color: colors.red
 	},
 	stripeBottom: {
@@ -32,17 +32,26 @@ const styles = theme => ({
 		width: '100%',
 	},
 	textCenter: {
-		textAlign: 'center'
+		textAlign: 'center',
+		position: 'absolute',
+		height: '34%',
+		top: '33%',
+		width: '100%',
+		display: 'flex',
+		flexDirection: 'column',
+		alignItems: 'center',
+		justifyContent: 'center'
 	}
 })
 
 const SectionHome = ({ classes }) => {
 	return (
-		<div className={classes.textCenter}>
+		<div>
 			<div className={classes.stripeTop}></div>
-			<div className={classes.textCenter}></div>
+			<div className={classes.textCenter}>
 				<h1 className={classes.sectionTitle}>bobae kang</h1>
 				<p className={classes.sectionBody}>Chicago-based social scientist turned software engineer</p>
+			</div>
 			<div className={classes.stripeBottom}></div>
 		</div>
 	)
