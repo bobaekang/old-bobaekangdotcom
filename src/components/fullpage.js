@@ -30,7 +30,7 @@ const Fullpage = ({ fullpageSection, onSectionChange }) => {
     <>
       {
         !isTop &&
-      <IconButton
+        <IconButton
           aria-label="Arrow up"
           style={{
             position: 'absolute',
