@@ -8,13 +8,25 @@ import { withStyles } from '@material-ui/core/styles'
 // components
 import Layout from "../components/layout"
 
+// styles
+import colors from '../styles/colors'
+
 const styles = theme => ({
   blog: {
-    marginTop: "8%"
+    marginTop: "5%"
   },
   date: {
-    marginBottom: "1em",
-    color: "#999"
+    color: colors.darkgrey,
+    fontFamily: 'Lato',
+    fontWeight: '300',
+    fontSize: '16px'
+  },
+  preview: {
+    '&:hover': {
+      '& h3': {
+        color: colors.red
+      }
+    }
   }
 });
 
@@ -26,17 +38,17 @@ const Blog = ({ classes, data }) => {
       isBlog={true}
       onSectionChange={() => {}}
     >
-      <Container maxWidth="md">
+      <Container className={classes.blog} maxWidth="md">
         <h4>{data.allMarkdownRemark.totalCount} Posts</h4>
         {
           data.allMarkdownRemark.edges.map(({ node }) => (
-            <div key={node.id}>
+            <div className={classes.preview} key={node.id}>
               <Link
                 to={node.fields.slug}
               >
                 <h3>
                   {node.frontmatter.title}{" "}
-                  <span>
+                  <span className={classes.date}>
                     — {node.frontmatter.date}
                   </span>
                 </h3>
