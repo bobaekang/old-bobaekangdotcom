@@ -5,8 +5,8 @@ import ReactFullpage from '@fullpage/react-fullpage'
 
 // material ui
 import IconButton from '@material-ui/core/IconButton'
-import KeyboardArrowUp from '@material-ui/icons/KeyboardArrowUp'
-import KeyboardArrowDown from '@material-ui/icons/KeyboardArrowDown'
+import KeyboardArrowUpIcon from '@material-ui/icons/KeyboardArrowUp'
+import KeyboardArrowDownIcon from '@material-ui/icons/KeyboardArrowDown'
 
 // components
 import SectionHome from './sectionHome'
@@ -40,7 +40,7 @@ const Fullpage = ({ fullpageSection, onSectionChange }) => {
           }}
           onClick={() => api.moveSectionUp()}
         >
-          <KeyboardArrowUp />
+          <KeyboardArrowUpIcon />
         </IconButton>
       }
       
@@ -56,7 +56,7 @@ const Fullpage = ({ fullpageSection, onSectionChange }) => {
           }}
           onClick={() => api.moveSectionDown()}
         >
-          <KeyboardArrowDown />
+          <KeyboardArrowDownIcon />
         </IconButton>
       }
 
