@@ -3,6 +3,9 @@ import React from "react"
 // material ui
 import { withStyles } from '@material-ui/core/styles'
 
+// components
+import TypedStrings from '../components/typedStrings'
+
 // styles
 import colors from '../styles/colors.js'
 
@@ -44,17 +47,21 @@ const styles = theme => ({
 	}
 })
 
-const SectionHome = ({ classes }) => {
-	return (
-		<div>
-			<div className={classes.stripeTop}></div>
-			<div className={classes.textCenter}>
-				<h1 className={classes.sectionTitle}>bobae kang</h1>
-				<p className={classes.sectionBody}>Chicago-based social scientist turned software engineer</p>
+const SectionHome = ({ classes }) => (
+	<div>
+		<div className={classes.stripeTop}></div>
+		<div className={classes.textCenter}>
+			<h1 className={classes.sectionTitle}>bobae kang</h1>
+			<div className={classes.sectionBody}>
+				<TypedStrings
+					strings={[
+						'Chicago-based social scientist turned software engineer'
+					]}
+				/>
 			</div>
-			<div className={classes.stripeBottom}></div>
 		</div>
-	)
-}
+		<div className={classes.stripeBottom}></div>
+	</div>
+)
 
 export default withStyles(styles)(SectionHome)
