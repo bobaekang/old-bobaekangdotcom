@@ -26,7 +26,14 @@ const styles = theme => ({
     padding: theme.spacing(3),
     height: '250px',
     '&:hover': {
-      backgroundColor: colors.blue
+      boxShadow: `
+        0px 1px 6px 0px ${colors.blue},
+        0px 1px 2px 0px ${colors.blue},
+        0px 2px 2px -1px ${colors.blue}
+      `,
+      '& h3': {
+        color: colors.red
+      }
     }
   },
   sectionTitle: {
