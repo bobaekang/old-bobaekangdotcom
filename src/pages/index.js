@@ -11,7 +11,7 @@ const IndexPage = () => {
   return (
     <Layout
       fullpageSection={section}
-      onClickMenu={setSection}
+      isBlog={false}
       onSectionChange={setSection}
     >
       <SEO title="Home" />

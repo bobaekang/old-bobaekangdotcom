@@ -44,7 +44,7 @@ const styles = theme => ({
   }
 })
 
-const Header = ({ classes, fullpageSection, onSectionChange, siteTitle }) => {
+const Header = ({ classes, fullpageSection, isBlog, onSectionChange }) => {
   const onClickMenu = index => onSectionChange(index)
   
   return (
@@ -64,7 +64,18 @@ const Header = ({ classes, fullpageSection, onSectionChange, siteTitle }) => {
               className={classes.menuItem}
               onClick={() => onClickMenu(0)}
             >
-              <span className={fullpageSection ===  0 ? classes.menuActiveItem : undefined}>home</span>
+              {
+                !isBlog &&
+                <span
+                  className={
+                    fullpageSection ===  0 ?
+                    classes.menuActiveItem :
+                    undefined
+                  }
+                >
+                  home
+                </span>
+              }
             </Link>
           </li>
           <li className={classes.menulist}>
@@ -73,16 +84,34 @@ const Header = ({ classes, fullpageSection, onSectionChange, siteTitle }) => {
               className={classes.menuItem}
               onClick={() => onClickMenu(1)}
             >
-              <span className={fullpageSection === 1 ? classes.menuActiveItem : undefined}>about</span>
+              {
+                !isBlog &&
+                <span
+                  className={
+                    fullpageSection === 1 ?
+                    classes.menuActiveItem :
+                    undefined
+                  }
+                >
+                  about
+                </span>
+              }
             </Link>
           </li>
           <li className={classes.menulist}>
             <Link
-              to="/"
+              to={isBlog ? "/blog" :  "/"}
               className={classes.menuItem}
               onClick={() => onClickMenu(2)}
             >
-              <span className={fullpageSection === 2 ? classes.menuActiveItem : undefined}>blog</span>
+              <span
+                className={
+                  fullpageSection === 2 ?
+                  classes.menuActiveItem :
+                  undefined}
+              >
+                blog
+              </span>
             </Link>
           </li>
         </ul>

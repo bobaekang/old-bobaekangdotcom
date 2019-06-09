@@ -27,6 +27,7 @@ const blogPost = ({ classes, data }) => {
   return (
     <Layout
       fullpageSection={section}
+      isBlog={true}
       onSectionChange={setSection}
     >
       <Container maxWidth="md">

@@ -26,7 +26,7 @@ const styles = theme => ({
   }
 })
 
-const Layout = ({ children, classes, fullpageSection, onSectionChange }) => {
+const Layout = ({ children, classes, fullpageSection, isBlog, onSectionChange }) => {
   const handleSectionChange = index => onSectionChange(index)
 
   return ( 
@@ -45,6 +45,7 @@ const Layout = ({ children, classes, fullpageSection, onSectionChange }) => {
           <Header
             siteTitle={data.site.siteMetadata.title}
             fullpageSection={fullpageSection}
+            isBlog={isBlog}
             onSectionChange={index => handleSectionChange(index)}
           />
             <main className={classes.siteMain}>{children}</main>
