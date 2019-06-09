@@ -23,7 +23,11 @@ const styles = theme => ({
     textAlign: 'center'
   },
   social: {
-    margin: '20px 5px'
+    margin: '20px 5px',
+    color: colors.blue,
+    '&:hover': {
+      color: colors.red
+    }
   }
 })
 
@@ -41,9 +45,15 @@ const SectionAbout = ({ classes }) => {
       <Grid item xs={12} sm={3} md={2}>
         <Image />
         <div className={classes.socialList}>
-          <Icon className={clsx(classes.social, 'fab fa-github')} />
-          <Icon className={clsx(classes.social, 'fab fa-linkedin')} />
-          <EmailIcon className={classes.social}/>
+          <a href="" target="_blank">
+            <Icon className={clsx(classes.social, 'fab fa-github')} />
+          </a>
+          <a href="" target="_blank">
+            <Icon className={clsx(classes.social, 'fab fa-linkedin')} />
+          </a>
+          <a href="" target="_blank">
+            <EmailIcon className={classes.social}/>
+          </a>
         </div>
       </Grid>
 
