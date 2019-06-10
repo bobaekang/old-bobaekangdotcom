@@ -4,6 +4,7 @@ import React, { useState } from "react"
 import ReactFullpage from '@fullpage/react-fullpage'
 
 // material ui
+import Hidden from '@material-ui/core/Hidden'
 import IconButton from '@material-ui/core/IconButton'
 import KeyboardArrowUpIcon from '@material-ui/icons/KeyboardArrowUp'
 import KeyboardArrowDownIcon from '@material-ui/icons/KeyboardArrowDown'
@@ -28,37 +29,39 @@ const Fullpage = ({ fullpageSection, onSectionChange }) => {
 
   return (
     <>
-      {
-        !isTop &&
-        <IconButton
-          aria-label="Arrow up"
-          style={{
-            position: 'absolute',
-            top: '3%',
-            left: '50%',
-            zIndex: '2'
-          }}
-          onClick={() => api.moveSectionUp()}
-        >
-          <KeyboardArrowUpIcon />
-        </IconButton>
-      }
-      
-      {
-        !isBottom &&
-        <IconButton
-          aria-label="Arrow down"
-          style={{
-            position: 'absolute',
-            top: '94%',
-            left: '50%',
-            zIndex: '2'
-          }}
-          onClick={() => api.moveSectionDown()}
-        >
-          <KeyboardArrowDownIcon />
-        </IconButton>
-      }
+      <Hidden smDown>
+        {
+          !isTop &&
+          <IconButton
+            aria-label="Arrow up"
+            style={{
+              position: 'absolute',
+              top: '3%',
+              left: '50%',
+              zIndex: '2'
+            }}
+            onClick={() => api.moveSectionUp()}
+          >
+            <KeyboardArrowUpIcon />
+          </IconButton>
+        }
+        
+        {
+          !isBottom &&
+          <IconButton
+            aria-label="Arrow down"
+            style={{
+              position: 'absolute',
+              top: '94%',
+              left: '50%',
+              zIndex: '2'
+            }}
+            onClick={() => api.moveSectionDown()}
+          >
+            <KeyboardArrowDownIcon />
+          </IconButton>
+        }
+      </Hidden>   
 
       <ReactFullpage
         onLeave={(origin, destination, direction) => {
