@@ -1,53 +1,69 @@
-/**
- * Layout component that queries for data
- * with Gatsby's StaticQuery component
- *
- * See: https://www.gatsbyjs.org/docs/static-query/
- */
-
 import React from "react"
 import PropTypes from "prop-types"
 import { StaticQuery, graphql } from "gatsby"
 
-import Header from "./header"
-import "./layout.css"
+// material-ui
+import Container from '@material-ui/core/Container'
+import { withStyles } from '@material-ui/core/styles'
 
-const Layout = ({ children }) => (
-  <StaticQuery
-    query={graphql`
-      query SiteTitleQuery {
-        site {
-          siteMetadata {
-            title
+// components
+import Header from "./header"
+
+// styles
+import "../styles/layout.css"
+
+const styles = theme => ({
+	site: {
+    display: "flex",
+    minHeight: "100vh",
+    flexDirection: "column",
+  },
+  siteMain: {
+    flexGrow: "1"
+  },
+  footer: {
+    margin: "5px"
+  }
+})
+
+const Layout = ({ children, classes, fullpageSection, isBlog, onSectionChange }) => {
+  const handleSectionChange = index => onSectionChange(index)
+
+  return ( 
+    <StaticQuery
+      query={graphql`
+        query SiteTitleQuery {
+          site {
+            siteMetadata {
+              title
+            }
           }
         }
-      }
-    `}
-    render={data => (
-      <>
-        <Header siteTitle={data.site.siteMetadata.title} />
-        <div
-          style={{
-            margin: `0 auto`,
-            maxWidth: 960,
-            padding: `0px 1.0875rem 1.45rem`,
-            paddingTop: 0,
-          }}
-        >
-          <main>{children}</main>
-          <footer>
-            © {new Date().getFullYear()}, Built with
-            {` `}
-            <a href="https://www.gatsbyjs.org">Gatsby</a>
-          </footer>
+      `}
+      render={data => (
+        <div className={classes.site}>
+          <Header
+            siteTitle={data.site.siteMetadata.title}
+            fullpageSection={fullpageSection}
+            isBlog={isBlog}
+            onSectionChange={index => handleSectionChange(index)}
+          />
+            <main className={classes.siteMain}>{children}</main>
+            <footer className={classes.footer}>
+              <Container maxWidth="md">
+                © {new Date().getFullYear()}, Built with
+                {` `}
+                <a href="https://www.gatsbyjs.org">Gatsby</a>
+              </Container>
+            </footer>
         </div>
-      </>
-    )}
-  />
-)
+      )}
+    />
+  )
+}
 
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
 }
 
-export default Layout
+export default withStyles(styles)(Layout)
