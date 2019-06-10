@@ -1,6 +1,7 @@
 import React from "react"
-import { loadCSS } from 'fg-loadcss';
+import { Link } from 'gatsby'
 import clsx from 'clsx'
+import { loadCSS } from 'fg-loadcss';
 
 // material ui
 import { withStyles } from '@material-ui/core/styles'
@@ -10,24 +11,27 @@ import Icon from '@material-ui/core/Icon'
 import EmailIcon from '@material-ui/icons/Email'
 
 // components
-import Image from './image.js'
+import MyImage from './myImage'
 
 // styles
 import colors from '../styles/colors'
 
 const styles = theme => ({
+  link: {
+    fontWeight: 400,
+    color: colors.blue,
+    '&:hover': {
+      color: colors.red
+    }
+  },
   sectionTitle: {
     color: colors.red
   },
   socialList: {
     textAlign: 'center'
   },
-  social: {
-    margin: '20px 5px',
-    color: colors.blue,
-    '&:hover': {
-      color: colors.red
-    }
+  socialIcon: {
+    margin: '20px 5px'
   }
 })
 
@@ -43,24 +47,41 @@ const SectionAbout = ({ classes }) => {
   <Container maxWidth="lg">
     <Grid container spacing={3}>
       <Grid item xs={12} sm={3} md={2}>
-        <Image />
+        <MyImage />
         <div className={classes.socialList}>
-          <a href="https://github.com/bobaekang" target="_blank">
-            <Icon className={clsx(classes.social, 'fab fa-github')} />
+          <a
+            href="https://github.com/bobaekang"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Icon
+              className={
+                clsx(classes.link, classes.socialIcon, 'fab fa-github')
+              }
+            />
           </a>
-          <a href="https://www.linkedin.com/in/bobaekang/" target="_blank">
-            <Icon className={clsx(classes.social, 'fab fa-linkedin')} />
+          <a
+            href="https://www.linkedin.com/in/bobaekang/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Icon
+              className={
+                clsx(classes.socialIcon, classes.link, 'fab fa-linkedin')
+              }
+            />
           </a>
           <a href="mailto:hello@bobaekang.com">
-            <EmailIcon className={classes.social}/>
+            <EmailIcon className={clsx(classes.link, classes.socialIcon)}/>
           </a>
         </div>
       </Grid>
 
       <Grid item xs={12} sm={6}>
-        <h2 className={classes.sectionTitle}>Hello World</h2>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum officiis itaque doloribus placeat optio nihil ab nostrum maxime odio fugiat.</p>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore dolorum, dolor voluptatem voluptatibus, repellat consequatur dignissimos quaerat laudantium deserunt magni mollitia voluptas adipisci ad sapiente officiis alias porro pariatur nemo?</p>
+        <h2 className={classes.sectionTitle}>Hi, I'm Bobae</h2>
+        <p>I build web applications in support of the administration of and research on criminal justice in Illinois.</p>
+        <p>Though I love all sorts of web technologies, my focus has been building front-end apps using modern component-based JavaScript frameworks like React and Vue.</p>
+        <p>If you'd like to know more about me, I invite you to start with <Link className={classes.link} to="/blog/hello-world">this blog post</Link>. Also, feel free to reach out to me via GitHub, LinkedIn or email!</p>
       </Grid>
     </Grid>
   </Container>
