@@ -45,13 +45,13 @@ const SectionAbout = ({ classes }) => {
       <Grid item xs={12} sm={3} md={2}>
         <Image />
         <div className={classes.socialList}>
-          <a href="" target="_blank">
+          <a href="https://github.com/bobaekang" target="_blank">
             <Icon className={clsx(classes.social, 'fab fa-github')} />
           </a>
-          <a href="" target="_blank">
+          <a href="https://www.linkedin.com/in/bobaekang/" target="_blank">
             <Icon className={clsx(classes.social, 'fab fa-linkedin')} />
           </a>
-          <a href="" target="_blank">
+          <a href="mailto:hello@bobaekang.com">
             <EmailIcon className={classes.social}/>
           </a>
         </div>
