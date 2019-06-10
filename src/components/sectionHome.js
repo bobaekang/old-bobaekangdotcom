@@ -16,7 +16,8 @@ const styles = theme => ({
 	},
 	sectionTitle: {
 		fontSize: 'calc(2em + 6vw)',
-		color: colors.red
+		color: colors.red,
+		marginBottom: '0.2rem'
 	},
 	stripeBottom: {
 		backgroundColor: colors.blue,
