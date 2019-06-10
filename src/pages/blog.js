@@ -7,6 +7,7 @@ import { withStyles } from '@material-ui/core/styles'
 
 // components
 import Layout from "../components/layout"
+import SEO from "../components/seo"
 
 // styles
 import colors from '../styles/colors'
@@ -38,6 +39,7 @@ const Blog = ({ classes, data }) => {
       isBlog={true}
       onSectionChange={() => {}}
     >
+      <SEO title="Blog" />
       <Container className={classes.blog} maxWidth="md">
         <h4>{data.allMarkdownRemark.totalCount} Posts</h4>
         {
