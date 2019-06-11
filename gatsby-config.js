@@ -28,6 +28,9 @@ module.exports = {
       options: {
         icon: `src/images/logo-icon.png`
       },
+    },
+    {
+      resolve: `gatsby-plugin-material-ui`
     }
   ],
 }
