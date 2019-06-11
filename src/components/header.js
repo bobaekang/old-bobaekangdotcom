@@ -124,7 +124,8 @@ const Header = ({ classes, fullpageSection, isBlog, onSectionChange }) => {
 }
 
 Header.propTypes = {
-  siteTitle: PropTypes.string,
+  children: PropTypes.node.isRequired,
+  siteTitle: PropTypes.string
 }
 
 Header.defaultProps = {

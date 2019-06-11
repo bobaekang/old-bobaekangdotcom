@@ -1,18 +1,21 @@
 import React, { useState } from "react"
 import { Link, graphql } from "gatsby"
+import PropTypes from 'prop-types'
+
+// layout
+import Layout from "../components/layout"
 
 // material ui
 import Container from '@material-ui/core/Container'
 import { withStyles } from '@material-ui/core/styles'
 
 // components
-import Layout from "../components/layout"
 import SEO from "../components/seo"
 
 // styles
 import colors from '../styles/colors'
 
-const styles = theme => ({
+const styles = {
   blog: {
     marginTop: "5%"
   },
@@ -29,7 +32,7 @@ const styles = theme => ({
       }
     }
   }
-});
+}
 
 const Blog = ({ classes, data }) => {
   const [section, setSection] = useState(2)
@@ -62,6 +65,10 @@ const Blog = ({ classes, data }) => {
       </Container>
     </Layout>
   )
+}
+
+Blog.propTypes = {
+	classes: PropTypes.object.isRequired,
 }
 
 export default withStyles(styles)(Blog)

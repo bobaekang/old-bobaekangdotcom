@@ -1,7 +1,8 @@
 import React from "react"
 import { Link } from 'gatsby'
 import clsx from 'clsx'
-import { loadCSS } from 'fg-loadcss';
+import { loadCSS } from 'fg-loadcss'
+import PropTypes from 'prop-types'
 
 // material ui
 import { withStyles } from '@material-ui/core/styles'
@@ -16,7 +17,7 @@ import MyImage from './myImage'
 // styles
 import colors from '../styles/colors'
 
-const styles = theme => ({
+const styles = {
   link: {
     fontWeight: 400,
     color: colors.blue,
@@ -33,7 +34,7 @@ const styles = theme => ({
   socialIcon: {
     margin: '20px 5px'
   }
-})
+}
 
 const SectionAbout = ({ classes }) => {
   React.useEffect(() => {
@@ -86,5 +87,9 @@ const SectionAbout = ({ classes }) => {
     </Grid>
   </Container>
 )}
+
+SectionAbout.propTypes = {
+  children: PropTypes.node.isRequired,
+}
 
 export default withStyles(styles)(SectionAbout)

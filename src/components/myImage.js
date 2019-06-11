@@ -1,17 +1,18 @@
 import React from "react"
 import { StaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
+import PropTypes from 'prop-types'
 
 // material ui
 import { withStyles } from '@material-ui/core/styles'
 
-const styles = theme => ({
+const styles = {
   image: {
     '& img': {
       borderRadius: '50%'
     }
   }
-})
+}
 
 const MyImage = ({ classes }) => (
   <StaticQuery
@@ -32,4 +33,9 @@ const MyImage = ({ classes }) => (
     />}
   />
 )
+
+MyImage.propTypes = {
+  children: PropTypes.node.isRequired
+}
+
 export default withStyles(styles)(MyImage)

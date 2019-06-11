@@ -1,5 +1,9 @@
 import React, { useState } from "react"
 import { graphql, Link } from "gatsby"
+import PropTypes from 'prop-types'
+
+// layout
+import Layout from "../components/layout"
 
 // material ui
 import Container from '@material-ui/core/Container'
@@ -7,9 +11,6 @@ import Grid from '@material-ui/core/Grid'
 import KeyboardArrowLeftIcon from '@material-ui/icons/KeyboardArrowLeft'
 import KeyboardArrowRightIcon from '@material-ui/icons/KeyboardArrowRight'
 import { withStyles } from '@material-ui/core/styles'
-
-// components
-import Layout from "../components/layout"
 
 // styles
 import colors from '../styles/colors'
@@ -46,7 +47,7 @@ const styles = theme => ({
 });
 
 
-const blogPost = ({ classes, data, pageContext }) => {
+const BlogPost = ({ classes, data, pageContext }) => {
   const [section, setSection] = useState(2)
   const post = data.markdownRemark
   const { next, prev } = pageContext
@@ -107,7 +108,11 @@ const blogPost = ({ classes, data, pageContext }) => {
   )
 }
 
-export default withStyles(styles)(blogPost)
+BlogPost.propTypes = {
+  children: PropTypes.node.isRequired,
+}
+
+export default withStyles(styles)(BlogPost)
 
 export const query = graphql`
   query($slug: String!) {

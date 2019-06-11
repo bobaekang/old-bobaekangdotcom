@@ -1,4 +1,5 @@
 import React from "react"
+import PropTypes from 'prop-types'
 
 // material ui
 import { withStyles } from '@material-ui/core/styles'
@@ -9,7 +10,7 @@ import TypedStrings from '../components/typedStrings'
 // styles
 import colors from '../styles/colors.js'
 
-const styles = theme => ({
+const styles = {
 	sectionBody: {
 		fontSize: '1.2em',
 		color: colors.darkgrey
@@ -46,7 +47,7 @@ const styles = theme => ({
 		alignItems: 'center',
 		justifyContent: 'center'
 	}
-})
+}
 
 const SectionHome = ({ classes }) => (
 	<div>
@@ -64,5 +65,9 @@ const SectionHome = ({ classes }) => (
 		<div className={classes.stripeBottom}></div>
 	</div>
 )
+
+SectionHome.propTypes = {
+	classes: PropTypes.object.isRequired,
+}
 
 export default withStyles(styles)(SectionHome)

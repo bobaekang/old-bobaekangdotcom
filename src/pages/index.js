@@ -1,8 +1,10 @@
 import React, { useState } from "react"
 
+// layout
+import Layout from "../components/layout"
+
 // components
 import Fullpage from '../components/fullpage'
-import Layout from "../components/layout"
 import SEO from "../components/seo"
 
 const IndexPage = () => {

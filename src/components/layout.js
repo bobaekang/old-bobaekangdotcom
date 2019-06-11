@@ -2,6 +2,9 @@ import React from "react"
 import PropTypes from "prop-types"
 import { StaticQuery, graphql } from "gatsby"
 
+// styles
+import "../styles/layout.css"
+
 // material-ui
 import Container from '@material-ui/core/Container'
 import { withStyles } from '@material-ui/core/styles'
@@ -9,10 +12,8 @@ import { withStyles } from '@material-ui/core/styles'
 // components
 import Header from "./header"
 
-// styles
-import "../styles/layout.css"
 
-const styles = theme => ({
+const styles = {
 	site: {
     display: "flex",
     minHeight: "100vh",
@@ -24,7 +25,7 @@ const styles = theme => ({
   footer: {
     margin: "5px"
   }
-})
+}
 
 const Layout = ({ children, classes, fullpageSection, isBlog, onSectionChange }) => {
   const handleSectionChange = index => onSectionChange(index)
