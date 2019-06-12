@@ -19,7 +19,7 @@ import colors from '../styles/colors'
 
 const styles = {
   link: {
-    fontWeight: 400,
+    fontWeight: 600,
     color: colors.blue,
     '&:hover': {
       color: colors.red
@@ -62,7 +62,7 @@ const SectionAbout = ({ classes }) => {
             />
           </a>
           <a
-            href="https://www.linkedin.com/in/bobaekang/"
+            href="https://www.linkedin.com/in/bobaekang"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -80,9 +80,10 @@ const SectionAbout = ({ classes }) => {
 
       <Grid item xs={12} sm={6}>
         <h2 className={classes.sectionTitle}>Hi, I'm Bobae</h2>
-        <p>I build web applications in support of the administration of and research on criminal justice in Illinois.</p>
-        <p>Though I love all sorts of web technologies, my focus has been building front-end apps using modern component-based JavaScript frameworks like React and Vue.</p>
-        <p>If you'd like to know more about me, I invite you to start with <Link className={classes.link} to="/blog/hello-world">this blog post</Link>. Also, feel free to reach out to me via GitHub, LinkedIn or email!</p>
+        <p>... and I build web applications!</p>
+        <p>While I love all sorts of web technologies, my recent focus has been building front-end apps using modern component-based JavaScript frameworks like React and Vue.</p>
+        <p>I'm also a big fan of Docker, which helped me a lot to explore beyond what shows up on my screen.</p>
+        <p>If you'd like to know more about me, I invite you to start with <Link className={classes.link} to="/blog/hello-world">this blog post</Link>. Also, feel free to reach out to me via <a className={classes.link} href="https://github.com/bobaekang" target="_blank" rel="noopener noreferrer">GitHub</a>, <a className={classes.link} href="https://www.linkedin.com/in/bobaekang" target="_blank" rel="noopener noreferrer">LinkedIn</a> or <a className={classes.link} href="mailto:hello@bobaekang.com">email</a>!</p>
       </Grid>
     </Grid>
   </Container>
