@@ -47,7 +47,7 @@ const SectionAbout = ({ classes }) => {
   return (
   <Container maxWidth="lg">
     <Grid container spacing={3}>
-      <Grid item xs={12} sm={3} md={2}>
+      <Grid item xs={12} sm={3}>
         <MyImage />
         <div className={classes.socialList}>
           <a
