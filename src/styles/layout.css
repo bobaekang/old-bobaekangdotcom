@@ -1,6 +1,6 @@
-@import url('https://fonts.googleapis.com/css?family=Ubuntu');
-@import url('https://fonts.googleapis.com/css?family=Lato');
+@import url('https://fonts.googleapis.com/css?family=Hind');
 @import url('https://fonts.googleapis.com/css?family=Roboto+Slab');
+@import url('https://fonts.googleapis.com/css?family=Ubuntu');
 
 html {
   font-family: sans-serif;
@@ -207,7 +207,7 @@ html {
 }
 body {
   color: hsla(0, 0%, 0%, 0.8);
-  font-family: Lato, serif;
+  font-family: Hind, sans-serif;
   font-weight: 300;
   word-wrap: break-word;
   font-kerning: normal;

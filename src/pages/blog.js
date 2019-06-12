@@ -21,7 +21,6 @@ const styles = {
   },
   date: {
     color: colors.darkgrey,
-    fontFamily: 'Lato',
     fontWeight: '300',
     fontSize: '16px'
   },
