@@ -6,10 +6,14 @@ import PropTypes from 'prop-types'
 // material ui
 import { withStyles } from '@material-ui/core/styles'
 
+// styles
+import colors from '../styles/colors'
+
 const styles = {
   image: {
     '& img': {
-      borderRadius: '50%'
+      borderRadius: '50%',
+      border: `3px solid ${colors.blue}`
     }
   }
 }
