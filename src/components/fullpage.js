@@ -3,6 +3,9 @@ import React, { useState } from "react"
 // fullpage
 import ReactFullpage from '@fullpage/react-fullpage'
 
+// styles
+import "../styles/fullpage.css"
+
 // components
 import SectionHome from './sectionHome'
 import SectionAbout from './sectionAbout'
