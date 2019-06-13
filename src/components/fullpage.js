@@ -8,7 +8,6 @@ import SectionHome from './sectionHome'
 import SectionAbout from './sectionAbout'
 import SectionBlog from './sectionBlog'
 
-
 const Fullpage = ({ fullpageSection, onSectionChange }) => {
   const [api, setApi] = useState({})
   
@@ -29,6 +28,7 @@ const Fullpage = ({ fullpageSection, onSectionChange }) => {
         fadeScrollbars: true
       }}
       navigation={true}
+      navigationTooltips={['home', 'about', 'blog']}
       render={({ state, fullpageApi }) => {
         setApi(fullpageApi)
         return (
