@@ -21,6 +21,13 @@ const Fullpage = ({ fullpageSection, onSectionChange }) => {
       onLeave={(origin, destination, direction) => {
         handleLeave(destination.index)
       }}
+      pluginWrapper={() => {
+        require('fullpage.js/vendors/scrolloverflow');
+      }}
+      scrollOverflow={ true }
+      scrollOverflowOptions={{
+        fadeScrollbars: true
+      }}
       navigation={true}
       render={({ state, fullpageApi }) => {
         setApi(fullpageApi)
