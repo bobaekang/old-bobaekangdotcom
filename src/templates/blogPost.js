@@ -1,6 +1,5 @@
 import React, { useState } from "react"
 import { graphql, Link } from "gatsby"
-import PropTypes from 'prop-types'
 
 // layout
 import Layout from "../components/layout"
@@ -15,7 +14,7 @@ import { withStyles } from '@material-ui/core/styles'
 // styles
 import colors from '../styles/colors'
 
-const styles = theme => ({
+const styles = {
   article: {
     '& h2': {
       fontSize: '1.2rem'
@@ -35,8 +34,7 @@ const styles = theme => ({
     color: colors.darkgrey
   },
   navIcon: {
-    position: "relative",
-    top: theme.spacing.unit,
+    position: "relative"
   },
   navLink: {
     color: colors.blue,
@@ -44,8 +42,7 @@ const styles = theme => ({
       color: colors.red
     }
   }
-});
-
+}
 
 const BlogPost = ({ classes, data, pageContext }) => {
   const [section, setSection] = useState(2)
@@ -106,10 +103,6 @@ const BlogPost = ({ classes, data, pageContext }) => {
       </Container>
     </Layout>
   )
-}
-
-BlogPost.propTypes = {
-  children: PropTypes.node.isRequired,
 }
 
 export default withStyles(styles)(BlogPost)

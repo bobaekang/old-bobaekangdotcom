@@ -1,15 +1,14 @@
 import React from "react"
-import PropTypes from "prop-types"
 import { Link } from "gatsby"
 
 // material ui
+import Container from '@material-ui/core/Container'
 import Grid from '@material-ui/core/Grid'
 import Hidden from '@material-ui/core/Hidden'
 import { withStyles } from '@material-ui/core/styles'
 
 // styles
 import colors from '../styles/colors'
-import { Container } from "@material-ui/core";
 
 const styles = {
   header: {
@@ -143,15 +142,6 @@ const Header = ({ classes, fullpageSection, isBlog, onSectionChange }) => {
       </Container>
     </header>
   )
-}
-
-Header.propTypes = {
-  children: PropTypes.node.isRequired,
-  siteTitle: PropTypes.string
-}
-
-Header.defaultProps = {
-  siteTitle: ``,
 }
 
 export default withStyles(styles)(Header)
