@@ -17,7 +17,7 @@ import colors from '../styles/colors'
 
 const styles = {
   blog: {
-    marginTop: "5%"
+    marginTop: "5rem"
   },
   date: {
     color: colors.darkgrey,

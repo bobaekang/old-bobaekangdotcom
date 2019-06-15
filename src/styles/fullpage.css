@@ -1,0 +1,20 @@
+#fp-nav ul li a span,
+#fp-nav ul li:hover a.active span,
+#fp-nav ul li a.active span,
+.fp-slidesNav ul li a span,
+.fp-slidesNav ul li:hover a.active span,
+.fp-slidesNav ul li a.active span {
+  background: #FF240E !important
+}
+
+#fp-nav ul li .fp-tooltip {
+  color: #FF240E !important
+}
+
+.section {
+  padding-top: 3rem;
+}
+
+.section-home {
+  padding-top: 0;
+}
