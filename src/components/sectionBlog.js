@@ -11,10 +11,7 @@ import { withStyles } from '@material-ui/core/styles'
 // style
 import colors from '../styles/colors'
 
-const styles = theme => ({
-  root: {
-    flexGrow: 1,
-  },
+const styles = {
   alignCenter: {
     display: 'flex',
     flexWrap: 'wrap',
@@ -23,7 +20,7 @@ const styles = theme => ({
     height: '100%'
   },
   paper: {
-    padding: theme.spacing(3),
+    padding: '1.5em',
     height: '250px',
     '&:hover': {
       boxShadow: `
@@ -40,7 +37,7 @@ const styles = theme => ({
     color: colors.red,
     marginBottom: '1em'
   }
-});
+}
 
 const SectionBlog = ({ classes }) => {
   const data = useStaticQuery(
