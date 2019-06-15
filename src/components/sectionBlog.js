@@ -22,11 +22,16 @@ const styles = {
   paper: {
     padding: '1.5em',
     height: '250px',
-    '&:hover': {
-      boxShadow: `
+    boxShadow: `
         0px 1px 6px 0px ${colors.blue},
         0px 1px 2px 0px ${colors.blue},
         0px 2px 2px -1px ${colors.blue}
+      `,
+    '&:hover': {
+      boxShadow: `
+        0px 1px 6px 0px ${colors.red},
+        0px 1px 2px 0px ${colors.red},
+        0px 2px 2px -1px ${colors.red}
       `,
       '& h3': {
         color: colors.red
