@@ -10,3 +10,11 @@
 #fp-nav ul li .fp-tooltip {
   color: #FF240E !important
 }
+
+.section {
+  padding-top: 3rem;
+}
+
+.section-home {
+  padding-top: 0;
+}

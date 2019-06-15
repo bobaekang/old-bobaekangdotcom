@@ -36,7 +36,7 @@ const Fullpage = ({ fullpageSection, onSectionChange }) => {
         setApi(fullpageApi)
         return (
           <ReactFullpage.Wrapper>
-            <div className="section">
+            <div className="section section-home">
               <SectionHome />
             </div>
 
