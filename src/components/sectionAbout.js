@@ -1,18 +1,14 @@
 import React from "react"
 import { Link } from 'gatsby'
-import clsx from 'clsx'
-import { loadCSS } from 'fg-loadcss'
-import PropTypes from 'prop-types'
 
 // material ui
 import { withStyles } from '@material-ui/core/styles'
 import Container from '@material-ui/core/Container'
 import Grid from '@material-ui/core/Grid'
-import Icon from '@material-ui/core/Icon'
-import EmailIcon from '@material-ui/icons/Email'
 
 // components
 import MyImage from './myImage'
+import MySocial from './mySocial'
 
 // styles
 import colors from '../styles/colors'
@@ -27,55 +23,31 @@ const styles = {
   },
   sectionTitle: {
     color: colors.red
-  },
-  socialList: {
-    textAlign: 'center'
-  },
-  socialIcon: {
-    margin: '20px 5px'
   }
 }
 
 const SectionAbout = ({ classes }) => {
-  React.useEffect(() => {
-    loadCSS(
-      'https://use.fontawesome.com/releases/v5.1.0/css/all.css',
-      document.querySelector('#font-awesome-css'),
-    );
-  }, []);
-
   return (
   <Container maxWidth="lg">
     <Grid container spacing={3}>
       <Grid item xs={12} sm={3}>
         <MyImage />
-        <div className={classes.socialList}>
-          <a
-            href="https://github.com/bobaekang"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Icon
-              className={
-                clsx(classes.link, classes.socialIcon, 'fab fa-github')
-              }
-            />
-          </a>
-          <a
-            href="https://www.linkedin.com/in/bobaekang"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Icon
-              className={
-                clsx(classes.socialIcon, classes.link, 'fab fa-linkedin')
-              }
-            />
-          </a>
-          <a href="mailto:hello@bobaekang.com">
-            <EmailIcon className={clsx(classes.link, classes.socialIcon)}/>
-          </a>
-        </div>
+        <br />
+        <MySocial
+          namespace="about"          
+          styles={`
+            .about-social-icon {
+              font-size: 1.5rem;
+              margin-left: .2rem;
+              margin-right: .2rem;
+              color: ${colors.blue};
+            }
+
+            .about-social-icon:hover {
+              color: ${colors.red};
+            }
+          `}
+        />
       </Grid>
 
       <Grid item xs={12} sm={6}>
@@ -88,9 +60,5 @@ const SectionAbout = ({ classes }) => {
     </Grid>
   </Container>
 )}
-
-SectionAbout.propTypes = {
-  children: PropTypes.node.isRequired,
-}
 
 export default withStyles(styles)(SectionAbout)
