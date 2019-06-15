@@ -11,7 +11,7 @@ import { withStyles } from '@material-ui/core/styles'
 
 // components
 import Header from "./header"
-
+import Footer from './footer'
 
 const styles = {
 	site: {
@@ -21,9 +21,6 @@ const styles = {
   },
   siteMain: {
     flexGrow: "1"
-  },
-  footer: {
-    margin: "5px"
   }
 }
 
@@ -49,14 +46,8 @@ const Layout = ({ children, classes, fullpageSection, isBlog, onSectionChange })
             isBlog={isBlog}
             onSectionChange={index => handleSectionChange(index)}
           />
-            <main className={classes.siteMain}>{children}</main>
-            <footer className={classes.footer}>
-              <Container maxWidth="md">
-                © {new Date().getFullYear()}, Built with
-                {` `}
-                <a href="https://www.gatsbyjs.org">Gatsby</a>
-              </Container>
-            </footer>
+          <main className={classes.siteMain}>{children}</main>
+          <Footer />
         </div>
       )}
     />
@@ -65,6 +56,11 @@ const Layout = ({ children, classes, fullpageSection, isBlog, onSectionChange })
 
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
+  siteTitle: PropTypes.string
+}
+
+Layout.defaultProps = {
+  siteTitle: ``,
 }
 
 export default withStyles(styles)(Layout)
