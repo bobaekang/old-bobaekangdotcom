@@ -9,7 +9,7 @@ import { withStyles } from '@material-ui/core/styles'
 // styles
 import colors from '../styles/colors'
 
-const styles = theme => ({
+const styles = {
   logo: {
     position: 'absolute',
     left: '10%',
@@ -34,7 +34,7 @@ const styles = theme => ({
     fontFamily: 'Ubuntu, san-serif',
     fontSize: '1.3em',
     fontWeight: '700',    
-    padding: theme.spacing(3),
+    padding: '1em',
     textDecoration: 'none',
     '&:hover': {
       color: colors.red
@@ -43,7 +43,7 @@ const styles = theme => ({
   menuActiveItem: {
     color: colors.red
   }
-})
+}
 
 const Header = ({ classes, fullpageSection, isBlog, onSectionChange }) => {
   const onClickMenu = index => onSectionChange(index)
