@@ -28,7 +28,7 @@ const styles = theme => ({
     },
   },
   blog: {
-    marginTop: "5%"
+    paddingTop: "5rem"
   },
   date: {
     marginBottom: "1em",
