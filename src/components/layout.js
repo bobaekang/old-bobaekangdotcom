@@ -6,7 +6,6 @@ import { StaticQuery, graphql } from "gatsby"
 import "../styles/layout.css"
 
 // material-ui
-import Container from '@material-ui/core/Container'
 import { withStyles } from '@material-ui/core/styles'
 
 // components

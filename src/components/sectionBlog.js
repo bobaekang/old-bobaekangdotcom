@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React from "react"
 import PropTypes from 'prop-types'
 import { Link, graphql, useStaticQuery } from "gatsby"
 
@@ -71,7 +71,7 @@ const SectionBlog = ({ classes }) => {
   )
   
   return (
-    <Container maxWidth="lg">
+    <Container style={{ marginBottom: '5rem' }} maxWidth="lg">
       <h2 className={classes.sectionTitle}>Latest writings</h2>
       <Grid container spacing={3}>
         {

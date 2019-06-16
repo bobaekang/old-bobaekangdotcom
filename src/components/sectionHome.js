@@ -13,7 +13,7 @@ import colors from '../styles/colors.js'
 const styles = {
 	sectionBody: {
 		fontSize: '1.2em',
-		margin: '0 1.2em',
+		margin: '0 2em',
 		color: colors.darkgrey
 	},
 	sectionTitle: {

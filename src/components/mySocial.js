@@ -28,6 +28,7 @@ const MySocial = ({ classes, namespace, styles }) => {
       <a
         className={`${namespace}-social-icon`}
         href="https://github.com/bobaekang"
+        aria-label="See my Github profile"
         target="_blank"
         rel="noopener noreferrer"
       >
@@ -36,6 +37,7 @@ const MySocial = ({ classes, namespace, styles }) => {
       <a
         className={`${namespace}-social-icon`}
         href="https://www.linkedin.com/in/bobaekang"
+        aria-label="See my LinkeIn profile"
         target="_blank"
         rel="noopener noreferrer"
       >
@@ -44,6 +46,7 @@ const MySocial = ({ classes, namespace, styles }) => {
       <a
         className={`${namespace}-social-icon`}
         href="mailto:hello@bobaekang.com"
+        aria-label="Send me an email"
       >
         <EmailIcon style={{fontSize: 'inherit'}} />
       </a>

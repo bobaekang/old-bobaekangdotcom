@@ -25,16 +25,28 @@ const styles = {
     '& h4': {
       fontSize: '85028rem'
     },
+    '& a': {
+      color: colors.blue,
+      fontWeight: 'bold',
+      '&:hover': {
+        color: colors.red
+      }
+    },
+    '& .footnotes': {
+      fontSize: '.8rem'
+    }
   },
   blog: {
-    paddingTop: "5rem"
+    paddingTop: "5rem",
+    paddingBottom: '5rem'
   },
   date: {
     marginBottom: "1em",
     color: colors.darkgrey
   },
   navIcon: {
-    position: "relative"
+    position: "relative",
+    top: ".25rem"
   },
   navLink: {
     color: colors.blue,
@@ -68,21 +80,25 @@ const BlogPost = ({ classes, data, pageContext }) => {
           justify="space-between"
           alignItems="center"
         >
-          <Grid item xs={3}>
+          <Grid item xs={5}>
             {
               prev &&
               <Link
                 className={classes.navLink}
                 to={prev.fields.slug}
               >
-                <h4>
-                  <KeyboardArrowLeftIcon className={classes.navIcon}/>
-                  {prev.frontmatter.title}
-                </h4>
+                <Grid container direction="row" alignItems="center">
+                  <Grid item xs={2}>
+                    <KeyboardArrowLeftIcon className={classes.navIcon}/>
+                  </Grid>
+                  <Grid item xs={10}>
+                    <h4 style={{marginBottom: "0"}}>{prev.frontmatter.title}</h4>
+                  </Grid>
+                </Grid>             
               </Link>
             }
           </Grid>
-          <Grid item xs={3}>
+          <Grid item xs={5}>
             {
               next &&
               <Link
@@ -92,10 +108,14 @@ const BlogPost = ({ classes, data, pageContext }) => {
                 }}
                 to={next.fields.slug}
               >
-                <h4>
-                  {next.frontmatter.title}
-                  <KeyboardArrowRightIcon className={classes.navIcon}/>
-                </h4>
+                <Grid container direction="row" alignItems="center">
+                  <Grid item xs={10}>
+                    <h4 style={{marginBottom: "0"}}>{next.frontmatter.title}</h4>
+                  </Grid>
+                  <Grid item xs={2}>
+                    <KeyboardArrowRightIcon className={classes.navIcon}/>
+                  </Grid>
+                </Grid>
               </Link>
             }
           </Grid>
