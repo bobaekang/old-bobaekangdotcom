@@ -25,6 +25,16 @@ const styles = {
     '& h4': {
       fontSize: '85028rem'
     },
+    '& a': {
+      color: colors.blue,
+      fontWeight: 'bold',
+      '&:hover': {
+        color: colors.red
+      }
+    },
+    '& .footnotes': {
+      fontSize: '.8rem'
+    }
   },
   blog: {
     paddingTop: "5rem"
@@ -34,7 +44,8 @@ const styles = {
     color: colors.darkgrey
   },
   navIcon: {
-    position: "relative"
+    position: "relative",
+    top: ".4rem"
   },
   navLink: {
     color: colors.blue,
@@ -68,7 +79,7 @@ const BlogPost = ({ classes, data, pageContext }) => {
           justify="space-between"
           alignItems="center"
         >
-          <Grid item xs={3}>
+          <Grid item xs={4}>
             {
               prev &&
               <Link
@@ -82,7 +93,7 @@ const BlogPost = ({ classes, data, pageContext }) => {
               </Link>
             }
           </Grid>
-          <Grid item xs={3}>
+          <Grid item xs={4}>
             {
               next &&
               <Link
