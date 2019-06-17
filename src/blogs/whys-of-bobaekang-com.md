@@ -3,21 +3,21 @@ title: "Whys of bobaekang.com"
 date: "2019-06-16"
 ---
 
-Now that this website is finally up and running, it is time to reflect on choices I made and steps I took to get here. In this post, I'd like to breifly discuss two fundamenal _why_s of bobaekang.com.
+Now that this website is finally up and running, it is time to reflect on the choices I made and the steps I took to get here. In this post, I'd like to briefly discuss two fundamental _why_s of bobaekang.com.
 
 ## Why Gatsby?
 
 This website is built using <a href="https://www.gatsbyjs.org/" target="_blank" rel="noopener noreferrer">Gatsby</a>, a popular and powerful static site generator built on top of <a href="https://reactjs.org/" target="_blank" rel="noopener noreferrer">React.js</a>. This was in fact a deliberate challenge I gave myself, a perfectly happy user of <a href="https://vuejs.org/" target="_blank" rel="noopener noreferrer">Vue</a> and its wonderful ecosystem.
 
-I believe it was <a href="https://en.wikipedia.org/wiki/The_Pragmatic_Programmer" target="_blank" rel="noopener noreferrer">_The Programmatic Programmer_ by Andy Hunt and Dave Thomas</a> where I first read that I should not marry my favorite piece of technology, whether it being a particular programming language or some framework. And from my own experience, I do believe that trying out new things can help me to not only broaden my perspective but also deepen my understanding of tools I already use.[^1]
+I believe it was <a href="https://en.wikipedia.org/wiki/The_Pragmatic_Programmer" target="_blank" rel="noopener noreferrer">_The Pragmatic Programmer_ by Andy Hunt and Dave Thomas</a> where I first read that I should not marry my favorite piece of technology, whether it being a particular programming language or framework. And based on my own experience, I do believe that trying out new things helps me to not only broaden my perspective but also deepen my understanding of tools I already use.[^1]
 
 [^1]: I started with R, then learned Python, and now primarily write JavaScript. I'll have another post to talk about this experience later.
 
 So I decided to give React a try.[^2] But it was a little inconvenient for me to start with "vanilla" React for building a website like this. Gatsby offered a great solution here. Gatsby uses React _and_ comes with handy features and plugins for quickly scaffolding a simple yet powerful app. And its decent integration of <a href="https://material-ui.com/" target="_blank" rel="noopener noreferrer">Material UI</a> sealed the deal. As a loyal user of <a href="https://vuetifyjs.com/" target="_blank" rel="noopener noreferrer">Vuetify</a>, an amazing Material Design UI library for Vue, I would have been much grumpier in the process of building this website if I had not had a similar option available.
 
-[^2]: I also thought about <a href="https://svelte.dev/" target="_blank" rel="noopener noreferrer">Svelte</a>, which seems to be finally getting attention it deserves since launching its v3.0. I love the ideas behind Svelte: no virtual DOM, smaller bundle size, complier as framework, etc. At the end, however, I decided to be a little more strategic by going with React, which has a larger community, meaning more resources and opportunities.
+[^2]: I also thought about <a href="https://svelte.dev/" target="_blank" rel="noopener noreferrer">Svelte</a>, which seems to be finally getting attention it deserves since launching its v3.0. I love the ideas behind Svelte: no virtual DOM, smaller bundle size, compiler as framework, etc. In the end, however, I decided to be a little more strategic by going with React, which has a larger community, meaning more resources and opportunities.
 
-Overall, I am happy that I choice Gatsby! Gatsby easied me into learning the core concepts and syntax of React while taking care of routing, parsing markdown files, providing basic file structure, etc.--all of which would have slowed down and distracted me from getting to know React and creating something with it.
+Overall, I am happy that I choice Gatsby! Gatsby eased me into learning the core concepts and syntax of React while taking care of routing, parsing markdown files, providing basic file structure, etc.--all of which would have significantly slowed down and distracted me from getting to know React and creating something with it.
 
 ## Why bobaekang.com?
 
