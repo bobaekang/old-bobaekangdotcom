@@ -543,6 +543,7 @@ li > p {
 code {
   font-size: 0.85rem;
   line-height: 1.45rem;
+  white-space: pre !important;
 }
 kbd {
   font-size: 0.85rem;
@@ -620,4 +621,14 @@ pre tt:after {
   html {
     font-size: 100%;
   }
+}
+.gatsby-highlight {
+  margin-bottom: 1.45rem;
+  overflow: auto;
+}
+
+.gatsby-highlight pre[class*="language-"].line-numbers {
+  padding: 0;
+  padding-left: 2.8em;
+  overflow: initial;
 }
