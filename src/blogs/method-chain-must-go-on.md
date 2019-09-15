@@ -32,7 +32,7 @@ Here, `arrests` is a data frame with arrest counts for violent and property crim
 
 One of the most common operations in reshaping a tabular data object is subsetting, either by rows or columns. And when it comes to subsetting a data frame, [`pandas.DataFrame.loc`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.loc.html) is like a Swiss army knife. This single method can handle subsetting both rows and columns either by labels or conditions.
 
-This versatility, however, is a double-edged sword. When one method does so much, the semantics of the each method call gets muddled a bit. In addition, `.loc` is accessing the subset of a data frame, which means any operations applied to that subset might lead to mutating the original data frame.[^1]
+This versatility, however, is a double-edged sword. When one method does so much, the semantics of each method call gets muddled a bit. In addition, `.loc` is accessing the subset of a data frame, which means any operations applied to that subset might lead to mutating the original data frame.[^1]
 
 [^1]: I'm picking on `.loc` specifically because `.ix` is now deprecated and `.iloc` is limited to integer-based indexing.
 
@@ -58,7 +58,7 @@ arrest \
     .filter(items = ['violent'])
 ```
 
-The `.loc` approach is terse and requires only a single method use. However, putting everything into a single method call makes can become quickly confusing.
+While the `.loc` approach is terse and gets the job done, putting everything into a single method call makes can become quickly confusing.
 
 The second approach with `.query` and `.filter` breaks what `.loc` was doing into two sequential steps. In my view, this improves readability and clarifies the intention of each method call.
 
@@ -148,7 +148,7 @@ So, let's see how the methods discussed thus far could be used together for a mo
 
 Let's say that, using `arrest` and `population` data frames, we want to get a table of arrest counts for violent crime in counties "1" and "2" in 2019. We also want to calculate rates per 1,000 to account for the population size. The final output will have four columns: `year`, `county`, `violent` and `violent_per_1k`.
 
-Here are two possible solutions for the given taks:
+Here are two possible solutions for the given task:
 
 ### Imperative code
 ```python
@@ -182,7 +182,7 @@ I don't know about you, dear reader, but the second approach to the given task s
 
 ## Bonus: Applying functions with `.pipe`
 
-[pandas.DataFrame.pipe](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.pipe.html) is a godsend since it allows us to apply non-method `pandas` functions without breaking the method chain. The only contrainst for ensuring the method chain to go on is that the provided function must take a data frame as an input and return a data frame as its output.
+[pandas.DataFrame.pipe](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.pipe.html) is a godsend since it allows us to apply non-method `pandas` functions without breaking the method chain. The only constraint for ensuring the method chain to go on is that the provided function must take a data frame as an input and return a data frame as its output.
 
 There are many `pandas` functions that can be introduced into our method chain via `.pipe`. One great candidate for using `.pipe` is `pandas.concat` for concatenating a list of data frame objects. In this case, calling `pandas.DataFrame.append` repeatedly can achieve the same, but `pandas.concat` is [known to be more efficient](https://jakevdp.github.io/PythonDataScienceHandbook/03.06-concat-and-append.html#The-append()-method).
 
@@ -197,12 +197,12 @@ def append_dfs(df, dfs):
 df1.pipe(append_dfs, [df2, df3])
 ```
 
-More generally, any arbitrary operation, or a set of operations, on `pandas.DataFrame` can be made into a function with a meaningful name. This allows my method chain to be more expressive and focused on the business logic. Even turning a number of methods into a single function and using it with `.pipe` can help to achieve better abstraction.
+More generally, any arbitrary operation, or a set of operations, on `pandas.DataFrame` can be made into a function with a meaningful name. This allows my method chain to be more expressive and focused on business logic. Even turning a number of methods into a single function and using it with `.pipe` can help to achieve better abstraction.
 
 ## Caveats
 
-A usual trade-off when adopting a functional style in most commonly used programming languages is one between performance and abstraction.
+A usual trade-off when adopting a functional style for most commonly used programming languages is one between performance and abstraction.
 
-In the case of `pandas` method chaining, the creation of an intermediate copy at each method call may lead to higher memory use and computation time. So if performance is the top priority, we should not shy away from directly manipulating a data frame at hand. 
+In the case of `pandas` method chaining, the creation of an intermediate copy at each method call may lead to higher memory use and computation time. So if performance is the top priority, we should not shy away from directly manipulating a data frame at hand.
 
 Then again, we should not sacrifice improved readability and maintainability for a trivial gain in performance. So, whenever feasible, we may as well keep that method chain going!
