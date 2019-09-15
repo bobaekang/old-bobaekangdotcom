@@ -1,5 +1,5 @@
 ---
-title: "A take of three languages"
+title: "A tale of three languages"
 date: "2019-08-25"
 ---
 
