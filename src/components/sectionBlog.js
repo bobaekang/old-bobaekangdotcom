@@ -62,7 +62,7 @@ const SectionBlog = ({ classes }) => {
               fields {
                 slug
               }
-              excerpt
+              excerpt(pruneLength: 120)
             }
           }
         }
