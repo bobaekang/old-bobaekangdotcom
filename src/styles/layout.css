@@ -541,7 +541,6 @@ li > p {
   margin-bottom: calc(1.45rem / 2);
 }
 code {
-  font-size: 0.85rem;
   line-height: 1.45rem;
   white-space: pre !important;
 }
@@ -616,6 +615,9 @@ pre code:after,
 pre tt:before,
 pre tt:after {
   content: "";
+}
+code .token.operator {
+  background: none;
 }
 @media only screen and (max-width: 480px) {
   html {
