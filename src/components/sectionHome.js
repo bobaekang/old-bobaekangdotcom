@@ -22,7 +22,7 @@ const styles = {
 		marginBottom: '0.2rem'
 	},
 	stripeBottom: {
-		backgroundColor: colors.blue,
+		backgroundColor: colors.lightblue,
 		bottom: '16.5%',
 		height: '16.5%',
 		left: '0%',
@@ -30,7 +30,7 @@ const styles = {
 		width: '100%',
 	},
 	stripeTop: {
-		backgroundColor: colors.blue,
+		backgroundColor: colors.lightblue,
 		height: '16.5%',
 		left: '0%',
 		position: 'absolute',
