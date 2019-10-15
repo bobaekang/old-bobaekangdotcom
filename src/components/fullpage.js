@@ -20,6 +20,7 @@ const Fullpage = ({ fullpageSection, onSectionChange }) => {
 
   return (
     <ReactFullpage
+      licenseKey={process.env.GATSBY_FULLPAGE_LICENSE_KEY} 
       onLeave={(origin, destination, direction) => {
         handleLeave(destination.index)
       }}
