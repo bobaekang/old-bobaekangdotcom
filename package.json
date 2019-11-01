@@ -1,9 +1,9 @@
 {
-  "name": "gatsby-starter-default",
+  "name": "bobaekangdotcom",
   "private": true,
-  "description": "A simple starter to get up and developing quickly with Gatsby",
+  "description": "A personal website and blog",
   "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "author": "Bobae Kang <hello@bobaekang.com>",
   "dependencies": {
     "@fullpage/react-fullpage": "^0.1.14",
     "@material-ui/core": "^4.1.0",
