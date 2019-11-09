@@ -634,3 +634,6 @@ code .token.operator {
   padding-left: 2.8em;
   overflow: initial;
 }
+.footnotes p {
+  display: contents;
+}
