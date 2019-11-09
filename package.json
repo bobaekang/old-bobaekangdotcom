@@ -23,15 +23,15 @@
     "gatsby-source-filesystem": "^2.1.35",
     "gatsby-transformer-remark": "^2.6.32",
     "gatsby-transformer-sharp": "^2.3.2",
-    "prismjs": "^1.16.0",
+    "prismjs": "^1.17.1",
     "prop-types": "^15.7.2",
     "react": "^16.11.0",
     "react-dom": "^16.11.0",
     "react-helmet": "^5.2.1",
-    "typed.js": "^2.0.10"
+    "typed.js": "^2.0.11"
   },
   "devDependencies": {
-    "prettier": "^1.18.2"
+    "prettier": "^1.19.1"
   },
   "keywords": [
     "gatsby"
