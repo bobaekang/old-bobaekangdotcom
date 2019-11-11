@@ -9,7 +9,7 @@ Listening to the podcast, I got inspired to write this post on what I love about
 
 ## What is Netlify?
 
-> "Netlify is an all-in-one platform for automating modern web projects." - Netlify official documentation
+> _"Netlify is an all-in-one platform for automating modern web projects."_ \- Netlify official documentation
 
 In other words, [Netlify](https://www.netlify.com/) is ❤️. And I mean it!
 
