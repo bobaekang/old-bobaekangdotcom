@@ -11,6 +11,9 @@ import KeyboardArrowLeftIcon from '@material-ui/icons/KeyboardArrowLeft'
 import KeyboardArrowRightIcon from '@material-ui/icons/KeyboardArrowRight'
 import { withStyles } from '@material-ui/core/styles'
 
+// components
+import SEO from "../components/seo"
+
 // styles
 import colors from '../styles/colors'
 
@@ -67,6 +70,7 @@ const BlogPost = ({ classes, data, pageContext }) => {
       isBlog={true}
       onSectionChange={setSection}
     >
+      <SEO title={post.frontmatter.title} description={post.excerpt} />
       <Container className={classes.blog} maxWidth="md">
         <h2>{post.frontmatter.title}</h2>
         <div className={classes.date}>{post.frontmatter.date}</div>
@@ -135,6 +139,7 @@ export const query = graphql`
         title
         date(formatString: "DD MMMM, YYYY")
       }
+      excerpt(pruneLength: 80)
     }
   }
 `
