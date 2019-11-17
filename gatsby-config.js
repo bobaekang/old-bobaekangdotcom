@@ -3,6 +3,8 @@ module.exports = {
     title: `bobaekang`,
     description: `Hello World! This is Bobae's place.`,
     author: `Bobae Kang`,
+    image: `/images/home.png`, 
+    url: `https://bobaekang.com`
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
