@@ -79,7 +79,7 @@ m$f()
 #> [1] "Huzzah!"
 ```
 
-Hmm, that remote path to the "import_module.R" script seemed too long to my eye. So I created [TinyURL](https://tinyurl.com/) for it: "https://tinyurl.com/r-module.trick/\*" now would direct to "https://raw.githubusercontent.com/bobaekang/r-module-trick/master/\*".
+Hmm, that remote path to the "import_module.R" script seemed too long to my eye. So I created [TinyURL](https://tinyurl.com/) for it: "https\://tinyurl.com/r-module.trick/\<path\>" now would redirect to "https\://raw.githubusercontent.com/bobaekang/r-module-trick/master/\<path\>".
 
 Finally, just to help others, like my future self, to get a quick reminder of how the function works, I added another function, `import_module_help()` to display documentation for `import_module()`.
 
