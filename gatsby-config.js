@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: `bobaekang`,
-    description: `Hello World! This is Bobae's place.`,
+    description: `Hello World! I am a Chicago-based social scientist turned software engineer. I built this place to share my experience & reflections on software development.`,
     author: `Bobae Kang`,
     image: `/images/home.png`, 
     url: `https://bobaekang.com`
