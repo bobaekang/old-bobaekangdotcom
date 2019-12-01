@@ -31,8 +31,14 @@ const styles = {
     '& a': {
       color: colors.blue,
       fontWeight: 'bold',
+      '& code': {
+        color: colors.blue,
+      },
       '&:hover': {
-        color: colors.red
+        color: colors.red,
+        '& code': {
+          color: colors.red,
+        }
       }
     },
     '& .footnotes': {
