@@ -76,7 +76,7 @@ const SectionBlog = ({ classes }) => {
       <Grid container spacing={3}>
         {
           data.allMarkdownRemark.edges.map(({ node }) => (
-            <Grid item xs={12} sm={4} key={node.id}>
+            <Grid item xs={12} sm={8} md={6} lg={4} key={node.id}>
               <Paper className={classes.paper}>
                 <Link to={node.fields.slug}>
                   <h3>{node.frontmatter.title}</h3>
@@ -87,7 +87,7 @@ const SectionBlog = ({ classes }) => {
             </Grid>
           ))
         }
-        <Grid item xs={12} sm={4}>
+        <Grid item xs={12} sm={8} md={6} lg={4}>
           <Paper className={classes.paper}>
             <Link to="/blog">
               <div className={classes.alignCenter}>
