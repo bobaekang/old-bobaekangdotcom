@@ -15,18 +15,25 @@ const styles = {
   alignCenter: {
     display: 'flex',
     flexWrap: 'wrap',
-    textAlign: 'center',
     alignContent: 'center',
     height: '100%'
   },
+  date: {
+    color: colors.darkgrey,
+    fontFamily: '"Roboto Slab", san-serif',
+    fontSize: '16px'
+  },
   paper: {
-    padding: '1.5em',
+    padding: '1em',
     height: '250px',
     boxShadow: `
         0px 1px 6px 0px ${colors.blue},
         0px 1px 2px 0px ${colors.blue},
         0px 2px 2px -1px ${colors.blue}
       `,
+    '& p': {
+      marginBottom: '0.5em'
+    },
     '&:hover': {
       boxShadow: `
         0px 1px 6px 0px ${colors.red},
@@ -79,9 +86,11 @@ const SectionBlog = ({ classes }) => {
             <Grid item xs={12} sm={8} md={6} lg={4} key={node.id}>
               <Paper className={classes.paper}>
                 <Link to={node.fields.slug}>
-                  <h3>{node.frontmatter.title}</h3>
-                  <p>{node.frontmatter.date}</p>
-                  <p>{node.excerpt}</p>
+                  <div className={classes.alignCenter}>
+                    <p className={classes.date}>{node.frontmatter.date}</p>
+                    <h3>{node.frontmatter.title}</h3>
+                    <p>{node.excerpt}</p>
+                  </div>
                 </Link> 
               </Paper>
             </Grid>
@@ -91,7 +100,7 @@ const SectionBlog = ({ classes }) => {
           <Paper className={classes.paper}>
             <Link to="/blog">
               <div className={classes.alignCenter}>
-                  <h3>Read more...</h3>
+                <h3>Read more...</h3>
               </div>
             </Link>
           </Paper>
