@@ -30,7 +30,7 @@ const styles = {
     },
     '& a': {
       color: colors.blue,
-      fontWeight: 'bold',
+      textDecoration: 'underline',
       '& code': {
         color: colors.blue,
       },
@@ -50,8 +50,10 @@ const styles = {
     paddingBottom: '5rem'
   },
   date: {
-    marginBottom: "1em",
-    color: colors.darkgrey
+    marginBottom: "2em",
+    color: colors.darkgrey,
+    fontFamily: '"Roboto Slab", san-serif',
+    fontSize: '16px'
   },
   navIcon: {
     position: "relative",
