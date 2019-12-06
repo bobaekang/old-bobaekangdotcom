@@ -30,7 +30,7 @@ const styles = {
     },
     '& a': {
       color: colors.blue,
-      fontWeight: 'bold',
+      textDecoration: 'underline',
       '& code': {
         color: colors.blue,
       },

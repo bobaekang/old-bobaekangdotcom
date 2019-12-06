@@ -14,11 +14,13 @@ import MySocial from './mySocial'
 import colors from '../styles/colors'
 
 const styles = {
-  link: {
-    fontWeight: 600,
-    color: colors.blue,
-    '&:hover': {
-      color: colors.red
+  sectionBody: {
+    '& a': {
+      color: colors.blue,
+      textDecoration: 'underline',
+      '&:hover': {
+        color: colors.red
+      }
     }
   },
   sectionTitle: {
@@ -52,10 +54,12 @@ const SectionAbout = ({ classes }) => {
 
       <Grid item xs={12} sm={6}>
         <h2 className={classes.sectionTitle}>Hi, I'm Bobae</h2>
-        <p>... and I am an ambitious self-taught software engineer!</p>
-        <p>I started out as a researcher and data analyst, and later fell in love with modern web technologies as well as the art and craft of software development in general.</p>
-        <p>I'm also a big fan of FOSS and its community, which continue to empower me to grow in skills and knowledge beyond my wildest dreams.</p>
-        <p>If you'd like to know more about me, I invite you to start with <Link className={classes.link} to="/blog/hello-world">this blog post</Link>. Also, feel free to reach out to me via <a className={classes.link} href="https://github.com/bobaekang" target="_blank" rel="noopener noreferrer">GitHub</a>, <a className={classes.link} href="https://www.linkedin.com/in/bobaekang" target="_blank" rel="noopener noreferrer">LinkedIn</a> or <a className={classes.link} href="mailto:hello@bobaekang.com">email</a>!</p>
+        <div className={classes.sectionBody}>
+          <p>... and I am an ambitious self-taught software engineer!</p>
+          <p>I started out as a researcher and data analyst, and later fell in love with modern web technologies as well as the art and craft of software development in general.</p>
+          <p>I'm also a big fan of FOSS and its community, which continue to empower me to grow in skills and knowledge beyond my wildest dreams.</p>
+          <p>If you'd like to know more about me, I invite you to start with <Link to="/blog/hello-world">this blog post</Link>. Also, feel free to reach out to me via <a href="https://github.com/bobaekang" target="_blank" rel="noopener noreferrer">GitHub</a>, <a href="https://www.linkedin.com/in/bobaekang" target="_blank" rel="noopener noreferrer">LinkedIn</a> or <a href="mailto:hello@bobaekang.com">email</a>!</p>
+        </div>
       </Grid>
     </Grid>
   </Container>
