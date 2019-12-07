@@ -78,7 +78,7 @@ const SectionBlog = ({ classes }) => {
   )
   
   return (
-    <Container style={{ marginBottom: '5rem' }} maxWidth="lg">
+    <Container style={{ marginTop: '4rem', marginBottom: '4rem' }} maxWidth="lg">
       <h2 className={classes.sectionTitle}>Latest writings</h2>
       <Grid container spacing={3}>
         {

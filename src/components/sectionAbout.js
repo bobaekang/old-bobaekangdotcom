@@ -33,7 +33,7 @@ const styles = {
 
 const SectionAbout = ({ classes }) => {
   return (
-  <Container maxWidth="lg">
+  <Container style={{ marginTop: '4rem', marginBottom: '4rem' }} maxWidth="lg">
     <Grid container spacing={3}>
       <Grid className={classes.sectionMain} item xs={11} sm={6}>
         <h2>Hi, I'm Bobae</h2>
