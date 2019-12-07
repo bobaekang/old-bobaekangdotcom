@@ -9,7 +9,6 @@ import EmailIcon from '@material-ui/icons/Email'
 const styles = {
   socialList: {
     textAlign: 'center',
-    lineHeight: '0'
   }
 }
 

@@ -12,11 +12,13 @@ import colors from '../styles/colors'
 
 const styles = {
   header: {
+    backgroundColor: 'white',
     position:'absolute',
     width:'100%',
-    zIndex:'99',
+    zIndex:'99'
   },
   container: {
+    height: '46px',
     padding: '0'
   },
   logo: {
