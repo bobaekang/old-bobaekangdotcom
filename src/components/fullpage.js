@@ -41,11 +41,15 @@ const Fullpage = ({ fullpageSection, onSectionChange }) => {
               <SectionHome />
             </div>
 
-            <div className="section">                            
+            <div className="section" style={{
+              display: state.initialized ? '' : 'none'
+            }}>
               <SectionAbout />
             </div>
 
-            <div className="section">
+            <div className="section"  style={{
+              display: state.initialized ? '' : 'none'
+            }}>
               <SectionBlog />
             </div>
           </ReactFullpage.Wrapper>
