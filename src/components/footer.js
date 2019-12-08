@@ -11,16 +11,14 @@ import colors from '../styles/colors'
 
 const styles = {
   footer: {
-    backgroundColor: '#f9f9f9',
     color: colors.darkgrey,
     fontSize: "0.8rem",
-    paddingBottom: "0.1rem",
-    paddingTop: ".5rem",
+    paddingBottom: "0.8rem",
     textAlign: 'center',
     '& a': {
+      textDecoration: 'underline',
       '&:hover': {
-        color: colors.red,
-        fontWeight: 'bold'
+        color: colors.red
       }
     }
   }
