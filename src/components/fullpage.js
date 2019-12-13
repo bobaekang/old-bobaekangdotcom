@@ -42,13 +42,13 @@ const Fullpage = ({ fullpageSection, onSectionChange }) => {
             </div>
 
             <div className="section" style={{
-              display: state.initialized ? '' : 'none'
+              visibility: state.initialized ? '' : 'hidden'
             }}>
               <SectionAbout />
             </div>
 
             <div className="section"  style={{
-              display: state.initialized ? '' : 'none'
+              visibility: state.initialized ? '' : 'hidden'
             }}>
               <SectionBlog />
             </div>
