@@ -18,16 +18,11 @@ import SEO from "../components/seo"
 import colors from '../styles/colors'
 
 const styles = {
-  article: {
-    '& h2': {
-      fontSize: '1.2rem'
-    },
-    '& h3': {
-      fontSize: '1rem'
-    },
-    '& h4': {
-      fontSize: '85028rem'
-    },
+  blog: {
+    paddingTop: "5rem",
+    paddingBottom: '5rem'
+  },
+  blogBody: {
     '& a': {
       color: colors.blue,
       textDecoration: 'underline',
@@ -45,15 +40,13 @@ const styles = {
       fontSize: '.8rem'
     }
   },
-  blog: {
-    paddingTop: "5rem",
-    paddingBottom: '5rem'
-  },
-  date: {
-    marginBottom: "2em",
-    color: colors.darkgrey,
-    fontFamily: '"Roboto Slab", san-serif',
-    fontSize: '16px'
+  blogHeader: {
+    paddingBottom: "1rem",
+    '& .date': {
+      color: colors.darkgrey,
+      fontFamily: '"Roboto Slab", san-serif',
+      fontSize: '16px'
+    }
   },
   navIcon: {
     position: "relative",
@@ -80,10 +73,12 @@ const BlogPost = ({ classes, data, pageContext }) => {
     >
       <SEO title={post.frontmatter.title} description={post.excerpt} />
       <Container className={classes.blog} maxWidth="md">
-        <h2>{post.frontmatter.title}</h2>
-        <div className={classes.date}>{post.frontmatter.date}</div>
+        <div className={classes.blogHeader}>
+          <div class="date">{post.frontmatter.date}</div>
+          <h1>{post.frontmatter.title}</h1>
+        </div>
         <div
-          className={classes.article}
+          className={classes.blogBody}
           dangerouslySetInnerHTML={{ __html: post.html }}
         />
         <Grid
