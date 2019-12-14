@@ -18,7 +18,11 @@ import SEO from "../components/seo"
 import colors from '../styles/colors'
 
 const styles = {
-  article: {
+  blog: {
+    paddingTop: "5rem",
+    paddingBottom: '5rem'
+  },
+  blogBody: {
     '& h2': {
       fontSize: '1.2rem'
     },
@@ -44,10 +48,6 @@ const styles = {
     '& .footnotes': {
       fontSize: '.8rem'
     }
-  },
-  blog: {
-    paddingTop: "5rem",
-    paddingBottom: '5rem'
   },
   date: {
     marginBottom: "2em",
@@ -83,7 +83,7 @@ const BlogPost = ({ classes, data, pageContext }) => {
         <h2>{post.frontmatter.title}</h2>
         <div className={classes.date}>{post.frontmatter.date}</div>
         <div
-          className={classes.article}
+          className={classes.blogBody}
           dangerouslySetInnerHTML={{ __html: post.html }}
         />
         <Grid
