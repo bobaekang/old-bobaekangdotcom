@@ -49,11 +49,13 @@ const styles = {
       fontSize: '.8rem'
     }
   },
-  date: {
-    marginBottom: "2em",
-    color: colors.darkgrey,
-    fontFamily: '"Roboto Slab", san-serif',
-    fontSize: '16px'
+  blogHeader: {
+    '& .date': {
+      marginBottom: "2em",
+      color: colors.darkgrey,
+      fontFamily: '"Roboto Slab", san-serif',
+      fontSize: '16px'
+    }
   },
   navIcon: {
     position: "relative",
@@ -80,8 +82,10 @@ const BlogPost = ({ classes, data, pageContext }) => {
     >
       <SEO title={post.frontmatter.title} description={post.excerpt} />
       <Container className={classes.blog} maxWidth="md">
-        <h2>{post.frontmatter.title}</h2>
-        <div className={classes.date}>{post.frontmatter.date}</div>
+        <div className={blogHeader}>
+          <h2>{post.frontmatter.title}</h2>
+          <div class="date">{post.frontmatter.date}</div>
+        </div>
         <div
           className={classes.blogBody}
           dangerouslySetInnerHTML={{ __html: post.html }}
