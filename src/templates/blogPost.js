@@ -23,15 +23,6 @@ const styles = {
     paddingBottom: '5rem'
   },
   blogBody: {
-    '& h2': {
-      fontSize: '1.2rem'
-    },
-    '& h3': {
-      fontSize: '1rem'
-    },
-    '& h4': {
-      fontSize: '85028rem'
-    },
     '& a': {
       color: colors.blue,
       textDecoration: 'underline',
