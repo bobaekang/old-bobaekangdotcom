@@ -50,8 +50,8 @@ const styles = {
     }
   },
   blogHeader: {
+    paddingBottom: "1rem",
     '& .date': {
-      marginBottom: "2em",
       color: colors.darkgrey,
       fontFamily: '"Roboto Slab", san-serif',
       fontSize: '16px'
@@ -82,9 +82,9 @@ const BlogPost = ({ classes, data, pageContext }) => {
     >
       <SEO title={post.frontmatter.title} description={post.excerpt} />
       <Container className={classes.blog} maxWidth="md">
-        <div className={blogHeader}>
-          <h2>{post.frontmatter.title}</h2>
+        <div className={classes.blogHeader}>
           <div class="date">{post.frontmatter.date}</div>
+          <h1>{post.frontmatter.title}</h1>
         </div>
         <div
           className={classes.blogBody}
