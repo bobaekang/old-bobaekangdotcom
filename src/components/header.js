@@ -13,33 +13,28 @@ import colors from '../styles/colors'
 const styles = {
   header: {
     backgroundColor: 'white',
+    fontFamily: 'Ubuntu, san-serif',
+    fontWeight: '700',
+    height: '2.4rem',
     position:'absolute',
     width:'100%',
     zIndex:'99'
   },
-  container: {
-    height: '46px',
-    padding: '0'
-  },
   logo: {
-    marginBottom: '0',
-    backgroundColor: '#FF240E',
+    backgroundColor: colors.red,
     color: 'white',
-    textDecoration: 'none'
+    fontSize: '1.6rem',
+    padding: '0 0.15rem 0.8rem'
   },
   menulist: {
     float: 'left',
     listStyleType: 'none',
-    marginTop: '2%'
+    paddingTop: '0.1rem',
   },
   menuItem: {
     color: colors.blue,
-    fontFamily: 'Ubuntu, san-serif',
-    fontSize: '1.3em',
-    fontWeight: '700',
-    paddingLeft: '1em',
-    paddingRight: '1em',
-    textDecoration: 'none',
+    fontSize: '1.2rem',
+    paddingLeft: '2.0rem',
     '&:hover': {
       color: colors.red
     }
@@ -54,7 +49,7 @@ const Header = ({ classes, fullpageSection, isBlog, onSectionChange }) => {
   
   return (
     <header className={classes.header}>
-      <Container className={classes.container} maxWidth="lg">
+      <Container maxWidth="lg">
         <Grid
           container
           direction="row"
@@ -63,9 +58,7 @@ const Header = ({ classes, fullpageSection, isBlog, onSectionChange }) => {
           <Grid item>
             {
               fullpageSection > 0 && 
-              <h1 style={{margindBottom:'0'}}>
-                <Link to="/" className={classes.logo}>bobae kang</Link>
-              </h1>
+              <Link to="/" className={classes.logo}>bobae kang</Link>
             }
           </Grid>
 
