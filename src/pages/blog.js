@@ -19,12 +19,8 @@ const styles = {
   blog: {
     marginTop: "5rem"
   },
-  date: {
-    color: colors.darkgrey,
-    fontWeight: '300',
-    fontSize: '16px'
-  },
   preview: {
+    marginBottom: '2rem',
     '&:hover': {
       '& h3': {
         color: colors.red
@@ -46,19 +42,13 @@ const Blog = ({ classes, data }) => {
         <h4>{data.allMarkdownRemark.totalCount} Posts</h4>
         {
           data.allMarkdownRemark.edges.map(({ node }) => (
-            <div className={classes.preview} key={node.id}>
-              <Link
-                to={node.fields.slug}
-              >
-                <h3>
-                  {node.frontmatter.title}{" "}
-                  <span className={classes.date}>
-                    — {node.frontmatter.date}
-                  </span>
-                </h3>
+            <Link to={node.fields.slug}>
+              <div className={classes.preview} key={node.id}>
+                <div class="date">{node.frontmatter.date}</div>
+                <h3>{node.frontmatter.title}</h3>
                 <p>{node.excerpt}</p>
-              </Link> 
-            </div>
+              </div>
+            </Link> 
           ))
         }
       </Container>
@@ -86,7 +76,7 @@ export const query = graphql`
           fields {
             slug
           }
-          excerpt
+          excerpt(pruneLength: 240)
         }
       }
     }

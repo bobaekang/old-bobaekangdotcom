@@ -639,3 +639,8 @@ code .token.operator {
 .footnotes p {
   display: contents;
 }
+.date {
+  color: #999;
+  font-family: 'Roboto Slab', san-serif;
+  font-size: 16px;
+}

@@ -41,12 +41,7 @@ const styles = {
     }
   },
   blogHeader: {
-    paddingBottom: "1rem",
-    '& .date': {
-      color: colors.darkgrey,
-      fontFamily: '"Roboto Slab", san-serif',
-      fontSize: '16px'
-    }
+    paddingBottom: "1rem"
   },
   navIcon: {
     position: "relative",
