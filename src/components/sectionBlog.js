@@ -18,21 +18,16 @@ const styles = {
     alignContent: 'center',
     height: '100%'
   },
-  date: {
-    color: colors.darkgrey,
-    fontFamily: '"Roboto Slab", san-serif',
-    fontSize: '16px'
-  },
   paper: {
     padding: '1em',
     height: '250px',
     boxShadow: `
-        0px 1px 6px 0px ${colors.blue},
-        0px 1px 2px 0px ${colors.blue},
-        0px 2px 2px -1px ${colors.blue}
-      `,
+      0px 1px 6px 0px ${colors.blue},
+      0px 1px 2px 0px ${colors.blue},
+      0px 2px 2px -1px ${colors.blue}
+    `,
     '& p': {
-      marginBottom: '0.5em'
+      marginBottom: '0'
     },
     '&:hover': {
       boxShadow: `
@@ -87,7 +82,7 @@ const SectionBlog = ({ classes }) => {
               <Paper className={classes.paper}>
                 <Link to={node.fields.slug}>
                   <div className={classes.alignCenter}>
-                    <p className={classes.date}>{node.frontmatter.date}</p>
+                    <div class="date">{node.frontmatter.date}</div>
                     <h3>{node.frontmatter.title}</h3>
                     <p>{node.excerpt}</p>
                   </div>
