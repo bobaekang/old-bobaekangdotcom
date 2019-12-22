@@ -46,6 +46,7 @@ const styles = {
 
 const Header = ({ classes, fullpageSection, isBlog, onSectionChange }) => {
   const onClickMenu = index => onSectionChange(index)
+  const showLogo = fullpageSection !== 0
   
   return (
     <header className={classes.header}>
@@ -57,7 +58,7 @@ const Header = ({ classes, fullpageSection, isBlog, onSectionChange }) => {
         >
           <Grid item>
             {
-              fullpageSection > 0 && 
+              showLogo && 
               <Link to="/" className={classes.logo}>bobae kang</Link>
             }
           </Grid>
