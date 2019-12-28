@@ -26,17 +26,17 @@ const styles = {
     fontSize: '1.6rem',
     padding: '0 0.15rem 0.8rem'
   },
-  menulist: {
+  menuItem: {
     float: 'left',
     listStyleType: 'none',
     paddingTop: '0.1rem',
-  },
-  menuItem: {
-    color: colors.blue,
-    fontSize: '1.2rem',
-    paddingLeft: '2.0rem',
-    '&:hover': {
-      color: colors.red
+    '& a': {
+      color: colors.blue,
+      fontSize: '1.2rem',
+      paddingLeft: '2.0rem',
+      '&:hover': {
+        color: colors.red
+      }
     }
   },
   menuActiveItem: {
@@ -45,9 +45,39 @@ const styles = {
 }
 
 const Header = ({ classes, fullpageSection, isBlog, onSectionChange }) => {
-  const onClickMenu = index => onSectionChange(index)
   const showLogo = fullpageSection !== 0
+  const logo = <Link to="/" className={classes.logo}>bobae kang</Link>
   
+  const isActiveItem = (section) =>
+    fullpageSection ===  section ? classes.menuActiveItem : undefined
+  const menuHome = (
+    <Link to="/" onClick={() => onSectionChange(0)}>
+      <span className={isActiveItem(0)}>home</span>
+    </Link>
+  )
+  const menuAbout = (
+    <Link to="/"onClick={() => onSectionChange(1)}>
+      <span className={isActiveItem(1)}>about</span>
+    </Link>
+  )
+  const menuBlog = (
+    <Link to={isBlog ? "/blog" : "/"} onClick={() => onSectionChange(2)}>
+      <span className={isActiveItem(2)}>blog</span>
+    </Link>
+  )
+  const menuBlog2 = (
+    <Link to="/blog" className={classes.menuItem}>
+      <span className={classes.menuActiveItem}>blog</span>
+    </Link>
+  )
+  const menuList = (
+    <ul>
+      <li className={classes.menuItem}>{ !isBlog && menuHome }</li>
+      <li className={classes.menuItem}>{ !isBlog && menuAbout }</li>
+      <li className={classes.menuItem}>{ menuBlog }</li>
+    </ul>
+  )
+
   return (
     <header className={classes.header}>
       <Container maxWidth="lg">
@@ -56,83 +86,10 @@ const Header = ({ classes, fullpageSection, isBlog, onSectionChange }) => {
           direction="row"
           justify="space-between"
         >
+          <Grid item>{showLogo && logo}</Grid>
           <Grid item>
-            {
-              showLogo && 
-              <Link to="/" className={classes.logo}>bobae kang</Link>
-            }
-          </Grid>
-
-          <Grid item>
-            <Hidden smDown>
-              <ul>
-                <li className={classes.menulist}>
-                  <Link
-                    to="/"
-                    className={classes.menuItem}
-                    onClick={() => onClickMenu(0)}
-                  >
-                    {
-                      !isBlog &&
-                      <span
-                        className={
-                          fullpageSection ===  0 ?
-                          classes.menuActiveItem :
-                          undefined
-                        }
-                      >
-                        home
-                      </span>
-                    }
-                  </Link>
-                </li>
-                <li className={classes.menulist}>
-                  <Link
-                    to="/"
-                    className={classes.menuItem}
-                    onClick={() => onClickMenu(1)}
-                  >
-                    {
-                      !isBlog &&
-                      <span
-                        className={
-                          fullpageSection === 1 ?
-                          classes.menuActiveItem :
-                          undefined
-                        }
-                      >
-                        about
-                      </span>
-                    }
-                  </Link>
-                </li>
-                <li className={classes.menulist}>
-                  <Link
-                    to={isBlog ? "/blog" :  "/"}
-                    className={classes.menuItem}
-                    onClick={() => onClickMenu(2)}
-                  >
-                    <span
-                      className={
-                        fullpageSection === 2 ?
-                        classes.menuActiveItem :
-                        undefined}
-                    >
-                      blog
-                    </span>
-                  </Link>
-                </li>
-              </ul>
-            </Hidden>
-            
-            <Hidden mdUp>
-              {
-                isBlog &&              
-                <Link to="/blog" className={classes.menuItem}>
-                  <span className={classes.menuActiveItem}>blog</span>
-                </Link>
-              }
-            </Hidden>
+            <Hidden smDown>{menuList}</Hidden>
+            <Hidden mdUp>{isBlog && menuBlog2}</Hidden>
           </Grid>
         </Grid>
       </Container>

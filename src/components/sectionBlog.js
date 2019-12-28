@@ -71,42 +71,45 @@ const SectionBlog = ({ classes }) => {
       }
     `
   )
-  
+
+  const latestPosts = data.allMarkdownRemark.edges.map(({ node }) => (
+    <Grid item xs={12} sm={8} md={6} lg={4} key={node.id}>
+      <Paper className={classes.paper}>
+        <Link to={node.fields.slug}>
+          <div className={classes.alignCenter}>
+            <div class="date">{node.frontmatter.date}</div>
+            <h3>{node.frontmatter.title}</h3>
+            <p>{node.excerpt}</p>
+          </div>
+        </Link> 
+      </Paper>
+    </Grid>
+  ))
+  const readMore = (
+    <Grid item xs={12} sm={8} md={6} lg={4}>
+      <Paper className={classes.paper}>
+        <Link to="/blog">
+          <div className={classes.alignCenter}>
+            <h3>Read more...</h3>
+          </div>
+        </Link>
+      </Paper>
+    </Grid>
+  )
+
   return (
     <Container style={{ marginTop: '4rem', marginBottom: '4rem' }} maxWidth="lg">
       <h2 className={classes.sectionTitle}>Latest writings</h2>
       <Grid container spacing={3}>
-        {
-          data.allMarkdownRemark.edges.map(({ node }) => (
-            <Grid item xs={12} sm={8} md={6} lg={4} key={node.id}>
-              <Paper className={classes.paper}>
-                <Link to={node.fields.slug}>
-                  <div className={classes.alignCenter}>
-                    <div class="date">{node.frontmatter.date}</div>
-                    <h3>{node.frontmatter.title}</h3>
-                    <p>{node.excerpt}</p>
-                  </div>
-                </Link> 
-              </Paper>
-            </Grid>
-          ))
-        }
-        <Grid item xs={12} sm={8} md={6} lg={4}>
-          <Paper className={classes.paper}>
-            <Link to="/blog">
-              <div className={classes.alignCenter}>
-                <h3>Read more...</h3>
-              </div>
-            </Link>
-          </Paper>
-        </Grid>
+        {latestPosts}
+        {readMore}
       </Grid>
     </Container>
   )
 }
 
 SectionBlog.propTypes = {
-    classes: PropTypes.object.isRequired,
+  classes: PropTypes.object.isRequired,
 }
 
 export default withStyles(styles)(SectionBlog)

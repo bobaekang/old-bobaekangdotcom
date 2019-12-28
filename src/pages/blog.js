@@ -31,6 +31,17 @@ const styles = {
 
 const Blog = ({ classes, data }) => {
   const [section, setSection] = useState(2)
+
+  const blogPosts = data.allMarkdownRemark.edges.map(({ node }) => (
+    <Link to={node.fields.slug}>
+      <div className={classes.preview} key={node.id}>
+        <div class="date">{node.frontmatter.date}</div>
+        <h3>{node.frontmatter.title}</h3>
+        <p>{node.excerpt}</p>
+      </div>
+    </Link> 
+  ))
+
   return (
     <Layout
       fullpageSection={section}
@@ -40,17 +51,7 @@ const Blog = ({ classes, data }) => {
       <SEO title="Blog" />
       <Container className={classes.blog} maxWidth="md">
         <h4>{data.allMarkdownRemark.totalCount} Posts</h4>
-        {
-          data.allMarkdownRemark.edges.map(({ node }) => (
-            <Link to={node.fields.slug}>
-              <div className={classes.preview} key={node.id}>
-                <div class="date">{node.frontmatter.date}</div>
-                <h3>{node.frontmatter.title}</h3>
-                <p>{node.excerpt}</p>
-              </div>
-            </Link> 
-          ))
-        }
+        {blogPosts}
       </Container>
     </Layout>
   )
