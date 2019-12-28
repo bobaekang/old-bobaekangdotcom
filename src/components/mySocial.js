@@ -19,36 +19,46 @@ const MySocial = ({ classes, namespace, styles }) => {
       document.querySelector('#font-awesome-css'),
     );
   }, []);
-  
+
+  const socialIconClass = `${namespace}-social-icon`
+  const socialGithub = (
+    <a
+      className={socialIconClass}
+      href="https://github.com/bobaekang"
+      aria-label="See my Github profile"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <Icon className='fab fa-github' style={{fontSize: 'inherit'}} />
+    </a>
+  )
+  const socialLinkedin = (
+    <a
+      className={socialIconClass}
+      href="https://www.linkedin.com/in/bobaekang"
+      aria-label="See my LinkeIn profile"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <Icon className='fab fa-linkedin' style={{fontSize: 'inherit'}} />
+    </a>
+  )
+  const socialEmail = (
+    <a
+      className={socialIconClass}
+      href="mailto:hello@bobaekang.com"
+      aria-label="Send me an email"
+    >
+      <EmailIcon style={{fontSize: 'inherit'}} />
+    </a>
+  )
+
   return (
     <div className={classes.socialList}>
       <style>{styles}</style>
-      
-      <a
-        className={`${namespace}-social-icon`}
-        href="https://github.com/bobaekang"
-        aria-label="See my Github profile"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        <Icon className='fab fa-github' style={{fontSize: 'inherit'}} />
-      </a>
-      <a
-        className={`${namespace}-social-icon`}
-        href="https://www.linkedin.com/in/bobaekang"
-        aria-label="See my LinkeIn profile"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        <Icon className='fab fa-linkedin' style={{fontSize: 'inherit'}} />
-      </a>
-      <a
-        className={`${namespace}-social-icon`}
-        href="mailto:hello@bobaekang.com"
-        aria-label="Send me an email"
-      >
-        <EmailIcon style={{fontSize: 'inherit'}} />
-      </a>
+      {socialGithub}
+      {socialLinkedin}
+      {socialEmail}
     </div>
   )
 }

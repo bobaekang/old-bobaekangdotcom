@@ -60,6 +60,60 @@ const BlogPost = ({ classes, data, pageContext }) => {
   const post = data.markdownRemark
   const { next, prev } = pageContext
 
+  const blogHeader = (
+    <div className={classes.blogHeader}>
+      <div class="date">{post.frontmatter.date}</div>
+      <h1>{post.frontmatter.title}</h1>
+    </div>
+  )
+  const blogBody = (
+    <div
+      className={classes.blogBody}
+      dangerouslySetInnerHTML={{ __html: post.html }}
+    />
+  )
+  const toPrevPost = (
+    prev && 
+    <Link className={classes.navLink} to={prev.fields.slug}>
+      <Grid container direction="row" alignItems="center">
+        <Grid item xs={2}>
+          <KeyboardArrowLeftIcon className={classes.navIcon}/>
+        </Grid>
+        <Grid item xs={10}>
+          <h4 style={{marginBottom: "0"}}>{prev.frontmatter.title}</h4>
+        </Grid>
+      </Grid>             
+    </Link>
+  )
+  const toNextPost = (
+    next &&
+    <Link
+      className={classes.navLink}
+      style={{textAlign: 'right'}}
+      to={next.fields.slug}
+    >
+      <Grid container direction="row" alignItems="center">
+        <Grid item xs={10}>
+          <h4 style={{marginBottom: "0"}}>{next.frontmatter.title}</h4>
+        </Grid>
+        <Grid item xs={2}>
+          <KeyboardArrowRightIcon className={classes.navIcon}/>
+        </Grid>
+      </Grid>
+    </Link>
+  )
+  const blogNavigation = (
+    <Grid
+      container
+      direction="row"
+      justify="space-between"
+      alignItems="center"
+    >
+      <Grid item xs={5}>{toPrevPost}</Grid>
+      <Grid item xs={5}>{toNextPost}</Grid>
+    </Grid>
+  )
+
   return (
     <Layout
       fullpageSection={section}
@@ -68,60 +122,9 @@ const BlogPost = ({ classes, data, pageContext }) => {
     >
       <SEO title={post.frontmatter.title} description={post.excerpt} />
       <Container className={classes.blog} maxWidth="md">
-        <div className={classes.blogHeader}>
-          <div class="date">{post.frontmatter.date}</div>
-          <h1>{post.frontmatter.title}</h1>
-        </div>
-        <div
-          className={classes.blogBody}
-          dangerouslySetInnerHTML={{ __html: post.html }}
-        />
-        <Grid
-          container
-          direction="row"
-          justify="space-between"
-          alignItems="center"
-        >
-          <Grid item xs={5}>
-            {
-              prev &&
-              <Link
-                className={classes.navLink}
-                to={prev.fields.slug}
-              >
-                <Grid container direction="row" alignItems="center">
-                  <Grid item xs={2}>
-                    <KeyboardArrowLeftIcon className={classes.navIcon}/>
-                  </Grid>
-                  <Grid item xs={10}>
-                    <h4 style={{marginBottom: "0"}}>{prev.frontmatter.title}</h4>
-                  </Grid>
-                </Grid>             
-              </Link>
-            }
-          </Grid>
-          <Grid item xs={5}>
-            {
-              next &&
-              <Link
-                className={classes.navLink}
-                style={{
-                  textAlign: 'right'
-                }}
-                to={next.fields.slug}
-              >
-                <Grid container direction="row" alignItems="center">
-                  <Grid item xs={10}>
-                    <h4 style={{marginBottom: "0"}}>{next.frontmatter.title}</h4>
-                  </Grid>
-                  <Grid item xs={2}>
-                    <KeyboardArrowRightIcon className={classes.navIcon}/>
-                  </Grid>
-                </Grid>
-              </Link>
-            }
-          </Grid>
-        </Grid>
+        {blogHeader}
+        {blogBody}
+        {blogNavigation}
       </Container>
     </Layout>
   )
