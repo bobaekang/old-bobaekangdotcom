@@ -1,4 +1,4 @@
-import React from "react"
+import React from 'react'
 import { loadCSS } from 'fg-loadcss'
 
 // material ui
@@ -9,16 +9,16 @@ import EmailIcon from '@material-ui/icons/Email'
 const styles = {
   socialList: {
     textAlign: 'center',
-  }
+  },
 }
 
 const MySocial = ({ classes, namespace, styles }) => {
   React.useEffect(() => {
     loadCSS(
       'https://use.fontawesome.com/releases/v5.1.0/css/all.css',
-      document.querySelector('#font-awesome-css'),
-    );
-  }, []);
+      document.querySelector('#font-awesome-css')
+    )
+  }, [])
 
   const socialIconClass = `${namespace}-social-icon`
   const socialGithub = (
@@ -29,7 +29,7 @@ const MySocial = ({ classes, namespace, styles }) => {
       target="_blank"
       rel="noopener noreferrer"
     >
-      <Icon className='fab fa-github' style={{fontSize: 'inherit'}} />
+      <Icon className="fab fa-github" style={{ fontSize: 'inherit' }} />
     </a>
   )
   const socialLinkedin = (
@@ -40,7 +40,7 @@ const MySocial = ({ classes, namespace, styles }) => {
       target="_blank"
       rel="noopener noreferrer"
     >
-      <Icon className='fab fa-linkedin' style={{fontSize: 'inherit'}} />
+      <Icon className="fab fa-linkedin" style={{ fontSize: 'inherit' }} />
     </a>
   )
   const socialEmail = (
@@ -49,7 +49,7 @@ const MySocial = ({ classes, namespace, styles }) => {
       href="mailto:hello@bobaekang.com"
       aria-label="Send me an email"
     >
-      <EmailIcon style={{fontSize: 'inherit'}} />
+      <EmailIcon style={{ fontSize: 'inherit' }} />
     </a>
   )
 

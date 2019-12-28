@@ -1,6 +1,6 @@
-import React from "react"
-import { StaticQuery, graphql } from "gatsby"
-import Img from "gatsby-image"
+import React from 'react'
+import { StaticQuery, graphql } from 'gatsby'
+import Img from 'gatsby-image'
 
 // material ui
 import { withStyles } from '@material-ui/core/styles'
@@ -12,9 +12,9 @@ const styles = {
   image: {
     '& img': {
       borderRadius: '50%',
-      border: `3px solid ${colors.blue}`
-    }
-  }
+      border: `3px solid ${colors.blue}`,
+    },
+  },
 }
 
 const MyImage = ({ classes }) => (
@@ -30,10 +30,12 @@ const MyImage = ({ classes }) => (
         }
       }
     `}
-    render={data => <Img
-      className={classes.image}
-      fluid={data.placeholderImage.childImageSharp.fluid}
-    />}
+    render={data => (
+      <Img
+        className={classes.image}
+        fluid={data.placeholderImage.childImageSharp.fluid}
+      />
+    )}
   />
 )
 

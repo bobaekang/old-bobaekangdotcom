@@ -1,8 +1,8 @@
-import React, { useState } from "react"
-import { graphql, Link } from "gatsby"
+import React, { useState } from 'react'
+import { graphql, Link } from 'gatsby'
 
 // layout
-import Layout from "../components/layout"
+import Layout from '../components/layout'
 
 // material ui
 import Container from '@material-ui/core/Container'
@@ -12,15 +12,15 @@ import KeyboardArrowRightIcon from '@material-ui/icons/KeyboardArrowRight'
 import { withStyles } from '@material-ui/core/styles'
 
 // components
-import SEO from "../components/seo"
+import SEO from '../components/seo'
 
 // styles
 import colors from '../styles/colors'
 
 const styles = {
   blog: {
-    paddingTop: "5rem",
-    paddingBottom: '5rem'
+    paddingTop: '5rem',
+    paddingBottom: '5rem',
   },
   blogBody: {
     '& a': {
@@ -33,26 +33,26 @@ const styles = {
         color: colors.red,
         '& code': {
           color: colors.red,
-        }
-      }
+        },
+      },
     },
     '& .footnotes': {
-      fontSize: '.8rem'
-    }
+      fontSize: '.8rem',
+    },
   },
   blogHeader: {
-    paddingBottom: "1rem"
+    paddingBottom: '1rem',
   },
   navIcon: {
-    position: "relative",
-    top: ".25rem"
+    position: 'relative',
+    top: '.25rem',
   },
   navLink: {
     color: colors.blue,
     '&:hover': {
-      color: colors.red
-    }
-  }
+      color: colors.red,
+    },
+  },
 }
 
 const BlogPost = ({ classes, data, pageContext }) => {
@@ -72,45 +72,42 @@ const BlogPost = ({ classes, data, pageContext }) => {
       dangerouslySetInnerHTML={{ __html: post.html }}
     />
   )
-  const toPrevPost = (
-    prev && 
+  const toPrevPost = prev && (
     <Link className={classes.navLink} to={prev.fields.slug}>
       <Grid container direction="row" alignItems="center">
         <Grid item xs={2}>
-          <KeyboardArrowLeftIcon className={classes.navIcon}/>
+          <KeyboardArrowLeftIcon className={classes.navIcon} />
         </Grid>
         <Grid item xs={10}>
-          <h4 style={{marginBottom: "0"}}>{prev.frontmatter.title}</h4>
+          <h4 style={{ marginBottom: '0' }}>{prev.frontmatter.title}</h4>
         </Grid>
-      </Grid>             
+      </Grid>
     </Link>
   )
-  const toNextPost = (
-    next &&
+  const toNextPost = next && (
     <Link
       className={classes.navLink}
-      style={{textAlign: 'right'}}
+      style={{ textAlign: 'right' }}
       to={next.fields.slug}
     >
       <Grid container direction="row" alignItems="center">
         <Grid item xs={10}>
-          <h4 style={{marginBottom: "0"}}>{next.frontmatter.title}</h4>
+          <h4 style={{ marginBottom: '0' }}>{next.frontmatter.title}</h4>
         </Grid>
         <Grid item xs={2}>
-          <KeyboardArrowRightIcon className={classes.navIcon}/>
+          <KeyboardArrowRightIcon className={classes.navIcon} />
         </Grid>
       </Grid>
     </Link>
   )
   const blogNavigation = (
-    <Grid
-      container
-      direction="row"
-      justify="space-between"
-      alignItems="center"
-    >
-      <Grid item xs={5}>{toPrevPost}</Grid>
-      <Grid item xs={5}>{toNextPost}</Grid>
+    <Grid container direction="row" justify="space-between" alignItems="center">
+      <Grid item xs={5}>
+        {toPrevPost}
+      </Grid>
+      <Grid item xs={5}>
+        {toNextPost}
+      </Grid>
     </Grid>
   )
 

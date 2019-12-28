@@ -1,32 +1,38 @@
-import React from "react"
-import PropTypes from "prop-types"
-import { StaticQuery, graphql } from "gatsby"
+import React from 'react'
+import PropTypes from 'prop-types'
+import { StaticQuery, graphql } from 'gatsby'
 
 // styles
-import "../styles/layout.css"
+import '../styles/layout.css'
 
 // material-ui
 import { withStyles } from '@material-ui/core/styles'
 
 // components
-import Header from "./header"
+import Header from './header'
 import Footer from './footer'
 
 const styles = {
-	site: {
-    display: "flex",
-    minHeight: "100vh",
-    flexDirection: "column",
+  site: {
+    display: 'flex',
+    minHeight: '100vh',
+    flexDirection: 'column',
   },
   siteMain: {
-    flexGrow: "1"
-  }
+    flexGrow: '1',
+  },
 }
 
-const Layout = ({ children, classes, fullpageSection, isBlog, onSectionChange }) => {
+const Layout = ({
+  children,
+  classes,
+  fullpageSection,
+  isBlog,
+  onSectionChange,
+}) => {
   const handleSectionChange = index => onSectionChange(index)
 
-  return ( 
+  return (
     <StaticQuery
       query={graphql`
         query SiteTitleQuery {
@@ -55,7 +61,7 @@ const Layout = ({ children, classes, fullpageSection, isBlog, onSectionChange })
 
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
-  siteTitle: PropTypes.string
+  siteTitle: PropTypes.string,
 }
 
 Layout.defaultProps = {

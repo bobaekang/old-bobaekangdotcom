@@ -1,6 +1,6 @@
-import React from "react"
+import React from 'react'
 import PropTypes from 'prop-types'
-import { Link, graphql, useStaticQuery } from "gatsby"
+import { Link, graphql, useStaticQuery } from 'gatsby'
 
 // material ui
 import Container from '@material-ui/core/Container'
@@ -16,7 +16,7 @@ const styles = {
     display: 'flex',
     flexWrap: 'wrap',
     alignContent: 'center',
-    height: '100%'
+    height: '100%',
   },
   paper: {
     padding: '1em',
@@ -27,7 +27,7 @@ const styles = {
       0px 2px 2px -1px ${colors.blue}
     `,
     '& p': {
-      marginBottom: '0'
+      marginBottom: '0',
     },
     '&:hover': {
       boxShadow: `
@@ -36,14 +36,14 @@ const styles = {
         0px 2px 2px -1px ${colors.red}
       `,
       '& h3': {
-        color: colors.red
-      }
-    }
+        color: colors.red,
+      },
+    },
   },
   sectionTitle: {
     color: colors.red,
-    marginBottom: '1em'
-  }
+    marginBottom: '1em',
+  },
 }
 
 const SectionBlog = ({ classes }) => {
@@ -51,7 +51,7 @@ const SectionBlog = ({ classes }) => {
     graphql`
       query {
         allMarkdownRemark(
-          limit: 2,
+          limit: 2
           sort: { fields: [frontmatter___date], order: DESC }
         ) {
           edges {
@@ -81,7 +81,7 @@ const SectionBlog = ({ classes }) => {
             <h3>{node.frontmatter.title}</h3>
             <p>{node.excerpt}</p>
           </div>
-        </Link> 
+        </Link>
       </Paper>
     </Grid>
   ))
@@ -98,7 +98,10 @@ const SectionBlog = ({ classes }) => {
   )
 
   return (
-    <Container style={{ marginTop: '4rem', marginBottom: '4rem' }} maxWidth="lg">
+    <Container
+      style={{ marginTop: '4rem', marginBottom: '4rem' }}
+      maxWidth="lg"
+    >
       <h2 className={classes.sectionTitle}>Latest writings</h2>
       <Grid container spacing={3}>
         {latestPosts}
