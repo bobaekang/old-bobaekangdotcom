@@ -33,8 +33,8 @@ const Blog = ({ classes, data }) => {
   const [section, setSection] = useState(2)
 
   const blogPosts = data.allMarkdownRemark.edges.map(({ node }) => (
-    <Link to={node.fields.slug}>
-      <div className={classes.preview} key={node.id}>
+    <Link to={node.fields.slug} key={node.id}>
+      <div className={classes.preview}>
         <div className="date">{node.frontmatter.date}</div>
         <h3>{node.frontmatter.title}</h3>
         <p>{node.excerpt}</p>
