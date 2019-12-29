@@ -62,7 +62,7 @@ const BlogPost = ({ classes, data, pageContext }) => {
 
   const blogHeader = (
     <div className={classes.blogHeader}>
-      <div class="date">{post.frontmatter.date}</div>
+      <div className="date">{post.frontmatter.date}</div>
       <h1>{post.frontmatter.title}</h1>
     </div>
   )

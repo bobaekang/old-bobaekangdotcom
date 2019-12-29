@@ -35,7 +35,7 @@ const Blog = ({ classes, data }) => {
   const blogPosts = data.allMarkdownRemark.edges.map(({ node }) => (
     <Link to={node.fields.slug}>
       <div className={classes.preview} key={node.id}>
-        <div class="date">{node.frontmatter.date}</div>
+        <div className="date">{node.frontmatter.date}</div>
         <h3>{node.frontmatter.title}</h3>
         <p>{node.excerpt}</p>
       </div>

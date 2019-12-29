@@ -77,7 +77,7 @@ const SectionBlog = ({ classes }) => {
       <Paper className={classes.paper}>
         <Link to={node.fields.slug}>
           <div className={classes.alignCenter}>
-            <div class="date">{node.frontmatter.date}</div>
+            <div className="date">{node.frontmatter.date}</div>
             <h3>{node.frontmatter.title}</h3>
             <p>{node.excerpt}</p>
           </div>
