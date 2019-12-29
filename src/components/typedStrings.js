@@ -1,28 +1,32 @@
-import React from "react"
+import React from 'react'
 import Typed from 'typed.js'
 
 class TypedStrings extends React.Component {
   componentDidMount() {
-    const { strings } = this.props;
+    const { strings } = this.props
     const options = {
-    	strings: strings,
+      strings: strings,
       typeSpeed: 50,
-      backSpeed: 50
-    };
-    this.typed = new Typed(this.el, options);
+      backSpeed: 50,
+    }
+    this.typed = new Typed(this.el, options)
   }
 
   componentWillUnmount() {
-    this.typed.destroy();
+    this.typed.destroy()
   }
 
   render() {
     return (
       <div className="type-wrap">
-        <span ref={(el) => { this.el = el; }} />
+        <span
+          ref={el => {
+            this.el = el
+          }}
+        />
       </div>
-    );
+    )
   }
 }
-    
+
 export default TypedStrings

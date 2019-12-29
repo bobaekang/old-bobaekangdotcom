@@ -1,4 +1,4 @@
-import React from "react"
+import React from 'react'
 
 // material ui
 import { withStyles } from '@material-ui/core/styles'
@@ -12,16 +12,16 @@ import colors from '../styles/colors'
 const styles = {
   footer: {
     color: colors.darkgrey,
-    fontSize: "0.8rem",
-    paddingBottom: "0.8rem",
+    fontSize: '0.8rem',
+    paddingBottom: '0.8rem',
     textAlign: 'center',
     '& a': {
       textDecoration: 'underline',
       '&:hover': {
-        color: colors.red
-      }
-    }
-  }
+        color: colors.red,
+      },
+    },
+  },
 }
 
 const Footer = ({ classes }) => (
@@ -40,9 +40,9 @@ const Footer = ({ classes }) => (
       © Bobae Kang {new Date().getFullYear()}, Powered by
       {` `}
       <a href="https://www.gatsbyjs.org">Gatsby</a>
-      { `, ` }
+      {`, `}
       <a href="https://material-ui.com/">Material UI</a>
-      { ` & ` }
+      {` & `}
       <a href="https://alvarotrigo.com/fullPage/">FullPage.js</a>
     </div>
   </footer>
