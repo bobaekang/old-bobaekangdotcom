@@ -1,6 +1,5 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { StaticQuery, graphql } from 'gatsby'
 
 // styles
 import '../styles/layout.css'
@@ -26,38 +25,20 @@ const styles = {
 const Layout = ({
   children,
   classes,
+  currentPage,
   fullpageSection,
-  isBlog,
   onSectionChange,
-}) => {
-  const handleSectionChange = index => onSectionChange(index)
-
-  return (
-    <StaticQuery
-      query={graphql`
-        query SiteTitleQuery {
-          site {
-            siteMetadata {
-              title
-            }
-          }
-        }
-      `}
-      render={data => (
-        <div className={classes.site}>
-          <Header
-            siteTitle={data.site.siteMetadata.title}
-            fullpageSection={fullpageSection}
-            isBlog={isBlog}
-            onSectionChange={index => handleSectionChange(index)}
-          />
-          <main className={classes.siteMain}>{children}</main>
-          <Footer />
-        </div>
-      )}
+}) => (
+  <div className={classes.site}>
+    <Header
+      currentPage={currentPage}
+      fullpageSection={fullpageSection}
+      onSectionChange={index => onSectionChange(index)}
     />
-  )
-}
+    <main className={classes.siteMain}>{children}</main>
+    <Footer />
+  </div>
+)
 
 Layout.propTypes = {
   children: PropTypes.node.isRequired,

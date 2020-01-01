@@ -29,7 +29,7 @@ const styles = {
 }
 
 const NotFoundPage = ({ classes }) => (
-  <Layout>
+  <Layout currentPage={'404'}>
     <SEO title="404: Not found" />
     <Container className={classes.notFound} maxWidth="md">
       <h1>page not found 😬</h1>

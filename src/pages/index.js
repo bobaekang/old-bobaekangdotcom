@@ -12,8 +12,8 @@ const IndexPage = () => {
 
   return (
     <Layout
+      currentPage={'home'}
       fullpageSection={section}
-      isBlog={false}
       onSectionChange={setSection}
     >
       <SEO title="Home" />
