@@ -44,7 +44,13 @@ const styles = {
   },
 }
 
-const Header = ({ classes, fullpageSection, isBlog, onSectionChange }) => {
+const Header = ({
+  classes,
+  fullpageSection,
+  isBlog,
+  is404,
+  onSectionChange,
+}) => {
   const showLogo = fullpageSection !== 0
   const logo = (
     <Link to="/" className={classes.logo}>
@@ -88,8 +94,8 @@ const Header = ({ classes, fullpageSection, isBlog, onSectionChange }) => {
         <Grid container direction="row" justify="space-between">
           <Grid item>{showLogo && logo}</Grid>
           <Grid item>
-            <Hidden smDown>{menuList}</Hidden>
-            <Hidden mdUp>{isBlog && menuBlog2}</Hidden>
+            <Hidden smDown>{!is404 && menuList}</Hidden>
+            <Hidden mdUp>{!is404 && isBlog && menuBlog2}</Hidden>
           </Grid>
         </Grid>
       </Container>

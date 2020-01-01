@@ -28,6 +28,7 @@ const Layout = ({
   classes,
   fullpageSection,
   isBlog,
+  is404,
   onSectionChange,
 }) => {
   const handleSectionChange = index => onSectionChange(index)
@@ -49,6 +50,7 @@ const Layout = ({
             siteTitle={data.site.siteMetadata.title}
             fullpageSection={fullpageSection}
             isBlog={isBlog}
+            is404={is404}
             onSectionChange={index => handleSectionChange(index)}
           />
           <main className={classes.siteMain}>{children}</main>
