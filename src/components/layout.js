@@ -25,16 +25,14 @@ const styles = {
 const Layout = ({
   children,
   classes,
+  currentPage,
   fullpageSection,
-  isBlog,
-  is404,
   onSectionChange,
 }) => (
   <div className={classes.site}>
     <Header
+      currentPage={currentPage}
       fullpageSection={fullpageSection}
-      isBlog={isBlog}
-      is404={is404}
       onSectionChange={index => onSectionChange(index)}
     />
     <main className={classes.siteMain}>{children}</main>

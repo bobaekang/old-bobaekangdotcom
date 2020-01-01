@@ -43,7 +43,11 @@ const Blog = ({ classes, data }) => {
   ))
 
   return (
-    <Layout fullpageSection={section} isBlog={true} onSectionChange={() => {}}>
+    <Layout
+      currentPage={'blog'}
+      fullpageSection={section}
+      onSectionChange={() => {}}
+    >
       <SEO title="Blog" />
       <Container className={classes.blog} maxWidth="md">
         <h4>{data.allMarkdownRemark.totalCount} Posts</h4>

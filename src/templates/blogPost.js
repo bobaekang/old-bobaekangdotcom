@@ -114,7 +114,7 @@ const BlogPost = ({ classes, data, pageContext }) => {
   return (
     <Layout
       fullpageSection={section}
-      isBlog={true}
+      currentPage={'blog'}
       onSectionChange={setSection}
     >
       <SEO title={post.frontmatter.title} description={post.excerpt} />

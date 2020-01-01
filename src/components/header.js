@@ -44,13 +44,8 @@ const styles = {
   },
 }
 
-const Header = ({
-  classes,
-  fullpageSection,
-  isBlog,
-  is404,
-  onSectionChange,
-}) => {
+const Header = ({ classes, currentPage, fullpageSection, onSectionChange }) => {
+  // logo
   const showLogo = fullpageSection !== 0
   const logo = (
     <Link to="/" className={classes.logo}>
@@ -58,6 +53,10 @@ const Header = ({
     </Link>
   )
 
+  // navigation menu
+  const isHome = currentPage == 'home'
+  const isBlog = currentPage == 'blog'
+  const is404 = currentPage == '404'
   const isActiveItem = section =>
     fullpageSection === section ? classes.menuActiveItem : undefined
   const menuHome = (
@@ -82,9 +81,9 @@ const Header = ({
   )
   const menuList = (
     <ul>
-      <li className={classes.menuItem}>{!isBlog && menuHome}</li>
-      <li className={classes.menuItem}>{!isBlog && menuAbout}</li>
-      <li className={classes.menuItem}>{menuBlog}</li>
+      <li className={classes.menuItem}>{isHome && menuHome}</li>
+      <li className={classes.menuItem}>{isHome && menuAbout}</li>
+      <li className={classes.menuItem}>{!is404 && menuBlog}</li>
     </ul>
   )
 
@@ -94,8 +93,8 @@ const Header = ({
         <Grid container direction="row" justify="space-between">
           <Grid item>{showLogo && logo}</Grid>
           <Grid item>
-            <Hidden smDown>{!is404 && menuList}</Hidden>
-            <Hidden mdUp>{!is404 && isBlog && menuBlog2}</Hidden>
+            <Hidden smDown>{menuList}</Hidden>
+            <Hidden mdUp>{isBlog && menuBlog2}</Hidden>
           </Grid>
         </Grid>
       </Container>
