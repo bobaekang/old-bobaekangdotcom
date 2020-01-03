@@ -8,16 +8,19 @@ import Fullpage from '../components/fullpage'
 import SEO from '../components/seo'
 
 const IndexPage = () => {
-  const [section, setSection] = useState(0)
+  const [fullpageSection, setFullpageSection] = useState(0)
 
   return (
     <Layout
       currentPage={'home'}
-      fullpageSection={section}
-      onSectionChange={setSection}
+      fullpageSection={fullpageSection}
+      setFullpageSection={setFullpageSection}
     >
       <SEO title="Home" />
-      <Fullpage onSectionChange={setSection} fullpageSection={section} />
+      <Fullpage
+        fullpageSection={fullpageSection}
+        setFullpageSection={setFullpageSection}
+      />
     </Layout>
   )
 }

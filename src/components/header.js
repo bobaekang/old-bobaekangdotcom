@@ -44,7 +44,12 @@ const styles = {
   },
 }
 
-const Header = ({ classes, currentPage, fullpageSection, onSectionChange }) => {
+const Header = ({
+  classes,
+  currentPage,
+  fullpageSection,
+  setFullpageSection,
+}) => {
   // logo
   const showLogo = fullpageSection !== 0
   const logo = (
@@ -58,7 +63,7 @@ const Header = ({ classes, currentPage, fullpageSection, onSectionChange }) => {
   const isActiveItem = section =>
     fullpageSection === section ? classes.menuActiveItem : undefined
   const createNavHomeItem = (sectionName, sectionIndex) => (
-    <Link to="/" onClick={() => onSectionChange(sectionIndex)}>
+    <Link to="/" onClick={() => setFullpageSection(sectionIndex)}>
       <span className={isActiveItem(sectionIndex)}>{sectionName}</span>
     </Link>
   )
