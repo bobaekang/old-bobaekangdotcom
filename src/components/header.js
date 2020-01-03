@@ -30,9 +30,9 @@ const styles = {
     float: 'left',
     listStyleType: 'none',
     paddingTop: '0.1rem',
+    fontSize: '1.2rem',
     '& a': {
       color: colors.blue,
-      fontSize: '1.2rem',
       paddingLeft: '2.0rem',
       '&:hover': {
         color: colors.red,
@@ -53,38 +53,30 @@ const Header = ({ classes, currentPage, fullpageSection, onSectionChange }) => {
     </Link>
   )
 
-  // navigation menu
-  const isHome = currentPage == 'home'
-  const isBlog = currentPage == 'blog'
-  const is404 = currentPage == '404'
+  // navigation home
+  const isHome = currentPage === 'home'
   const isActiveItem = section =>
     fullpageSection === section ? classes.menuActiveItem : undefined
-  const menuHome = (
-    <Link to="/" onClick={() => onSectionChange(0)}>
-      <span className={isActiveItem(0)}>home</span>
+  const createNavHomeItem = (sectionName, sectionIndex) => (
+    <Link to="/" onClick={() => onSectionChange(sectionIndex)}>
+      <span className={isActiveItem(sectionIndex)}>{sectionName}</span>
     </Link>
   )
-  const menuAbout = (
-    <Link to="/" onClick={() => onSectionChange(1)}>
-      <span className={isActiveItem(1)}>about</span>
-    </Link>
+  const homeSections = ['home', 'about', 'blog']
+  const navHome = (
+    <ul>
+      {homeSections.map((name, index) => (
+        <li className={classes.menuItem}>{createNavHomeItem(name, index)}</li>
+      ))}
+    </ul>
   )
-  const menuBlog = (
-    <Link to={isBlog ? '/blog' : '/'} onClick={() => onSectionChange(2)}>
-      <span className={isActiveItem(2)}>blog</span>
-    </Link>
-  )
-  const menuBlog2 = (
+
+  // navigation blog
+  const isBlog = currentPage === 'blog'
+  const navBlog = (
     <Link to="/blog" className={classes.menuItem}>
       <span className={classes.menuActiveItem}>blog</span>
     </Link>
-  )
-  const menuList = (
-    <ul>
-      <li className={classes.menuItem}>{isHome && menuHome}</li>
-      <li className={classes.menuItem}>{isHome && menuAbout}</li>
-      <li className={classes.menuItem}>{!is404 && menuBlog}</li>
-    </ul>
   )
 
   return (
@@ -93,8 +85,8 @@ const Header = ({ classes, currentPage, fullpageSection, onSectionChange }) => {
         <Grid container direction="row" justify="space-between">
           <Grid item>{showLogo && logo}</Grid>
           <Grid item>
-            <Hidden smDown>{menuList}</Hidden>
-            <Hidden mdUp>{isBlog && menuBlog2}</Hidden>
+            {isHome && <Hidden smDown>{navHome}</Hidden>}
+            {isBlog && navBlog}
           </Grid>
         </Grid>
       </Container>
