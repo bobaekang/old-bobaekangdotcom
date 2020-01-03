@@ -56,7 +56,6 @@ const styles = {
 }
 
 const BlogPost = ({ classes, data, pageContext }) => {
-  const [section, setSection] = useState(2)
   const post = data.markdownRemark
   const { next, prev } = pageContext
 
@@ -112,11 +111,7 @@ const BlogPost = ({ classes, data, pageContext }) => {
   )
 
   return (
-    <Layout
-      fullpageSection={section}
-      currentPage={'blog'}
-      onSectionChange={setSection}
-    >
+    <Layout currentPage={'blog'}>
       <SEO title={post.frontmatter.title} description={post.excerpt} />
       <Container className={classes.blog} maxWidth="md">
         {blogHeader}
