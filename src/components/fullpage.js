@@ -11,19 +11,17 @@ import SectionHome from './sectionHome'
 import SectionAbout from './sectionAbout'
 import SectionBlog from './sectionBlog'
 
-const Fullpage = ({ fullpageSection, onSectionChange }) => {
+const Fullpage = ({ fullpageSection, setFullpageSection }) => {
   const [api, setApi] = useState({})
-
-  const handleLeave = index => onSectionChange(index)
 
   if (api && api.moveTo) api.moveTo(fullpageSection + 1)
 
   return (
     <ReactFullpage
       licenseKey={process.env.GATSBY_FULLPAGE_LICENSE_KEY}
-      onLeave={(origin, destination, direction) => {
-        handleLeave(destination.index)
-      }}
+      onLeave={(origin, destination, direction) =>
+        setFullpageSection(destination.index)
+      }
       pluginWrapper={() => {
         require('fullpage.js/vendors/scrolloverflow')
       }}

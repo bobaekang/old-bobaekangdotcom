@@ -27,13 +27,13 @@ const Layout = ({
   classes,
   currentPage,
   fullpageSection,
-  onSectionChange,
+  setFullpageSection,
 }) => (
   <div className={classes.site}>
     <Header
       currentPage={currentPage}
-      fullpageSection={fullpageSection}
-      onSectionChange={index => onSectionChange(index)}
+      fullpageSection={currentPage === 'home' ? fullpageSection : null}
+      setFullpageSection={currentPage === 'home' ? setFullpageSection : null}
     />
     <main className={classes.siteMain}>{children}</main>
     <Footer />
