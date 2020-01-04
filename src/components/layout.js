@@ -32,8 +32,8 @@ const Layout = ({
   <div className={classes.site}>
     <Header
       currentPage={currentPage}
-      fullpageSection={currentPage === 'home' ? fullpageSection : null}
-      setFullpageSection={currentPage === 'home' ? setFullpageSection : null}
+      fullpageSection={currentPage === 'index' ? fullpageSection : null}
+      setFullpageSection={currentPage === 'index' ? setFullpageSection : null}
     />
     <main className={classes.siteMain}>{children}</main>
     <Footer />

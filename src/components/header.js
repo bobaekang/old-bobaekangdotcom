@@ -59,19 +59,19 @@ const Header = ({
   )
 
   // navigation home
-  const isHome = currentPage === 'home'
+  const isIndex = currentPage === 'index'
   const isActiveItem = section =>
     fullpageSection === section ? classes.menuActiveItem : undefined
-  const createNavHomeItem = (sectionName, sectionIndex) => (
+  const createNavIndexItem = (sectionName, sectionIndex) => (
     <Link to="/" onClick={() => setFullpageSection(sectionIndex)}>
       <span className={isActiveItem(sectionIndex)}>{sectionName}</span>
     </Link>
   )
-  const homeSections = ['home', 'about', 'blog']
-  const navHome = (
+  const indexSections = ['home', 'about', 'blog']
+  const navIndex = (
     <ul>
-      {homeSections.map((name, index) => (
-        <li className={classes.menuItem}>{createNavHomeItem(name, index)}</li>
+      {indexSections.map((name, index) => (
+        <li className={classes.menuItem}>{createNavIndexItem(name, index)}</li>
       ))}
     </ul>
   )
@@ -90,7 +90,7 @@ const Header = ({
         <Grid container direction="row" justify="space-between">
           <Grid item>{showLogo && logo}</Grid>
           <Grid item>
-            {isHome && <Hidden smDown>{navHome}</Hidden>}
+            {isIndex && <Hidden smDown>{navIndex}</Hidden>}
             {isBlog && navBlog}
           </Grid>
         </Grid>
