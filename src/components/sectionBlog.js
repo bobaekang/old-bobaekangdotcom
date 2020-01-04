@@ -75,8 +75,8 @@ const SectionBlog = ({ classes }) => {
   const latestPosts = data.allMarkdownRemark.edges.map(({ node }) => (
     <Grid item xs={12} sm={8} md={6} lg={4} key={node.id}>
       <Paper className={classes.paper}>
-        <Link to={node.fields.slug}>
-          <div className={classes.alignCenter}>
+        <Link to={node.fields.slug}  className={classes.alignCenter}>
+          <div>
             <div className="date">{node.frontmatter.date}</div>
             <h3>{node.frontmatter.title}</h3>
             <p>{node.excerpt}</p>
@@ -88,10 +88,8 @@ const SectionBlog = ({ classes }) => {
   const readMore = (
     <Grid item xs={12} sm={8} md={6} lg={4}>
       <Paper className={classes.paper}>
-        <Link to="/blog">
-          <div className={classes.alignCenter}>
-            <h3>Read more...</h3>
-          </div>
+        <Link to="/blog"  className={classes.alignCenter}>
+          <h3>Read more...</h3>
         </Link>
       </Paper>
     </Grid>
