@@ -11,34 +11,33 @@ import { withStyles } from '@material-ui/core/styles'
 // style
 import colors from '../styles/colors'
 
+const defineBoxShadow = color =>
+  `0px 1px 6px 0px ${color}, 0px 1px 2px 0px ${color}, 0px 2px 2px -1px ${color}`
+
 const styles = {
-  alignCenter: {
-    display: 'flex',
-    flexWrap: 'wrap',
-    alignContent: 'center',
-    height: '100%',
-  },
-  paper: {
-    padding: '1em',
+  postCard: {
+    boxShadow: defineBoxShadow(colors.blue),
     height: '250px',
-    boxShadow: `
-      0px 1px 6px 0px ${colors.blue},
-      0px 1px 2px 0px ${colors.blue},
-      0px 2px 2px -1px ${colors.blue}
-    `,
-    '& p': {
-      marginBottom: '0',
-    },
+    padding: '1em',
     '&:hover': {
-      boxShadow: `
-        0px 1px 6px 0px ${colors.red},
-        0px 1px 2px 0px ${colors.red},
-        0px 2px 2px -1px ${colors.red}
-      `,
+      boxShadow: defineBoxShadow(colors.red),
       '& h3': {
         color: colors.red,
       },
     },
+  },
+  postCardBody: {
+    alignContent: 'center',
+    display: 'flex',
+    flexWrap: 'wrap',
+    height: '100%',
+    '& p': {
+      marginBottom: '0',
+    },
+  },
+  sectionContainer: {
+    marginTop: '4rem',
+    marginBottom: '4rem',
   },
   sectionTitle: {
     color: colors.red,
@@ -72,34 +71,29 @@ const SectionBlog = ({ classes }) => {
     `
   )
 
-  const latestPosts = data.allMarkdownRemark.edges.map(({ node }) => (
-    <Grid item xs={12} sm={8} md={6} lg={4} key={node.id}>
-      <Paper className={classes.paper}>
-        <Link to={node.fields.slug}  className={classes.alignCenter}>
-          <div>
-            <div className="date">{node.frontmatter.date}</div>
-            <h3>{node.frontmatter.title}</h3>
-            <p>{node.excerpt}</p>
-          </div>
-        </Link>
-      </Paper>
-    </Grid>
-  ))
-  const readMore = (
+  const createPostCard = (to, body) => (
     <Grid item xs={12} sm={8} md={6} lg={4}>
-      <Paper className={classes.paper}>
-        <Link to="/blog"  className={classes.alignCenter}>
-          <h3>Read more...</h3>
+      <Paper className={classes.postCard}>
+        <Link to={to} className={classes.postCardBody}>
+          {body}
         </Link>
       </Paper>
     </Grid>
   )
+  const latestPosts = data.allMarkdownRemark.edges.map(({ node }) =>
+    createPostCard(
+      node.fields.slug,
+      <div>
+        <div className="date">{node.frontmatter.date}</div>
+        <h3>{node.frontmatter.title}</h3>
+        <p>{node.excerpt}</p>
+      </div>
+    )
+  )
+  const readMore = createPostCard('/blog', <h3>Read more...</h3>)
 
   return (
-    <Container
-      style={{ marginTop: '4rem', marginBottom: '4rem' }}
-      maxWidth="lg"
-    >
+    <Container className={classes.sectionContainer} maxWidth="lg">
       <h2 className={classes.sectionTitle}>Latest writings</h2>
       <Grid container spacing={3}>
         {latestPosts}
