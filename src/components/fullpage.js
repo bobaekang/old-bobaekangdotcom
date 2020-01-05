@@ -33,29 +33,17 @@ const Fullpage = ({ fullpageSection, setFullpageSection }) => {
       navigationTooltips={['home', 'about', 'blog']}
       render={({ state, fullpageApi }) => {
         setApi(fullpageApi)
+
+        const sections = [<SectionHome />, <SectionAbout />, <SectionBlog />]
+        const visibility = state.initialized ? '' : 'hidden'
+
         return (
           <ReactFullpage.Wrapper>
-            <div className="section">
-              <SectionHome />
-            </div>
-
-            <div
-              className="section"
-              style={{
-                visibility: state.initialized ? '' : 'hidden',
-              }}
-            >
-              <SectionAbout />
-            </div>
-
-            <div
-              className="section"
-              style={{
-                visibility: state.initialized ? '' : 'hidden',
-              }}
-            >
-              <SectionBlog />
-            </div>
+            {sections.map(section => (
+              <div className="section" style={{ visibility }}>
+                {section}
+              </div>
+            ))}
           </ReactFullpage.Wrapper>
         )
       }}

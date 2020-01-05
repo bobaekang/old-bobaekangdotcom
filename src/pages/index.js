@@ -12,7 +12,7 @@ const IndexPage = () => {
 
   return (
     <Layout
-      currentPage={'home'}
+      currentPage={'index'}
       fullpageSection={fullpageSection}
       setFullpageSection={setFullpageSection}
     >

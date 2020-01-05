@@ -29,7 +29,7 @@ const styles = {
   },
 }
 
-const Blog = ({ classes, data }) => {
+const BlogPage = ({ classes, data }) => {
   const blogPosts = data.allMarkdownRemark.edges.map(({ node }) => (
     <Link to={node.fields.slug} key={node.id}>
       <div className={classes.preview}>
@@ -51,11 +51,11 @@ const Blog = ({ classes, data }) => {
   )
 }
 
-Blog.propTypes = {
+BlogPage.propTypes = {
   classes: PropTypes.object.isRequired,
 }
 
-export default withStyles(styles)(Blog)
+export default withStyles(styles)(BlogPage)
 
 export const query = graphql`
   query {
