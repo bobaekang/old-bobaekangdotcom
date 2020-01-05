@@ -26,7 +26,7 @@ const styles = {
     fontSize: '1.6rem',
     padding: '0 0.15rem 0.8rem',
   },
-  menuItem: {
+  navItem: {
     float: 'left',
     listStyleType: 'none',
     paddingTop: '0.1rem',
@@ -39,7 +39,7 @@ const styles = {
       },
     },
   },
-  menuActiveItem: {
+  navActiveItem: {
     color: colors.red,
   },
 }
@@ -51,17 +51,16 @@ const Header = ({
   setFullpageSection,
 }) => {
   // logo
-  const showLogo = fullpageSection !== 0
+  const hideLogo = currentPage === 'index' && fullpageSection === 0
   const logo = (
     <Link to="/" className={classes.logo}>
       bobae kang
     </Link>
   )
 
-  // navigation home
-  const isIndex = currentPage === 'index'
+  // index page
   const isActiveItem = section =>
-    fullpageSection === section ? classes.menuActiveItem : undefined
+    fullpageSection === section ? classes.navActiveItem : undefined
   const createNavIndexItem = (sectionName, sectionIndex) => (
     <Link to="/" onClick={() => setFullpageSection(sectionIndex)}>
       <span className={isActiveItem(sectionIndex)}>{sectionName}</span>
@@ -71,16 +70,15 @@ const Header = ({
   const navIndex = (
     <ul>
       {indexSections.map((name, index) => (
-        <li className={classes.menuItem}>{createNavIndexItem(name, index)}</li>
+        <li className={classes.navItem}>{createNavIndexItem(name, index)}</li>
       ))}
     </ul>
   )
 
-  // navigation blog
-  const isBlog = currentPage === 'blog'
+  // blog page
   const navBlog = (
-    <Link to="/blog" className={classes.menuItem}>
-      <span className={classes.menuActiveItem}>blog</span>
+    <Link to="/blog" className={classes.navItem}>
+      <span className={classes.navActiveItem}>blog</span>
     </Link>
   )
 
@@ -88,10 +86,10 @@ const Header = ({
     <header className={classes.header}>
       <Container maxWidth="lg">
         <Grid container direction="row" justify="space-between">
-          <Grid item>{showLogo && logo}</Grid>
+          <Grid item>{!hideLogo && logo}</Grid>
           <Grid item>
-            {isIndex && <Hidden smDown>{navIndex}</Hidden>}
-            {isBlog && navBlog}
+            {currentPage === 'index' && <Hidden smDown>{navIndex}</Hidden>}
+            {currentPage === 'blog' && navBlog}
           </Grid>
         </Grid>
       </Container>
