@@ -1,6 +1,5 @@
 ---
 title: "The method chain must go on"
-date: "2019-09-08"
 ---
 
 Recently, I had a chance to refactor a Python command-line app used internally at work. The key function of this app is to fetch and reshape some tabular data to update a database and generate a CSV file that is a dataset product based on the records in the database.

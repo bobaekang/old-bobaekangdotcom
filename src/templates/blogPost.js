@@ -61,7 +61,7 @@ const BlogPost = ({ classes, data, pageContext }) => {
 
   const blogHeader = (
     <div className={classes.blogHeader}>
-      <div className="date">{post.frontmatter.date}</div>
+      <div className="date">{post.fields.date}</div>
       <h1>{post.frontmatter.title}</h1>
     </div>
   )
@@ -130,6 +130,8 @@ export const query = graphql`
       html
       frontmatter {
         title
+      }
+      fields {
         date(formatString: "DD MMMM, YYYY")
       }
       excerpt(pruneLength: 80)

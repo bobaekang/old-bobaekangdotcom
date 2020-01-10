@@ -1,6 +1,5 @@
 ---
 title: "Here I Go, finally"
-date: "2020-01-04"
 ---
 
 At the end of 2019, I finally managed to get started with Go.

@@ -33,7 +33,7 @@ const BlogPage = ({ classes, data }) => {
   const blogPosts = data.allMarkdownRemark.edges.map(({ node }) => (
     <Link to={node.fields.slug} key={node.id}>
       <div className={classes.preview}>
-        <div className="date">{node.frontmatter.date}</div>
+        <div className="date">{node.fields.date}</div>
         <h3>{node.frontmatter.title}</h3>
         <p>{node.excerpt}</p>
       </div>
@@ -59,16 +59,16 @@ export default withStyles(styles)(BlogPage)
 
 export const query = graphql`
   query {
-    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
+    allMarkdownRemark(sort: { fields: [fields___date], order: DESC }) {
       totalCount
       edges {
         node {
           id
           frontmatter {
             title
-            date(formatString: "DD MMMM, YYYY")
           }
           fields {
+            date(formatString: "DD MMMM, YYYY")
             slug
           }
           excerpt(pruneLength: 240)

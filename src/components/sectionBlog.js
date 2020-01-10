@@ -51,16 +51,16 @@ const SectionBlog = ({ classes }) => {
       query {
         allMarkdownRemark(
           limit: 2
-          sort: { fields: [frontmatter___date], order: DESC }
+          sort: { fields: [fields___date], order: DESC }
         ) {
           edges {
             node {
               id
               frontmatter {
                 title
-                date(formatString: "DD MMMM, YYYY")
               }
               fields {
+                date(formatString: "DD MMMM, YYYY")
                 slug
               }
               excerpt(pruneLength: 120)
@@ -84,7 +84,7 @@ const SectionBlog = ({ classes }) => {
     createPostCard(
       node.fields.slug,
       <div>
-        <div className="date">{node.frontmatter.date}</div>
+        <div className="date">{node.fields.date}</div>
         <h3>{node.frontmatter.title}</h3>
         <p>{node.excerpt}</p>
       </div>

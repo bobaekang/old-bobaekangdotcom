@@ -1,6 +1,5 @@
 ---
 title: "My journey to finding R modules"
-date: "2019-11-24"
 ---
 
 R is still my go-to language when it comes to data wrangling and analysis tasks. But I have long been frustrated that R does not offer a simple, built-in solution to use modules for organizing code into multiple files, each encapsulates functions/objects to serve a specific purpose. Python has it, JavaScript has it, and many other major languages have it. Why not R?

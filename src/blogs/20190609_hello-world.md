@@ -1,6 +1,5 @@
 ---
 title: "Hello World"
-date: "2019-06-09"
 ---
 
 _Welcome to my place!_ My name is Bobae, and I live in Chicago.
