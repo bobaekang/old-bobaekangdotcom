@@ -1,6 +1,5 @@
 ---
 title: "Jump in! This is the best time to learn programming"
-date: "2019-12-08"
 ---
 
 One thing I learned from getting into programming in recent years is that the door is truly and widely open to newcomers.[^1] This was the case when I was just getting started in late 2016, but it is more so today, three years later. If anyone is hesitating, this (i.e. late 2019 and beyond) really is the time to jump in.

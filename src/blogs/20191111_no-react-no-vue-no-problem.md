@@ -1,6 +1,5 @@
 ---
 title: "No React, no Vue, no problem"
-date: "2019-11-11"
 ---
 
 Recently, I worked on a minimal website for my spouse to help her with building a professional online presence. When I first came to this task, the first tool I was going to reach for was, of course, Vue.js. Vue is great, and I'm already familiar with it--so why not? Or I can use this as an opportunity to practice React![^1]

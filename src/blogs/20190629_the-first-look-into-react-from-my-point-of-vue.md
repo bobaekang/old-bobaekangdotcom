@@ -1,6 +1,5 @@
 ---
 title: "The first look into React--from my point of Vue"
-date: "2019-06-29"
 ---
 
 Well, there is no shortage of articles and blog posts comparing [React](https://reactjs.org/) and [Vue.js](https://vuejs.org/), two of the most popular frameworks for creating modern web applications (and beyond!). And, IMHO, I am not sure if I could bring anything revolutionarily new to the table. So please consider this post as a personal impression rather than a well-researched informational piece.
