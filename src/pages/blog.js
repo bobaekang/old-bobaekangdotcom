@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { Link, graphql } from 'gatsby'
 import PropTypes from 'prop-types'
 
@@ -11,6 +11,7 @@ import { withStyles } from '@material-ui/core/styles'
 
 // components
 import SEO from '../components/seo'
+import BlogTags from '../components/blogTags'
 
 // styles
 import colors from '../styles/colors'
@@ -33,7 +34,8 @@ const BlogPage = ({ classes, data }) => {
   const blogPosts = data.allMarkdownRemark.edges.map(({ node }) => (
     <Link to={node.fields.slug} key={node.id}>
       <div className={classes.preview}>
-        <div className="date">{node.fields.date}</div>
+        <span className="date">{node.fields.date}</span>
+        <BlogTags tags={node.frontmatter.tags}></BlogTags>
         <h3>{node.frontmatter.title}</h3>
         <p>{node.excerpt}</p>
       </div>
@@ -66,6 +68,7 @@ export const query = graphql`
           id
           frontmatter {
             title
+            tags
           }
           fields {
             date(formatString: "DD MMMM, YYYY")
