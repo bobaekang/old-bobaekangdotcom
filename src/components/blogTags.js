@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'gatsby'
 
 // material ui
 import { withStyles } from '@material-ui/core/styles'
@@ -24,18 +25,23 @@ const styles = {
   },
 }
 
-const BlogTags = ({ classes, tags, showAll = true }) =>
-  tags &&
-  tags.length > 0 &&
-  (showAll ? (
-    <span className={classes.blogTags}>
-      {tags.map(tag => (
-        <span className="tag">#{tag}</span>
-      ))}
-    </span>
-  ) : (
-    <span className={classes.blogTags}>
-      <span className="tag">#{tags[0]}</span>+{tags.length - 1}
-    </span>
-  ))
+const BlogTags = ({ classes, tags, showAll = true }) => {
+  const tagLink = tag => (
+    <Link className="tag" to={`/blog/tags/${tag.replace(' ', '-')}`}>
+      #{tag}
+    </Link>
+  )
+
+  return (
+    tags &&
+    tags.length > 0 &&
+    (showAll ? (
+      <span className={classes.blogTags}>{tags.map(tag => tagLink(tag))}</span>
+    ) : (
+      <span className={classes.blogTags}>
+        {tagLink(tags[0])} +{tags.length - 1}
+      </span>
+    ))
+  )
+}
 export default withStyles(styles)(BlogTags)
