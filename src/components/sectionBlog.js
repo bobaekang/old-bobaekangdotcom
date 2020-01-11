@@ -8,6 +8,9 @@ import Paper from '@material-ui/core/Paper'
 import Grid from '@material-ui/core/Grid'
 import { withStyles } from '@material-ui/core/styles'
 
+// components
+import BlogTags from '../components/blogTags'
+
 // style
 import colors from '../styles/colors'
 
@@ -58,6 +61,7 @@ const SectionBlog = ({ classes }) => {
               id
               frontmatter {
                 title
+                tags
               }
               fields {
                 date(formatString: "DD MMMM, YYYY")
@@ -84,7 +88,8 @@ const SectionBlog = ({ classes }) => {
     createPostCard(
       node.fields.slug,
       <div>
-        <div className="date">{node.fields.date}</div>
+        <span className="date">{node.fields.date}</span>
+        <BlogTags tags={node.frontmatter.tags} showAll={false}></BlogTags>
         <h3>{node.frontmatter.title}</h3>
         <p>{node.excerpt}</p>
       </div>

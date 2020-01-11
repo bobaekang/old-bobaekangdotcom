@@ -14,11 +14,14 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
   }
 }
 
-exports.createPages = ({ graphql, actions }) => {
+exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions
-  return graphql(`
+
+  const blogPostTemplate = path.resolve("src/templates/blogPost.js")
+  const blogTagTemplate = path.resolve("src/templates/blogTags.js")
+  const result = await graphql(`
     {
-      allMarkdownRemark (
+      postsRemark: allMarkdownRemark (
         sort: {order: ASC, fields: [fields___date]}
       ) {
         edges {
@@ -28,26 +31,46 @@ exports.createPages = ({ graphql, actions }) => {
             }
             frontmatter {
               title
+              tags
             }
           }
         }
       }
+      tagsGroup: allMarkdownRemark(limit: 2000) {
+        group(field: frontmatter___tags) {
+          fieldValue
+        }
+      }
     }
-  `).then(result => {
-    const posts =  result.data.allMarkdownRemark.edges
-    
-    posts.forEach(({ node }, index) => {
-      createPage({
-        path: node.fields.slug,
-        component: path.resolve(`./src/templates/blogPost.js`),
-        context: {
-          // Data passed to context is available
-          // in page queries as GraphQL variables.
-          slug: node.fields.slug,
-          prev: index === 0 ? null : posts[index - 1].node,
-          next: index === (posts.length - 1) ? null : posts[index + 1].node,
-        },
-      })
+  `)
+
+  if (result.errors) {
+    reporter.panicOnBuild(`Error while running GraphQL query.`)
+    return
+  }
+  
+  const posts = result.data.postsRemark.edges
+  posts.forEach(({ node }, index) => {
+    createPage({
+      path: node.fields.slug,
+      component: blogPostTemplate,
+      context: {
+        // Data passed to context is available
+        // in page queries as GraphQL variables.
+        slug: node.fields.slug,
+        prev: index === 0 ? null : posts[index - 1].node,
+        next: index === (posts.length - 1) ? null : posts[index + 1].node,
+      },
+    })
+  })
+  const tags = result.data.tagsGroup.group
+  tags.forEach(tag => {
+    createPage({
+      path: `blog/tags/${tag.fieldValue.replace(' ', '-')}/`,
+      component: blogTagTemplate,
+      context: {
+        tag: tag.fieldValue,
+      },
     })
   })
 }

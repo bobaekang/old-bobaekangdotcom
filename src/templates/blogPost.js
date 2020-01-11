@@ -13,6 +13,7 @@ import { withStyles } from '@material-ui/core/styles'
 
 // components
 import SEO from '../components/seo'
+import BlogTags from '../components/blogTags'
 
 // styles
 import colors from '../styles/colors'
@@ -61,7 +62,8 @@ const BlogPost = ({ classes, data, pageContext }) => {
 
   const blogHeader = (
     <div className={classes.blogHeader}>
-      <div className="date">{post.fields.date}</div>
+      <span className="date">{post.fields.date}</span>
+      <BlogTags tags={post.frontmatter.tags}></BlogTags>
       <h1>{post.frontmatter.title}</h1>
     </div>
   )
@@ -130,6 +132,7 @@ export const query = graphql`
       html
       frontmatter {
         title
+        tags
       }
       fields {
         date(formatString: "DD MMMM, YYYY")
