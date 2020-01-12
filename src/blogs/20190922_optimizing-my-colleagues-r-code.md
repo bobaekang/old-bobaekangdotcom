@@ -1,5 +1,6 @@
 ---
 title: "Optimizing my colleague's R code"
+tags: ["R", "optimize", "data analysis"]
 ---
 
 A little more than a year ago, I started an R user group at work. It was originally intended as a continuation of a six-week R workshop I prepared and gave. Since then, the user group has been meeting once a month to share interesting projects, useful packages, informative talks, and more.

@@ -1,5 +1,6 @@
 ---
 title: "A tale of three languages"
+tags: ["learn", "R", "Python", "JavaScript"]
 ---
 
 

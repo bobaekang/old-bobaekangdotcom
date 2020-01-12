@@ -1,5 +1,6 @@
 ---
 title: "Playing with functions for fun and practice"
+tags: ["JavaScript", "functional programming"]
 ---
 
 I have been familiarizing myself with functional programming through the Haskell language. All the while, I am also realizing that JavaScript, especially since ES6, also supports many functional programming features.[^1] 

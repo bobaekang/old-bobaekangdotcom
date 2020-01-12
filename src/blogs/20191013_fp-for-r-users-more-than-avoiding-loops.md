@@ -1,5 +1,6 @@
 ---
 title: "FP for R users--more than avoiding loops"
+tags: ["R", "functional programming"]
 ---
 
 Earlier this week, I was searching for some materials for this month's R user group meeting at work. In the process, I came to [a recorded webinar on functional programming](https://www.youtube.com/watch?v=bzUmK0Y07ck) led by none other than Hadley Wickham himself. The webinar focused mostly on using basic `purrr` functions, including `map` and its variants such as `map_dfr`, `map2`, etc.

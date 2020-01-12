@@ -1,5 +1,6 @@
 ---
 title: "Netlify FTW!"
+tags: ["Netlify"]
 ---
 
 Today on my way home, I listened to [a recent episode of JS Party](https://changelog.com/jsparty/99), a podcast that is "a weekly celebration of JavaScript and the web." This was basically a Netlify episode, where the host interviewed Phil Hawksworth, the "principle DX engineer at Netlify" and a co-author of Modern Web Development on the JAMstack (available for [free download]((https://www.netlify.com/oreilly-jamstack/))).
