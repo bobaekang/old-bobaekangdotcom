@@ -23,6 +23,7 @@ const styles = {
   tag: {
     '&:hover': {
       color: colors.red,
+      textDecoration: 'underline',
     },
   },
 }
