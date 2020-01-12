@@ -10,6 +10,7 @@ import colors from '../styles/colors'
 const styles = {
   back: {
     color: colors.darkgrey,
+    fontSize: '16px',
     '&:hover': {
       color: colors.red,
       textDecoration: 'underline',
