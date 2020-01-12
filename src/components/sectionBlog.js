@@ -9,7 +9,7 @@ import Grid from '@material-ui/core/Grid'
 import { withStyles } from '@material-ui/core/styles'
 
 // components
-import BlogTags from '../components/blogTags'
+import BlogPreview from '../components/blogPreview'
 
 // style
 import colors from '../styles/colors'
@@ -49,7 +49,9 @@ const styles = {
 }
 
 const SectionBlog = ({ classes }) => {
-  const data = useStaticQuery(
+  const {
+    allMarkdownRemark: { edges },
+  } = useStaticQuery(
     graphql`
       query {
         allMarkdownRemark(
@@ -84,15 +86,10 @@ const SectionBlog = ({ classes }) => {
       </Paper>
     </Grid>
   )
-  const latestPosts = data.allMarkdownRemark.edges.map(({ node }) =>
+  const latestPosts = edges.map(({ node }) =>
     createPostCard(
       node.fields.slug,
-      <div>
-        <span className="date">{node.fields.date}</span>
-        <BlogTags tags={node.frontmatter.tags} showAll={false}></BlogTags>
-        <h3>{node.frontmatter.title}</h3>
-        <p>{node.excerpt}</p>
-      </div>
+      <BlogPreview postNode={node} showAll={false}></BlogPreview>
     )
   )
   const readMore = createPostCard('/blog', <h3>Read more...</h3>)

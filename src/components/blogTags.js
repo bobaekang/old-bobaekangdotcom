@@ -40,7 +40,8 @@ const BlogTags = ({ classes, tags, showAll = true }) => {
       <span className={classes.tags}>{tags.map(tag => tagLink(tag))}</span>
     ) : (
       <span className={classes.tags}>
-        {tagLink(tags[0])} +{tags.length - 1}
+        {tagLink(tags[0])}
+        {tags.length > 1 && `+${tags.length - 1}`}
       </span>
     ))
   )
