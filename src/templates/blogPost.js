@@ -14,6 +14,7 @@ import { withStyles } from '@material-ui/core/styles'
 // components
 import SEO from '../components/seo'
 import BlogTags from '../components/blogTags'
+import LinkBackTo from '../components/linkBackTo'
 
 // styles
 import colors from '../styles/colors'
@@ -116,6 +117,7 @@ const BlogPost = ({ classes, data, pageContext }) => {
     <Layout currentPage={'blog'}>
       <SEO title={post.frontmatter.title} description={post.excerpt} />
       <Container className={classes.blog} maxWidth="md">
+        <LinkBackTo to={{ name: 'Blog', path: '/blog' }}></LinkBackTo>
         {blogHeader}
         {blogBody}
         {blogNavigation}
