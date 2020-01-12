@@ -32,7 +32,9 @@ const styles = {
 }
 
 const BlogPage = ({ classes, data }) => {
-  const blogPosts = data.allMarkdownRemark.edges.map(({ node }) => (
+  const { edges, totalCount } = data.allMarkdownRemark
+
+  const blogPosts = edges.map(({ node }) => (
     <Link to={node.fields.slug} key={node.id}>
       <BlogPreview postNode={node}></BlogPreview>
     </Link>
@@ -43,7 +45,7 @@ const BlogPage = ({ classes, data }) => {
       <SEO title="Blog" />
       <Container className={classes.blog} maxWidth="md">
         <LinkBackTo to={{ name: 'Home', path: '/' }}></LinkBackTo>
-        <h4>{data.allMarkdownRemark.totalCount} Posts</h4>
+        <h4>{totalCount} Posts</h4>
         {blogPosts}
       </Container>
     </Layout>

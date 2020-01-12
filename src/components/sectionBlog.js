@@ -49,7 +49,9 @@ const styles = {
 }
 
 const SectionBlog = ({ classes }) => {
-  const data = useStaticQuery(
+  const {
+    allMarkdownRemark: { edges },
+  } = useStaticQuery(
     graphql`
       query {
         allMarkdownRemark(
@@ -84,7 +86,7 @@ const SectionBlog = ({ classes }) => {
       </Paper>
     </Grid>
   )
-  const latestPosts = data.allMarkdownRemark.edges.map(({ node }) =>
+  const latestPosts = edges.map(({ node }) =>
     createPostCard(
       node.fields.slug,
       <BlogPreview postNode={node} showAll={false}></BlogPreview>
