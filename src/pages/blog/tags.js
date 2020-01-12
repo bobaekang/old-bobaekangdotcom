@@ -21,6 +21,7 @@ const styles = {
     marginTop: '5rem',
   },
   tag: {
+    display: 'block',
     '&:hover': {
       color: colors.red,
       textDecoration: 'underline',
@@ -30,14 +31,12 @@ const styles = {
 
 const TagsPage = ({ classes, data }) => {
   const tags = data.allMarkdownRemark.group.map(tag => (
-    <div>
-      <Link
-        className={classes.tag}
-        to={`/blog/tags/${tag.fieldValue.replace(' ', '-')}/`}
-      >
-        #{tag.fieldValue} ({tag.totalCount})
-      </Link>
-    </div>
+    <Link
+      className={classes.tag}
+      to={`/blog/tags/${tag.fieldValue.replace(' ', '-')}/`}
+    >
+      #{tag.fieldValue} ({tag.totalCount})
+    </Link>
   ))
 
   return (
