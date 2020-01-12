@@ -10,9 +10,9 @@ import Container from '@material-ui/core/Container'
 import { withStyles } from '@material-ui/core/styles'
 
 // components
-import SEO from '../../components/seo'
-import BlogTags from '../../components/blogTags'
+import BlogPreview from '../../components/blogPreview'
 import LinkBackTo from '../../components/linkBackTo'
+import SEO from '../../components/seo'
 
 // styles
 import colors from '../../styles/colors'
@@ -34,12 +34,7 @@ const styles = {
 const BlogPage = ({ classes, data }) => {
   const blogPosts = data.allMarkdownRemark.edges.map(({ node }) => (
     <Link to={node.fields.slug} key={node.id}>
-      <div className={classes.preview}>
-        <span className="date">{node.fields.date}</span>
-        <BlogTags tags={node.frontmatter.tags}></BlogTags>
-        <h3>{node.frontmatter.title}</h3>
-        <p>{node.excerpt}</p>
-      </div>
+      <BlogPreview postNode={node}></BlogPreview>
     </Link>
   ))
 
