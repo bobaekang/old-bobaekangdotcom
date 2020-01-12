@@ -1,5 +1,6 @@
 ---
 title: "Faking immutability in JavaScript"
+tags: ["JavaScript", "functional programming"]
 ---
 
 As I continue my study of functional programming, I also try to bring its key ideas into my own projects.

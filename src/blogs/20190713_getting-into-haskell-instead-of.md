@@ -1,5 +1,6 @@
 ---
 title: "Getting into Haskell instead of..."
+tags: ["learn", "Haskell", "functional programming"]
 ---
 
 By a strange turn of fate, I'm getting into [Haskell](https://www.haskell.org/) and functional programming instead of other things I originally planned to study, including [Go](https://golang.org/).

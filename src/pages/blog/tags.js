@@ -11,6 +11,7 @@ import { withStyles } from '@material-ui/core/styles'
 
 // components
 import SEO from '../../components/seo'
+import LinkBackTo from '../../components/linkBackTo'
 
 // styles
 import colors from '../../styles/colors'
@@ -22,6 +23,7 @@ const styles = {
   tag: {
     '&:hover': {
       color: colors.red,
+      textDecoration: 'underline',
     },
   },
 }
@@ -42,6 +44,7 @@ const TagsPage = ({ classes, data }) => {
     <Layout currentPage={'blog'}>
       <SEO title="Blog tags" />
       <Container className={classes.blog} maxWidth="md">
+        <LinkBackTo to={{ name: 'Blog', path: '/blog' }}></LinkBackTo>
         <h4>All tags</h4>
         {tags}
       </Container>

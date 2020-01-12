@@ -1,5 +1,6 @@
 ---
 title: "Here I Go, finally"
+tags: ["learn", "Go"]
 ---
 
 At the end of 2019, I finally managed to get started with Go.

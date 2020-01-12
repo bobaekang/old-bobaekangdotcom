@@ -1,5 +1,6 @@
 ---
 title: "Whys of bobaekang.com"
+tags: ["project", "Reactjs"]
 ---
 
 Now that this website is finally up and running, it is time to reflect on the choices I made and the steps I took to get here. In this post, I'd like to briefly discuss two fundamental _why_s of bobaekang.com.

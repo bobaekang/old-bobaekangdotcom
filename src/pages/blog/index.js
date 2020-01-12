@@ -3,18 +3,19 @@ import { Link, graphql } from 'gatsby'
 import PropTypes from 'prop-types'
 
 // layout
-import Layout from '../components/layout'
+import Layout from '../../components/layout'
 
 // material ui
 import Container from '@material-ui/core/Container'
 import { withStyles } from '@material-ui/core/styles'
 
 // components
-import SEO from '../components/seo'
-import BlogTags from '../components/blogTags'
+import SEO from '../../components/seo'
+import BlogTags from '../../components/blogTags'
+import LinkBackTo from '../../components/linkBackTo'
 
 // styles
-import colors from '../styles/colors'
+import colors from '../../styles/colors'
 
 const styles = {
   blog: {
@@ -46,6 +47,7 @@ const BlogPage = ({ classes, data }) => {
     <Layout currentPage={'blog'}>
       <SEO title="Blog" />
       <Container className={classes.blog} maxWidth="md">
+        <LinkBackTo to={{ name: 'Home', path: '/' }}></LinkBackTo>
         <h4>{data.allMarkdownRemark.totalCount} Posts</h4>
         {blogPosts}
       </Container>

@@ -1,5 +1,6 @@
 ---
 title: "My first major project has shipped!"
+tags: ["project"]
 ---
 
 My first professional web application project, dubbed ICJIA Research Hub, has been deployed to production a little while ago and now [officially announced](https://twitter.com/ICJIA_Illinois/status/1204507465708126208)! This marks a personal as well as professional milestone for me and a great way to close the year of 2019.
