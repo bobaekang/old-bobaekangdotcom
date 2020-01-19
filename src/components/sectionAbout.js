@@ -32,11 +32,11 @@ const SectionAbout = ({ classes }) => {
   const aboutMain = (
     <div className={classes.sectionMain}>
       <h2>Hi, I'm Bobae</h2>
-      <p>... and I am an ambitious self-taught software engineer!</p>
       <p>
-        I started out as a researcher and data analyst, and later fell in love
-        with modern web technologies as well as the art and craft of software
-        development in general.
+        I am an ambitious self-taught software engineer! I started out as a
+        researcher and data analyst, and later fell in love with modern web
+        technologies as well as the art and craft of software development in
+        general.
       </p>
       <p>
         I'm also a big fan of FOSS and its community, which continue to empower
