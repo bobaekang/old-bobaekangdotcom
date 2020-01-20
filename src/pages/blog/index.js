@@ -45,7 +45,7 @@ const BlogPage = ({ classes, data }) => {
       <SEO title="Blog" />
       <Container className={classes.blog} maxWidth="md">
         <LinkBackTo to={{ name: 'Home', path: '/' }}></LinkBackTo>
-        <h4>{totalCount} Posts</h4>
+        <h4>{totalCount} posts</h4>
         {blogPosts}
       </Container>
     </Layout>

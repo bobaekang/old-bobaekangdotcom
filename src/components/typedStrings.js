@@ -17,15 +17,7 @@ class TypedStrings extends React.Component {
   }
 
   render() {
-    return (
-      <div className="type-wrap">
-        <span
-          ref={el => {
-            this.el = el
-          }}
-        />
-      </div>
-    )
+    return <span ref={el => (this.el = el)} />
   }
 }
 
