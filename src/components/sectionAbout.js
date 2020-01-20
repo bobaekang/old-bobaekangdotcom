@@ -71,11 +71,11 @@ const SectionAbout = ({ classes }) => {
       style={{ marginTop: '4rem', marginBottom: '4rem' }}
       maxWidth="lg"
     >
-      <Grid container spacing={3}>
+      <Grid container>
         <Grid item xs={11} sm={6}>
           {aboutMain}
         </Grid>
-        <Grid item xs={9} sm={3} style={{ margin: 'auto' }}>
+        <Grid item xs={6} sm={4} md={3} style={{ margin: 'auto' }}>
           <MyImage />
           <br />
           <MySocial
