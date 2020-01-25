@@ -59,7 +59,7 @@ const Header = ({ classes, currentPage }) => {
     [classes.navItem, active ? classes.navActiveItem : undefined].join(' ')
   const navIndex = indexSections.map(s => (
     <Link to={`/#${s}`} className={navItemClass(activeSection === s)}>
-      {section}
+      {s}
     </Link>
   ))
 
