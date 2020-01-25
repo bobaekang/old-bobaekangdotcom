@@ -22,19 +22,9 @@ const styles = {
   },
 }
 
-const Layout = ({
-  children,
-  classes,
-  currentPage,
-  fullpageSection,
-  setFullpageSection,
-}) => (
+const Layout = ({ children, classes, currentPage }) => (
   <div className={classes.site}>
-    <Header
-      currentPage={currentPage}
-      fullpageSection={currentPage === 'index' ? fullpageSection : null}
-      setFullpageSection={currentPage === 'index' ? setFullpageSection : null}
-    />
+    <Header currentPage={currentPage} />
     <main className={classes.siteMain}>{children}</main>
     <Footer />
   </div>
