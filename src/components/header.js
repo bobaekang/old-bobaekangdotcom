@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import { Link } from 'gatsby'
 
 // material ui
@@ -16,7 +16,7 @@ const styles = {
     fontFamily: 'Ubuntu, san-serif',
     fontWeight: '700',
     height: '2.4rem',
-    position: 'absolute',
+    position: 'fixed',
     width: '100%',
     zIndex: '99',
   },
@@ -31,12 +31,10 @@ const styles = {
     listStyleType: 'none',
     paddingTop: '0.1rem',
     fontSize: '1.2rem',
-    '& a': {
-      color: colors.blue,
-      paddingLeft: '2.0rem',
-      '&:hover': {
-        color: colors.red,
-      },
+    color: colors.blue,
+    paddingLeft: '2.0rem',
+    '&:hover': {
+      color: colors.red,
     },
   },
   navActiveItem: {
@@ -44,14 +42,9 @@ const styles = {
   },
 }
 
-const Header = ({
-  classes,
-  currentPage,
-  fullpageSection,
-  setFullpageSection,
-}) => {
+const Header = ({ classes, currentPage }) => {
   // logo
-  const hideLogo = currentPage === 'index' && fullpageSection === 0
+  const [hideLogo, setHideLogo] = useState(currentPage === 'index')
   const logo = (
     <Link to="/" className={classes.logo}>
       bobae kang
@@ -59,26 +52,38 @@ const Header = ({
   )
 
   // index page
-  const isActiveItem = section =>
-    fullpageSection === section ? classes.navActiveItem : undefined
-  const createNavIndexItem = (sectionName, sectionIndex) => (
-    <Link to="/" onClick={() => setFullpageSection(sectionIndex)}>
-      <span className={isActiveItem(sectionIndex)}>{sectionName}</span>
-    </Link>
-  )
+  const [activeSection, setActiveSection] = useState('home')
   const indexSections = ['home', 'about', 'blog']
-  const navIndex = (
-    <ul>
-      {indexSections.map((name, index) => (
-        <li className={classes.navItem}>{createNavIndexItem(name, index)}</li>
-      ))}
-    </ul>
-  )
+
+  const navItemClass = active =>
+    [classes.navItem, active ? classes.navActiveItem : undefined].join(' ')
+  const navIndex = indexSections.map(s => (
+    <Link to={`/#${s}`} className={navItemClass(activeSection === s)}>
+      {s}
+    </Link>
+  ))
+
+  useEffect(() => {
+    const onScroll = e => {
+      indexSections.forEach(s => {
+        if (
+          document.querySelector(`#${s}`).getBoundingClientRect().top <
+          e.target.documentElement.scrollTop
+        ) {
+          setActiveSection(s)
+          setHideLogo(activeSection === 'home')
+        }
+      })
+    }
+
+    if (currentPage === 'index') window.addEventListener('scroll', onScroll)
+    return () => window.removeEventListener('scroll', onScroll)
+  }, [activeSection])
 
   // blog page
   const navBlog = (
-    <Link to="/blog" className={classes.navItem}>
-      <span className={classes.navActiveItem}>blog</span>
+    <Link to="/blog" className={navItemClass(true)}>
+      blog
     </Link>
   )
 
@@ -88,7 +93,7 @@ const Header = ({
         <Grid container direction="row" justify="space-between">
           <Grid item>{!hideLogo && logo}</Grid>
           <Grid item>
-            {currentPage === 'index' && <Hidden smDown>{navIndex}</Hidden>}
+            <Hidden xsDown>{currentPage === 'index' && navIndex}</Hidden>
             {currentPage === 'blog' && navBlog}
           </Grid>
         </Grid>

@@ -3,26 +3,37 @@ import React, { useState } from 'react'
 // layout
 import Layout from '../components/layout'
 
+// material ui
+import { withStyles } from '@material-ui/core/styles'
+
 // components
-import Fullpage from '../components/fullpage'
+import SectionHome from '../components/sectionHome'
+import SectionAbout from '../components/sectionAbout'
+import SectionBlog from '../components/sectionBlog'
 import SEO from '../components/seo'
 
-const IndexPage = () => {
-  const [fullpageSection, setFullpageSection] = useState(0)
-
-  return (
-    <Layout
-      currentPage={'index'}
-      fullpageSection={fullpageSection}
-      setFullpageSection={setFullpageSection}
-    >
-      <SEO title="Home" />
-      <Fullpage
-        fullpageSection={fullpageSection}
-        setFullpageSection={setFullpageSection}
-      />
-    </Layout>
-  )
+const styles = {
+  section: {
+    minHeight: '100vh',
+    alignContent: 'center',
+    display: 'flex',
+    flexWrap: 'wrap',
+  },
 }
 
-export default IndexPage
+const IndexPage = ({ classes }) => (
+  <Layout currentPage={'index'}>
+    <SEO title="Home" />
+    <div id="home" className={classes.section}>
+      <SectionHome />
+    </div>
+    <div id="about" className={classes.section}>
+      <SectionAbout />
+    </div>
+    <div id="blog" className={classes.section}>
+      <SectionBlog />
+    </div>
+  </Layout>
+)
+
+export default withStyles(styles)(IndexPage)
