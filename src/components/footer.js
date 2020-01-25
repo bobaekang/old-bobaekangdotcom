@@ -40,10 +40,8 @@ const Footer = ({ classes }) => (
       © Bobae Kang {new Date().getFullYear()}, Powered by
       {` `}
       <a href="https://www.gatsbyjs.org">Gatsby</a>
-      {`, `}
-      <a href="https://material-ui.com/">Material UI</a>
       {` & `}
-      <a href="https://alvarotrigo.com/fullPage/">FullPage.js</a>
+      <a href="https://material-ui.com/">Material UI</a>
     </div>
   </footer>
 )
