@@ -3,13 +3,11 @@ import Typed from 'typed.js'
 
 class TypedStrings extends React.Component {
   componentDidMount() {
-    const { strings } = this.props
-    const options = {
-      strings: strings,
+    this.typed = new Typed(this.el, {
+      strings: this.props.strings,
       typeSpeed: 50,
       backSpeed: 50,
-    }
-    this.typed = new Typed(this.el, options)
+    })
   }
 
   componentWillUnmount() {
