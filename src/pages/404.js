@@ -26,7 +26,7 @@ const NotFoundPage = ({ classes }) => (
     <SEO title="404: Not found" />
     <Container className={classes.notFound} maxWidth="md">
       <LinkBackTo to={{ name: 'Home', path: '/' }}></LinkBackTo>
-      <h1>page not found 😬</h1>
+      <h1>page not found <span aria-label="jsx-a11y/accessible-emoji" role="img">😬</span></h1>
       <p>The page you're looking for does not exist (404 Error).</p>
     </Container>
   </Layout>
