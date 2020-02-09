@@ -1,5 +1,6 @@
 import React from 'react'
 import { graphql, Link } from 'gatsby'
+import PropTypes from 'prop-types'
 
 // layout
 import Layout from '../components/layout'
@@ -124,6 +125,20 @@ const BlogPost = ({ classes, data, pageContext }) => {
       </Container>
     </Layout>
   )
+}
+
+BlogPost.propTypes = {
+  markdownRemark: PropTypes.shape({
+    html: PropTypes.string.isRequired,
+    frontmatter: PropTypes.shape({
+      title: PropTypes.string.isRequired,
+      tags: PropTypes.arrayOf(PropTypes.string)
+    }).isRequired,
+    fields: PropTypes.shape({
+      date: PropTypes.string.isRequired,
+    }).isRequired,
+    excerpt: PropTypes.string.isRequired,
+  })
 }
 
 export default withStyles(styles)(BlogPost)

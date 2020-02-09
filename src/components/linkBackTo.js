@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import { Link } from 'gatsby'
 
 // material ui
@@ -23,5 +24,10 @@ const linkBackTo = ({ classes, to: { name, path } }) => (
     ← {name}
   </Link>
 )
+
+linkBackTo.propTypes = {
+  classes: PropTypes.object.isRequired,
+  to: PropTypes.object.isRequired,
+}
 
 export default withStyles(styles)(linkBackTo)

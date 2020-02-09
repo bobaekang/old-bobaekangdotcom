@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import { Link } from 'gatsby'
 
 // material ui
@@ -45,6 +46,12 @@ const BlogTags = ({ classes, tags, showAll = true }) => {
       </span>
     ))
   )
+}
+
+BlogTags.propTypes = {
+  classes: PropTypes.object.isRequired,
+  tags: PropTypes.arrayOf(PropTypes.string),
+  showAll: PropTypes.bool.isRequired,
 }
 
 export default withStyles(styles)(BlogTags)
