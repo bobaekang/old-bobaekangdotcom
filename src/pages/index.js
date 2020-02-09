@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
 // layout
 import Layout from '../components/layout'
@@ -35,5 +36,9 @@ const IndexPage = ({ classes }) => (
     </div>
   </Layout>
 )
+
+IndexPage.propTypes = {
+  classes: PropTypes.object.isRequired,
+}
 
 export default withStyles(styles)(IndexPage)

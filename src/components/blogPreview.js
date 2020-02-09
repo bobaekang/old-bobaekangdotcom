@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
 // material ui
 import { withStyles } from '@material-ui/core/styles'
@@ -31,5 +32,11 @@ const BlogPreview = ({
     <p>{excerpt}</p>
   </div>
 )
+
+BlogPreview.propTypes = {
+  classes: PropTypes.object.isRequired,
+  postNode: PropTypes.node.isRequired,
+  showAll: PropTypes.bool,
+}
 
 export default withStyles(styles)(BlogPreview)

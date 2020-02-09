@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import PropTypes from 'prop-types'
 import { Link } from 'gatsby'
 
 // material ui
@@ -78,7 +79,7 @@ const Header = ({ classes, currentPage }) => {
 
     if (currentPage === 'index') window.addEventListener('scroll', onScroll)
     return () => window.removeEventListener('scroll', onScroll)
-  }, [activeSection])
+  }, [activeSection, currentPage, indexSections])
 
   // blog page
   const navBlog = (
@@ -100,6 +101,11 @@ const Header = ({ classes, currentPage }) => {
       </Container>
     </header>
   )
+}
+
+Header.propTypes = {
+  classes: PropTypes.object.isRequired,
+  currentPage: PropTypes.string.isRequired,
 }
 
 export default withStyles(styles)(Header)

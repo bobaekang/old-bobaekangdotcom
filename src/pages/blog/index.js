@@ -54,6 +54,25 @@ const BlogPage = ({ classes, data }) => {
 
 BlogPage.propTypes = {
   classes: PropTypes.object.isRequired,
+  data: PropTypes.shape({
+    allMarkdownRemark: PropTypes.shape({
+      totalCount: PropTypes.number.isRequired,
+      edges: PropTypes.arrayOf(
+        PropTypes.shape({
+          id: PropTypes.string,
+          frontmatter: PropTypes.shape({
+            title: PropTypes.string.isRequired,
+            tags: PropTypes.arrayOf(PropTypes.string)
+          }).isRequired,
+          fields: PropTypes.shape({
+            date: PropTypes.string,
+            slug: PropTypes.string
+          }).isRequired,
+          excerpt: PropTypes.string.isRequired
+        }).isRequired
+      ),
+    }),
+  }),
 }
 
 export default withStyles(styles)(BlogPage)

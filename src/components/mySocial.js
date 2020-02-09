@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import { loadCSS } from 'fg-loadcss'
 
 // material ui
@@ -61,6 +62,12 @@ const MySocial = ({ classes, namespace, styles }) => {
       {socialEmail}
     </div>
   )
+}
+
+MySocial.propTypes = {
+  classes: PropTypes.object.isRequired,
+  namespace: PropTypes.string.isRequired,
+  styles: PropTypes.string.isRequired,
 }
 
 export default withStyles(styles)(MySocial)
