@@ -1,11 +1,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { Link } from 'gatsby'
-
-// material ui
 import { withStyles } from '@material-ui/core/styles'
 
-// styles
 import colors from '../styles/colors'
 
 const styles = {

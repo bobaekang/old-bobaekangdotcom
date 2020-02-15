@@ -1,17 +1,12 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-
-// material ui
+import { Container } from '@material-ui/core'
 import { withStyles } from '@material-ui/core/styles'
 
-// components
 import Layout from '../components/layout'
 import LinkBackTo from '../components/linkBackTo'
 import SEO from '../components/seo'
-
-// styles
 import colors from '../styles/colors.js'
-import { Container } from '@material-ui/core'
 
 const styles = {
   notFound: {

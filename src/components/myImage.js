@@ -2,11 +2,8 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { StaticQuery, graphql } from 'gatsby'
 import Img from 'gatsby-image'
-
-// material ui
 import { withStyles } from '@material-ui/core/styles'
 
-// styles
 import colors from '../styles/colors'
 
 const styles = {

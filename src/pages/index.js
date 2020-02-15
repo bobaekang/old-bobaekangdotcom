@@ -1,16 +1,11 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-
-// layout
-import Layout from '../components/layout'
-
-// material ui
 import { withStyles } from '@material-ui/core/styles'
 
-// components
-import SectionHome from '../components/sectionHome'
+import Layout from '../components/layout'
 import SectionAbout from '../components/sectionAbout'
 import SectionBlog from '../components/sectionBlog'
+import SectionHome from '../components/sectionHome'
 import SEO from '../components/seo'
 
 const styles = {

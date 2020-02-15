@@ -1,13 +1,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-
-// material ui
 import { withStyles } from '@material-ui/core/styles'
 
-// components
 import TypedStrings from '../components/typedStrings'
-
-// styles
 import colors from '../styles/colors.js'
 
 const styles = {

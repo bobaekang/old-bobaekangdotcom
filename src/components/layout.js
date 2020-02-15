@@ -1,15 +1,10 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-
-// styles
-import '../styles/layout.css'
-
-// material-ui
 import { withStyles } from '@material-ui/core/styles'
 
-// components
 import Header from './header'
 import Footer from './footer'
+import '../styles/layout.css'
 
 const styles = {
   site: {

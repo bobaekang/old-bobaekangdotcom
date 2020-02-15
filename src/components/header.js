@@ -1,14 +1,11 @@
 import React, { useState, useEffect } from 'react'
 import PropTypes from 'prop-types'
 import { Link } from 'gatsby'
-
-// material ui
 import Container from '@material-ui/core/Container'
 import Grid from '@material-ui/core/Grid'
 import Hidden from '@material-ui/core/Hidden'
 import { withStyles } from '@material-ui/core/styles'
 
-// styles
 import colors from '../styles/colors'
 
 const styles = {
