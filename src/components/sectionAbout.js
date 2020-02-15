@@ -1,17 +1,12 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { Link } from 'gatsby'
-
-// material ui
-import { withStyles } from '@material-ui/core/styles'
 import Container from '@material-ui/core/Container'
 import Grid from '@material-ui/core/Grid'
+import { withStyles } from '@material-ui/core/styles'
 
-// components
 import MyImage from './myImage'
 import MySocial from './mySocial'
-
-// styles
 import colors from '../styles/colors'
 
 const styles = {

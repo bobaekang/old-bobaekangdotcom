@@ -1,17 +1,12 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { Link, graphql, useStaticQuery } from 'gatsby'
-
-// material ui
 import Container from '@material-ui/core/Container'
-import Paper from '@material-ui/core/Paper'
 import Grid from '@material-ui/core/Grid'
+import Paper from '@material-ui/core/Paper'
 import { withStyles } from '@material-ui/core/styles'
 
-// components
 import BlogPreview from '../components/blogPreview'
-
-// style
 import colors from '../styles/colors'
 
 const defineBoxShadow = color =>

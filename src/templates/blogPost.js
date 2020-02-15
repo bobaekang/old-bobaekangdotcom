@@ -1,23 +1,16 @@
 import React from 'react'
-import { graphql, Link } from 'gatsby'
 import PropTypes from 'prop-types'
-
-// layout
-import Layout from '../components/layout'
-
-// material ui
+import { graphql, Link } from 'gatsby'
 import Container from '@material-ui/core/Container'
 import Grid from '@material-ui/core/Grid'
+import { withStyles } from '@material-ui/core/styles'
 import KeyboardArrowLeftIcon from '@material-ui/icons/KeyboardArrowLeft'
 import KeyboardArrowRightIcon from '@material-ui/icons/KeyboardArrowRight'
-import { withStyles } from '@material-ui/core/styles'
 
-// components
-import SEO from '../components/seo'
 import BlogTags from '../components/blogTags'
+import Layout from '../components/layout'
 import LinkBackTo from '../components/linkBackTo'
-
-// styles
+import SEO from '../components/seo'
 import colors from '../styles/colors'
 
 const styles = {

@@ -1,19 +1,12 @@
 import React from 'react'
-import { Link, graphql } from 'gatsby'
 import PropTypes from 'prop-types'
-
-// layout
-import Layout from '../../components/layout'
-
-// material ui
+import { Link, graphql } from 'gatsby'
 import Container from '@material-ui/core/Container'
 import { withStyles } from '@material-ui/core/styles'
 
-// components
+import Layout from '../../components/layout'
 import SEO from '../../components/seo'
 import LinkBackTo from '../../components/linkBackTo'
-
-// styles
 import colors from '../../styles/colors'
 
 const styles = {

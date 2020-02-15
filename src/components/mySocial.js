@@ -1,10 +1,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { loadCSS } from 'fg-loadcss'
-
-// material ui
-import { withStyles } from '@material-ui/core/styles'
 import Icon from '@material-ui/core/Icon'
+import { withStyles } from '@material-ui/core/styles'
 import EmailIcon from '@material-ui/icons/Email'
 
 const styles = {
