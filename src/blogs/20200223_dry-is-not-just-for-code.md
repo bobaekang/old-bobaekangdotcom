@@ -1,5 +1,6 @@
 ---
 title: "DRY is not just for code"
+tags: ["learn", "programming"]
 ---
 
 I've been re-reading _The Programatic Programmer_, this time, [the 20th year edition](https://www.amazon.com/Pragmatic-Programmer-journey-mastery-Anniversary/dp/0135957052). Yeah, the new edition came out in 2018, but I didn't have a chance to pick it up until recently.
