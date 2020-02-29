@@ -33,12 +33,12 @@ BlogPreview.propTypes = {
   postNode: PropTypes.shape({
     excerpt: PropTypes.string.isRequired,
     fields: PropTypes.shape({
-      date: PropTypes.string.isRequired
+      date: PropTypes.string.isRequired,
     }).isRequired,
     frontmatter: PropTypes.shape({
       title: PropTypes.string.isRequired,
-      tags: PropTypes.arrayOf(PropTypes.string)
-    })
+      tags: PropTypes.arrayOf(PropTypes.string),
+    }),
   }).isRequired,
   showAll: PropTypes.bool,
 }

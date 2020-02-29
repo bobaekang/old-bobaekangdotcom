@@ -125,13 +125,13 @@ BlogPost.propTypes = {
     html: PropTypes.string.isRequired,
     frontmatter: PropTypes.shape({
       title: PropTypes.string.isRequired,
-      tags: PropTypes.arrayOf(PropTypes.string)
+      tags: PropTypes.arrayOf(PropTypes.string),
     }).isRequired,
     fields: PropTypes.shape({
       date: PropTypes.string.isRequired,
     }).isRequired,
     excerpt: PropTypes.string.isRequired,
-  })
+  }),
 }
 
 export default withStyles(styles)(BlogPost)
