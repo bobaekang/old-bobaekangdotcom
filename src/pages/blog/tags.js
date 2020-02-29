@@ -26,6 +26,7 @@ const TagsPage = ({ classes, data }) => {
   const tags = data.allMarkdownRemark.group.map(tag => (
     <Link
       className={classes.tag}
+      key={tag.fieldValue}
       to={`/blog/tags/${tag.fieldValue.replace(' ', '-')}/`}
     >
       #{tag.fieldValue} ({tag.totalCount})

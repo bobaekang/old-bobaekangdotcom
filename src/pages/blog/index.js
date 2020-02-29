@@ -55,13 +55,13 @@ BlogPage.propTypes = {
           id: PropTypes.string,
           frontmatter: PropTypes.shape({
             title: PropTypes.string.isRequired,
-            tags: PropTypes.arrayOf(PropTypes.string)
+            tags: PropTypes.arrayOf(PropTypes.string),
           }).isRequired,
           fields: PropTypes.shape({
             date: PropTypes.string,
-            slug: PropTypes.string
+            slug: PropTypes.string,
           }).isRequired,
-          excerpt: PropTypes.string.isRequired
+          excerpt: PropTypes.string.isRequired,
         }).isRequired
       ),
     }),

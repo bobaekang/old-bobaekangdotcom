@@ -84,6 +84,7 @@ export const pageQuery = graphql`
       totalCount
       edges {
         node {
+          id
           fields {
             date(formatString: "DD MMMM, YYYY")
             slug

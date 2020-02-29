@@ -30,7 +30,16 @@ const BlogPreview = ({
 
 BlogPreview.propTypes = {
   classes: PropTypes.object.isRequired,
-  postNode: PropTypes.node.isRequired,
+  postNode: PropTypes.shape({
+    excerpt: PropTypes.string.isRequired,
+    fields: PropTypes.shape({
+      date: PropTypes.string.isRequired,
+    }).isRequired,
+    frontmatter: PropTypes.shape({
+      title: PropTypes.string.isRequired,
+      tags: PropTypes.arrayOf(PropTypes.string),
+    }),
+  }).isRequired,
   showAll: PropTypes.bool,
 }
 
