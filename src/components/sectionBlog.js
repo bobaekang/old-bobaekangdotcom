@@ -73,7 +73,7 @@ const SectionBlog = ({ classes }) => {
   )
 
   const createPostCard = (to, body) => (
-    <Grid item xs={11} sm={8} md={6} lg={4}>
+    <Grid key={to} item xs={11} sm={8} md={6} lg={4}>
       <Paper className={classes.postCard}>
         <Link to={to} className={classes.postCardBody}>
           {body}

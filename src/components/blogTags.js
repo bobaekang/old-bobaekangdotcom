@@ -26,7 +26,11 @@ const styles = {
 
 const BlogTags = ({ classes, tags, showAll = true }) => {
   const tagLink = tag => (
-    <Link className={classes.tag} to={`/blog/tags/${tag.replace(' ', '-')}`}>
+    <Link
+      className={classes.tag}
+      key={tag}
+      to={`/blog/tags/${tag.replace(' ', '-')}`}
+    >
       #{tag}
     </Link>
   )
@@ -48,7 +52,7 @@ const BlogTags = ({ classes, tags, showAll = true }) => {
 BlogTags.propTypes = {
   classes: PropTypes.object.isRequired,
   tags: PropTypes.arrayOf(PropTypes.string),
-  showAll: PropTypes.bool.isRequired,
+  showAll: PropTypes.bool,
 }
 
 export default withStyles(styles)(BlogTags)
