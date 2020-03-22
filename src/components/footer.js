@@ -35,9 +35,21 @@ const Footer = ({ classes }) => (
     <div>
       © Bobae Kang {new Date().getFullYear()}, Powered by
       {` `}
-      <a href="https://www.gatsbyjs.org">Gatsby</a>
+      <a
+        href="https://www.gatsbyjs.org"
+        target="_blank"
+        rel="noreferrer noopener"
+      >
+        Gatsby
+      </a>
       {` & `}
-      <a href="https://material-ui.com/">Material UI</a>
+      <a
+        href="https://material-ui.com/"
+        target="_blank"
+        rel="noreferrer noopener"
+      >
+        Material UI
+      </a>
     </div>
   </footer>
 )
