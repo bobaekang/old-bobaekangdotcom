@@ -1,12 +1,12 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { withStyles } from '@material-ui/core/styles'
+import { makeStyles } from '@material-ui/core/styles'
 
 import Header from './header'
 import Footer from './footer'
 import '../styles/layout.css'
 
-const styles = {
+const useStyles = makeStyles({
   site: {
     display: 'flex',
     minHeight: '100vh',
@@ -15,15 +15,19 @@ const styles = {
   siteMain: {
     flexGrow: '1',
   },
-}
+})
 
-const Layout = ({ children, classes, currentPage }) => (
-  <div className={classes.site}>
-    <Header currentPage={currentPage} />
-    <main className={classes.siteMain}>{children}</main>
-    <Footer />
-  </div>
-)
+const Layout = ({ children, currentPage }) => {
+  const classes = useStyles()
+
+  return (
+    <div className={classes.site}>
+      <Header currentPage={currentPage} />
+      <main className={classes.siteMain}>{children}</main>
+      <Footer />
+    </div>
+  )
+}
 
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
@@ -34,4 +38,4 @@ Layout.defaultProps = {
   siteTitle: ``,
 }
 
-export default withStyles(styles)(Layout)
+export default Layout

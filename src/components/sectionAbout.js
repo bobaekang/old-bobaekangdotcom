@@ -3,13 +3,13 @@ import PropTypes from 'prop-types'
 import { Link } from 'gatsby'
 import Container from '@material-ui/core/Container'
 import Grid from '@material-ui/core/Grid'
-import { withStyles } from '@material-ui/core/styles'
+import { makeStyles } from '@material-ui/core/styles'
 
 import MyImage from './myImage'
 import MySocial from './mySocial'
 import colors from '../styles/colors'
 
-const styles = {
+const useStyles = makeStyles({
   sectionMain: {
     '& h2': {
       color: colors.red,
@@ -22,9 +22,11 @@ const styles = {
       },
     },
   },
-}
+})
 
-const SectionAbout = ({ classes }) => {
+const SectionAbout = () => {
+  const classes = useStyles()
+
   const aboutMain = (
     <div className={classes.sectionMain}>
       <h2>Hi, I'm Bobae</h2>
@@ -106,4 +108,4 @@ SectionAbout.propTypes = {
   classes: PropTypes.object.isRequired,
 }
 
-export default withStyles(styles)(SectionAbout)
+export default SectionAbout

@@ -1,11 +1,11 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { Link } from 'gatsby'
-import { withStyles } from '@material-ui/core/styles'
+import { makeStyles } from '@material-ui/core/styles'
 
 import colors from '../styles/colors'
 
-const styles = {
+const useStyles = makeStyles({
   back: {
     color: colors.darkgrey,
     fontSize: '16px',
@@ -14,17 +14,21 @@ const styles = {
       textDecoration: 'underline',
     },
   },
+})
+
+const LinkBackTo = ({ to: { name, path } }) => {
+  const classes = useStyles()
+
+  return (
+    <Link className={classes.back} to={path}>
+      ← {name}
+    </Link>
+  )
 }
 
-const linkBackTo = ({ classes, to: { name, path } }) => (
-  <Link className={classes.back} to={path}>
-    ← {name}
-  </Link>
-)
-
-linkBackTo.propTypes = {
+LinkBackTo.propTypes = {
   classes: PropTypes.object.isRequired,
   to: PropTypes.object.isRequired,
 }
 
-export default withStyles(styles)(linkBackTo)
+export default LinkBackTo

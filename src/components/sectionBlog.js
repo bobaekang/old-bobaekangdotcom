@@ -4,7 +4,7 @@ import { Link, graphql, useStaticQuery } from 'gatsby'
 import Container from '@material-ui/core/Container'
 import Grid from '@material-ui/core/Grid'
 import Paper from '@material-ui/core/Paper'
-import { withStyles } from '@material-ui/core/styles'
+import { makeStyles } from '@material-ui/core/styles'
 
 import BlogPreview from '../components/blogPreview'
 import colors from '../styles/colors'
@@ -12,7 +12,7 @@ import colors from '../styles/colors'
 const defineBoxShadow = color =>
   `0px 1px 6px 0px ${color}, 0px 1px 2px 0px ${color}, 0px 2px 2px -1px ${color}`
 
-const styles = {
+const useStyles = makeStyles({
   postCard: {
     boxShadow: defineBoxShadow(colors.blue),
     height: '250px',
@@ -41,9 +41,11 @@ const styles = {
     color: colors.red,
     marginBottom: '1em',
   },
-}
+})
 
-const SectionBlog = ({ classes }) => {
+const SectionBlog = () => {
+  const classes = useStyles()
+
   const {
     allMarkdownRemark: { edges },
   } = useStaticQuery(
@@ -104,4 +106,4 @@ SectionBlog.propTypes = {
   classes: PropTypes.object.isRequired,
 }
 
-export default withStyles(styles)(SectionBlog)
+export default SectionBlog

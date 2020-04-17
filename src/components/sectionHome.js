@@ -1,11 +1,11 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { withStyles } from '@material-ui/core/styles'
+import { makeStyles } from '@material-ui/core/styles'
 
 import TypedStrings from '../components/typedStrings'
 import colors from '../styles/colors.js'
 
-const styles = {
+const useStyles = makeStyles({
   sectionBody: {
     fontSize: '1.2em',
     margin: '0 2em',
@@ -43,25 +43,31 @@ const styles = {
     alignItems: 'center',
     justifyContent: 'center',
   },
-}
+})
 
-const SectionHome = ({ classes }) => (
-  <div>
-    <div className={classes.stripeTop}></div>
-    <div className={classes.textCenter}>
-      <h1 className={classes.sectionTitle}>bobae kang</h1>
-      <div className={classes.sectionBody}>
-        <TypedStrings
-          strings={['Chicago-based social scientist turned software engineer']}
-        />
+const SectionHome = () => {
+  const classes = useStyles()
+
+  return (
+    <div>
+      <div className={classes.stripeTop}></div>
+      <div className={classes.textCenter}>
+        <h1 className={classes.sectionTitle}>bobae kang</h1>
+        <div className={classes.sectionBody}>
+          <TypedStrings
+            strings={[
+              'Chicago-based social scientist turned software engineer',
+            ]}
+          />
+        </div>
       </div>
+      <div className={classes.stripeBottom}></div>
     </div>
-    <div className={classes.stripeBottom}></div>
-  </div>
-)
+  )
+}
 
 SectionHome.propTypes = {
   classes: PropTypes.object.isRequired,
 }
 
-export default withStyles(styles)(SectionHome)
+export default SectionHome

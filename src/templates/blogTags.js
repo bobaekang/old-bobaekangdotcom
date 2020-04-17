@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { Link, graphql } from 'gatsby'
 import Container from '@material-ui/core/Container'
-import { withStyles } from '@material-ui/core/styles'
+import { makeStyles } from '@material-ui/core/styles'
 
 import BlogPreview from '../components/blogPreview'
 import Layout from '../components/layout'
@@ -10,7 +10,7 @@ import LinkBackTo from '../components/linkBackTo'
 import SEO from '../components/seo'
 import colors from '../styles/colors'
 
-const styles = {
+const useStyles = makeStyles({
   blog: {
     marginTop: '5rem',
   },
@@ -22,9 +22,11 @@ const styles = {
       },
     },
   },
-}
+})
 
-const Tags = ({ classes, pageContext, data }) => {
+const Tags = ({ pageContext, data }) => {
+  const classes = useStyles()
+
   const { tag } = pageContext
   const { edges, totalCount } = data.allMarkdownRemark
   const tagHeader = `${totalCount} post${
@@ -72,7 +74,7 @@ Tags.propTypes = {
   }),
 }
 
-export default withStyles(styles)(Tags)
+export default Tags
 
 export const pageQuery = graphql`
   query($tag: String) {
