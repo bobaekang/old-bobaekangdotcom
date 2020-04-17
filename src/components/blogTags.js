@@ -1,11 +1,11 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { Link } from 'gatsby'
-import { withStyles } from '@material-ui/core/styles'
+import { makeStyles } from '@material-ui/core/styles'
 
 import colors from '../styles/colors'
 
-const styles = {
+const useStyles = makeStyles({
   tag: {
     '&:after': {
       content: '" "',
@@ -22,9 +22,11 @@ const styles = {
       content: '" · "',
     },
   },
-}
+})
 
-const BlogTags = ({ classes, tags, showAll = true }) => {
+const BlogTags = ({ tags, showAll = true }) => {
+  const classes = useStyles()
+
   const tagLink = tag => (
     <Link
       className={classes.tag}
@@ -55,4 +57,4 @@ BlogTags.propTypes = {
   showAll: PropTypes.bool,
 }
 
-export default withStyles(styles)(BlogTags)
+export default BlogTags

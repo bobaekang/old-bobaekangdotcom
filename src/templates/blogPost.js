@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import { graphql, Link } from 'gatsby'
 import Container from '@material-ui/core/Container'
 import Grid from '@material-ui/core/Grid'
-import { withStyles } from '@material-ui/core/styles'
+import { makeStyles } from '@material-ui/core/styles'
 import KeyboardArrowLeftIcon from '@material-ui/icons/KeyboardArrowLeft'
 import KeyboardArrowRightIcon from '@material-ui/icons/KeyboardArrowRight'
 
@@ -13,7 +13,7 @@ import LinkBackTo from '../components/linkBackTo'
 import SEO from '../components/seo'
 import colors from '../styles/colors'
 
-const styles = {
+const useStyles = makeStyles({
   blog: {
     paddingTop: '5rem',
     paddingBottom: '5rem',
@@ -49,9 +49,11 @@ const styles = {
       color: colors.red,
     },
   },
-}
+})
 
-const BlogPost = ({ classes, data, pageContext }) => {
+const BlogPost = ({ data, pageContext }) => {
+  const classes = useStyles()
+
   const post = data.markdownRemark
   const { next, prev } = pageContext
 
@@ -134,7 +136,7 @@ BlogPost.propTypes = {
   }),
 }
 
-export default withStyles(styles)(BlogPost)
+export default BlogPost
 
 export const query = graphql`
   query($slug: String!) {

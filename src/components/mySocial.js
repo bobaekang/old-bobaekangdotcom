@@ -2,16 +2,18 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { loadCSS } from 'fg-loadcss'
 import Icon from '@material-ui/core/Icon'
-import { withStyles } from '@material-ui/core/styles'
+import { makeStyles } from '@material-ui/core/styles'
 import EmailIcon from '@material-ui/icons/Email'
 
-const styles = {
+const useStyles = makeStyles({
   socialList: {
     textAlign: 'center',
   },
-}
+})
 
-const MySocial = ({ classes, namespace, styles }) => {
+const MySocial = ({ namespace, styles }) => {
+  const classes = useStyles()
+
   React.useEffect(() => {
     loadCSS(
       'https://use.fontawesome.com/releases/v5.1.0/css/all.css',
@@ -68,4 +70,4 @@ MySocial.propTypes = {
   styles: PropTypes.string.isRequired,
 }
 
-export default withStyles(styles)(MySocial)
+export default MySocial

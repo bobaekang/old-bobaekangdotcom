@@ -4,11 +4,11 @@ import { Link } from 'gatsby'
 import Container from '@material-ui/core/Container'
 import Grid from '@material-ui/core/Grid'
 import Hidden from '@material-ui/core/Hidden'
-import { withStyles } from '@material-ui/core/styles'
+import { makeStyles } from '@material-ui/core/styles'
 
 import colors from '../styles/colors'
 
-const styles = {
+const useStyles = makeStyles({
   header: {
     backgroundColor: 'white',
     fontFamily: 'Ubuntu, san-serif',
@@ -38,9 +38,11 @@ const styles = {
   navActiveItem: {
     color: colors.red,
   },
-}
+})
 
-const Header = ({ classes, currentPage }) => {
+const Header = ({ currentPage }) => {
+  const classes = useStyles()
+
   // logo
   const [hideLogo, setHideLogo] = useState(currentPage === 'index')
   const logo = (
@@ -105,4 +107,4 @@ Header.propTypes = {
   currentPage: PropTypes.string.isRequired,
 }
 
-export default withStyles(styles)(Header)
+export default Header

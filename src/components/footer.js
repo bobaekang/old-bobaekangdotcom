@@ -1,11 +1,11 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { withStyles } from '@material-ui/core/styles'
+import { makeStyles } from '@material-ui/core/styles'
 
 import MySocial from './mySocial'
 import colors from '../styles/colors'
 
-const styles = {
+const useStyles = makeStyles({
   footer: {
     color: colors.darkgrey,
     fontSize: '0.8rem',
@@ -18,44 +18,48 @@ const styles = {
       },
     },
   },
-}
+})
 
-const Footer = ({ classes }) => (
-  <footer className={classes.footer}>
-    <MySocial
-      namespace="footer"
-      styles={`
+const Footer = () => {
+  const classes = useStyles()
+
+  return (
+    <footer className={classes.footer}>
+      <MySocial
+        namespace="footer"
+        styles={`
         .footer-social-icon {
           font-size: 1rem;
           margin-left: .2rem;
           margin-right: .2rem;
         }
       `}
-    />
-    <div>
-      © Bobae Kang {new Date().getFullYear()}, Powered by
-      {` `}
-      <a
-        href="https://www.gatsbyjs.org"
-        target="_blank"
-        rel="noreferrer noopener"
-      >
-        Gatsby
-      </a>
-      {` & `}
-      <a
-        href="https://material-ui.com/"
-        target="_blank"
-        rel="noreferrer noopener"
-      >
-        Material UI
-      </a>
-    </div>
-  </footer>
-)
+      />
+      <div>
+        © Bobae Kang {new Date().getFullYear()}, Powered by
+        {` `}
+        <a
+          href="https://www.gatsbyjs.org"
+          target="_blank"
+          rel="noreferrer noopener"
+        >
+          Gatsby
+        </a>
+        {` & `}
+        <a
+          href="https://material-ui.com/"
+          target="_blank"
+          rel="noreferrer noopener"
+        >
+          Material UI
+        </a>
+      </div>
+    </footer>
+  )
+}
 
 Footer.propTypes = {
   classes: PropTypes.object.isRequired,
 }
 
-export default withStyles(styles)(Footer)
+export default Footer
