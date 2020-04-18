@@ -52,7 +52,6 @@ const BlogTags = ({ tags, showAll = true }) => {
 }
 
 BlogTags.propTypes = {
-  classes: PropTypes.object.isRequired,
   tags: PropTypes.arrayOf(PropTypes.string),
   showAll: PropTypes.bool,
 }

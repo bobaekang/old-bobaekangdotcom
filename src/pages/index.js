@@ -1,5 +1,4 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 import { makeStyles } from '@material-ui/core/styles'
 
 import Layout from '../components/layout'
@@ -34,10 +33,6 @@ const IndexPage = () => {
       </div>
     </Layout>
   )
-}
-
-IndexPage.propTypes = {
-  classes: PropTypes.object.isRequired,
 }
 
 export default IndexPage

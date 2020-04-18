@@ -65,7 +65,6 @@ const MySocial = ({ namespace, styles }) => {
 }
 
 MySocial.propTypes = {
-  classes: PropTypes.object.isRequired,
   namespace: PropTypes.string.isRequired,
   styles: PropTypes.string.isRequired,
 }

@@ -31,7 +31,6 @@ const BlogPreview = ({ postNode, showAll }) => {
 }
 
 BlogPreview.propTypes = {
-  classes: PropTypes.object.isRequired,
   postNode: PropTypes.shape({
     excerpt: PropTypes.string.isRequired,
     fields: PropTypes.shape({

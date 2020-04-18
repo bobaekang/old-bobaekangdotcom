@@ -1,5 +1,4 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 import { makeStyles } from '@material-ui/core/styles'
 
 import TypedStrings from '../components/typedStrings'
@@ -64,10 +63,6 @@ const SectionHome = () => {
       <div className={classes.stripeBottom}></div>
     </div>
   )
-}
-
-SectionHome.propTypes = {
-  classes: PropTypes.object.isRequired,
 }
 
 export default SectionHome
