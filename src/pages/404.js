@@ -1,5 +1,4 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 import { Container } from '@material-ui/core'
 import { makeStyles } from '@material-ui/core/styles'
 
@@ -35,10 +34,6 @@ const NotFoundPage = () => {
       </Container>
     </Layout>
   )
-}
-
-NotFoundPage.propTypes = {
-  classes: PropTypes.object.isRequired,
 }
 
 export default NotFoundPage

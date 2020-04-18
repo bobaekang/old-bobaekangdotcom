@@ -27,7 +27,6 @@ const LinkBackTo = ({ to: { name, path } }) => {
 }
 
 LinkBackTo.propTypes = {
-  classes: PropTypes.object.isRequired,
   to: PropTypes.object.isRequired,
 }
 

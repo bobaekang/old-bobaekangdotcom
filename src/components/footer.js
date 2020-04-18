@@ -1,5 +1,4 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 import { makeStyles } from '@material-ui/core/styles'
 
 import MySocial from './mySocial'
@@ -56,10 +55,6 @@ const Footer = () => {
       </div>
     </footer>
   )
-}
-
-Footer.propTypes = {
-  classes: PropTypes.object.isRequired,
 }
 
 export default Footer

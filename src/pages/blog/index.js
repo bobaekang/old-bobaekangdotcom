@@ -48,7 +48,6 @@ const BlogPage = ({ data }) => {
 }
 
 BlogPage.propTypes = {
-  classes: PropTypes.object.isRequired,
   data: PropTypes.shape({
     allMarkdownRemark: PropTypes.shape({
       totalCount: PropTypes.number.isRequired,

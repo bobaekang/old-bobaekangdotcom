@@ -103,7 +103,6 @@ const Header = ({ currentPage }) => {
 }
 
 Header.propTypes = {
-  classes: PropTypes.object.isRequired,
   currentPage: PropTypes.string.isRequired,
 }
 

@@ -1,5 +1,4 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 import { StaticQuery, graphql } from 'gatsby'
 import Img from 'gatsby-image'
 import { makeStyles } from '@material-ui/core/styles'
@@ -39,10 +38,6 @@ const MyImage = () => {
       )}
     />
   )
-}
-
-MyImage.propTypes = {
-  classes: PropTypes.object.isRequired,
 }
 
 export default MyImage

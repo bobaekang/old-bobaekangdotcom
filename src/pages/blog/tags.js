@@ -48,7 +48,6 @@ const TagsPage = ({ data }) => {
 }
 
 TagsPage.propTypes = {
-  classes: PropTypes.object.isRequired,
   data: PropTypes.shape({
     allMarkdownRemark: PropTypes.shape({
       group: PropTypes.arrayOf(

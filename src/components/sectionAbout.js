@@ -1,5 +1,4 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 import { Link } from 'gatsby'
 import Container from '@material-ui/core/Container'
 import Grid from '@material-ui/core/Grid'
@@ -102,10 +101,6 @@ const SectionAbout = () => {
       </Grid>
     </Container>
   )
-}
-
-SectionAbout.propTypes = {
-  classes: PropTypes.object.isRequired,
 }
 
 export default SectionAbout
