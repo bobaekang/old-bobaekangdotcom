@@ -103,7 +103,7 @@ kbd,
 pre,
 samp {
   font-family: monospace, monospace;
-  font-size: 1em;
+  font-size: 0.95em !important;
 }
 figure {
   margin: 1em 40px;
