@@ -41,15 +41,8 @@ const SectionAbout = () => {
       </p>
       <p>
         If you'd like to know more about me, I invite you to start with{' '}
-        <Link to="/blog/hello-world">this blog post</Link> or check out{' '}
-        <a
-          href="/files/bobaekang-resume.pdf"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          my resume
-        </a>
-        . Also, feel free to reach out to me via{' '}
+        <Link to="/blog/hello-world">this blog post</Link>. Also, feel free to
+        reach out to me via{' '}
         <a
           href="https://github.com/bobaekang"
           target="_blank"
