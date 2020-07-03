@@ -73,22 +73,25 @@ const SectionBlog = () => {
     `
   )
 
-  const createPostCard = (to, body) => (
-    <Grid key={to} item xs={11} sm={8} md={6} lg={4}>
+  const latestPosts = edges.map(({ node }) => (
+    <Grid item xs={11} sm={8} md={6} lg={4} key={node.id}>
       <Paper className={classes.postCard}>
-        <Link to={to} className={classes.postCardBody}>
-          {body}
+        <div className={classes.postCardBody}>
+          <BlogPreview postNode={node} showAll={false}></BlogPreview>
+        </div>
+      </Paper>
+    </Grid>
+  ))
+
+  const readMore = (
+    <Grid item xs={11} sm={8} md={6} lg={4}>
+      <Paper className={classes.postCard}>
+        <Link to={'/blog'} className={classes.postCardBody}>
+          <h3>Read more...</h3>
         </Link>
       </Paper>
     </Grid>
   )
-  const latestPosts = edges.map(({ node }) =>
-    createPostCard(
-      node.fields.slug,
-      <BlogPreview postNode={node} showAll={false}></BlogPreview>
-    )
-  )
-  const readMore = createPostCard('/blog', <h3>Read more...</h3>)
 
   return (
     <Container className={classes.sectionContainer} maxWidth="lg">

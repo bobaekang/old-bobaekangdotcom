@@ -30,9 +30,7 @@ const BlogPage = ({ data }) => {
   const { edges, totalCount } = data.allMarkdownRemark
 
   const blogPosts = edges.map(({ node }) => (
-    <Link to={node.fields.slug} key={node.id}>
-      <BlogPreview postNode={node}></BlogPreview>
-    </Link>
+    <BlogPreview postNode={node} key={node.id}></BlogPreview>
   ))
 
   return (
