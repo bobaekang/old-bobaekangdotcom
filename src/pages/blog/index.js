@@ -30,9 +30,7 @@ const BlogPage = ({ data }) => {
   const { edges, totalCount } = data.allMarkdownRemark
 
   const blogPosts = edges.map(({ node }) => (
-    <Link to={node.fields.slug} key={node.id}>
-      <BlogPreview postNode={node}></BlogPreview>
-    </Link>
+    <BlogPreview postNode={node} key={node.id}></BlogPreview>
   ))
 
   return (
@@ -53,17 +51,19 @@ BlogPage.propTypes = {
       totalCount: PropTypes.number.isRequired,
       edges: PropTypes.arrayOf(
         PropTypes.shape({
-          id: PropTypes.string,
-          frontmatter: PropTypes.shape({
-            title: PropTypes.string.isRequired,
-            tags: PropTypes.arrayOf(PropTypes.string),
+          node: PropTypes.shape({
+            id: PropTypes.string,
+            frontmatter: PropTypes.shape({
+              title: PropTypes.string.isRequired,
+              tags: PropTypes.arrayOf(PropTypes.string),
+            }).isRequired,
+            fields: PropTypes.shape({
+              date: PropTypes.string,
+              slug: PropTypes.string,
+            }).isRequired,
+            excerpt: PropTypes.string.isRequired,
           }).isRequired,
-          fields: PropTypes.shape({
-            date: PropTypes.string,
-            slug: PropTypes.string,
-          }).isRequired,
-          excerpt: PropTypes.string.isRequired,
-        }).isRequired
+        })
       ),
     }),
   }),

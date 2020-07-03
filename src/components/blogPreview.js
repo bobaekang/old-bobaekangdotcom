@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'gatsby'
 import PropTypes from 'prop-types'
 import { makeStyles } from '@material-ui/core/styles'
 
@@ -24,8 +25,10 @@ const BlogPreview = ({ postNode, showAll }) => {
     <div className={classes.preview}>
       <span className="date">{fields.date}</span>
       <BlogTags tags={frontmatter.tags} showAll={showAll}></BlogTags>
-      <h3>{frontmatter.title}</h3>
-      <p>{excerpt}</p>
+      <Link to={fields.slug}>
+        <h3>{frontmatter.title}</h3>
+        <p>{excerpt}</p>
+      </Link>
     </div>
   )
 }
