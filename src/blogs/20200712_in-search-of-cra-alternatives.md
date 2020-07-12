@@ -35,7 +35,7 @@ So how do they compare? Since I often use TypeScript for my React projects, I'll
 - Command
   - **CRA**: `npx create-react-app <project-name>`
   - **CSA**: `npx create-snowpack-app <project-name> --template @snowpack/app-template-react`
-  - **Vite**: `npx create-vite-app <project-name> --template react && cd vite && npm install`
+  - **Vite**: `npx create-vite-app <project-name> --template react && cd <project-name> && npm install`
 - Start up time (in seconds)
   - **CRA**: ~100
   - **CSA**: ~35
@@ -54,7 +54,7 @@ So how do they compare? Since I often use TypeScript for my React projects, I'll
 - Command
   - **CRA**: `npx create-react-app <project-name> --template typescript`
   - **CSA**: `npx create-snowpack-app <project-name> --template @snowpack/app-template-react-typescript`
-  - **Vite**: `npx create-vite-app <project-name> --template react-ts && cd vite && npm install`
+  - **Vite**: `npx create-vite-app <project-name> --template react-ts && cd <project-name> && npm install`
 - Start up time (in seconds)
   - **CRA**: ~110
   - **CSA**: ~35
