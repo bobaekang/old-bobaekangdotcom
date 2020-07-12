@@ -1,5 +1,6 @@
 ---
 title: 'In search of CRA alternatives'
+tags: ['Reactjs', 'CRA', 'Snowpack', 'Vite']
 ---
 
 [Create React App (CRA)](https://create-react-app.dev/) is one of my favorite tools to bootstrap a new React project, providing me a sensible default for setting up and configuring build tools, such as webpack, Babel, etc., required for any "modern" web project. While it is important for me as a web developer to be familiar with the tools themselves, CRA is a worthy abstraction over these tools. Being able to get right into the business after running a single command `npx create-react-app <project-name>` is just so damn useful.
