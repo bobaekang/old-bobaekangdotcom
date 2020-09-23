@@ -1,6 +1,6 @@
 ---
 title: 'How I finally understood .reduce()'
-tags: ['JavaScript', 'learning']
+tags: ['JavaScript', 'learn']
 ---
 
 One of my favorite features of the JavaScript language is the trio of `.map()`, `.filter()`, and `.reduce()`.[^1] Combined with the arrow function syntax,[^2] these built-in array methods make it easier for me to approach programming as building pipelines, i.e. series of function applications, for data to flow through. The analogy of programming as building data pipelines particularly resonates with me--my first introduction to programming was via data analysis using R (with `dplyr` and its friends) and Python (with `pandas`), where one of the most common tasks is transforming, or "wrangling", a data frame by letting it pass through a series of functions or methods.
