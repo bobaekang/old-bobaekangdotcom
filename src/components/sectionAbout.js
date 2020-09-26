@@ -5,7 +5,6 @@ import Grid from '@material-ui/core/Grid'
 import { makeStyles } from '@material-ui/core/styles'
 
 import MyImage from './myImage'
-import MySocial from './mySocial'
 import colors from '../styles/colors'
 
 const useStyles = makeStyles({
@@ -69,22 +68,6 @@ const SectionAbout = () => {
         </Grid>
         <Grid item xs={12} md={3} style={{ maxWidth: '240px' }}>
           <MyImage />
-          <br />
-          <MySocial
-            namespace="about"
-            styles={`
-              .about-social-icon {
-                font-size: 1.5rem;
-                margin-left: .2rem;
-                margin-right: .2rem;
-                color: ${colors.blue};
-              }
-
-              .about-social-icon:hover {
-                color: ${colors.red};
-              }
-            `}
-          />
         </Grid>
       </Grid>
     </Container>
