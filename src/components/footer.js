@@ -1,7 +1,9 @@
 import React from 'react'
 import { makeStyles } from '@material-ui/core/styles'
+import GitHubIcon from '@material-ui/icons/GitHub'
+import LinkedInIcon from '@material-ui/icons/LinkedIn'
+import EmailIcon from '@material-ui/icons/Email'
 
-import MySocial from './mySocial'
 import colors from '../styles/colors'
 
 const useStyles = makeStyles({
@@ -17,6 +19,9 @@ const useStyles = makeStyles({
       },
     },
   },
+  social: {
+    margin: '0 .2rem',
+  },
 })
 
 const Footer = () => {
@@ -24,16 +29,33 @@ const Footer = () => {
 
   return (
     <footer className={classes.footer}>
-      <MySocial
-        namespace="footer"
-        styles={`
-        .footer-social-icon {
-          font-size: 1rem;
-          margin-left: .2rem;
-          margin-right: .2rem;
-        }
-      `}
-      />
+      <div>
+        <a
+          className={classes.social}
+          href="https://github.com/bobaekang"
+          aria-label="See my Github profile"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <GitHubIcon fontSize="small" />
+        </a>
+        <a
+          className={classes.social}
+          href="https://www.linkedin.com/in/bobaekang"
+          aria-label="See my LinkeIn profile"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <LinkedInIcon fontSize="small" />
+        </a>
+        <a
+          className={classes.social}
+          href="mailto:hello@bobaekang.com"
+          aria-label="Send me an email"
+        >
+          <EmailIcon fontSize="small" />
+        </a>
+      </div>
       <div>
         © Bobae Kang {new Date().getFullYear()}, Powered by
         {` `}
