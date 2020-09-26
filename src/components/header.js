@@ -89,7 +89,7 @@ const Header = ({ currentPage }) => {
 
   return (
     <header className={classes.header}>
-      <Container maxWidth="lg">
+      <Container maxWidth="md">
         <Grid container direction="row" justify="space-between">
           <Grid item>{!hideLogo && logo}</Grid>
           <Grid item>

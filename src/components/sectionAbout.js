@@ -30,14 +30,9 @@ const SectionAbout = () => {
     <div className={classes.sectionMain}>
       <h2>Hi, I'm Bobae</h2>
       <p>
-        I am an ambitious self-taught software engineer! I started out as a
-        researcher and data analyst, and later fell in love with modern web
-        technologies as well as the art and craft of software development in
-        general.
-      </p>
-      <p>
-        I'm also a big fan of FOSS and its community, which continue to empower
-        me to grow in skills and knowledge beyond my wildest dreams.
+        I started out as a researcher and data analyst, and later fell in love
+        with modern web technologies as well as the art and craft of software
+        development in general.
       </p>
       <p>
         If you'd like to know more about me, I invite you to start with{' '}
@@ -66,29 +61,29 @@ const SectionAbout = () => {
   return (
     <Container
       style={{ marginTop: '4rem', marginBottom: '4rem' }}
-      maxWidth="lg"
+      maxWidth="md"
     >
-      <Grid container>
-        <Grid item xs={11} sm={6}>
+      <Grid container justify="space-between">
+        <Grid item xs={12} md={6}>
           {aboutMain}
         </Grid>
-        <Grid item xs={6} sm={4} md={3} style={{ margin: 'auto' }}>
+        <Grid item xs={12} md={3} style={{ maxWidth: '240px' }}>
           <MyImage />
           <br />
           <MySocial
             namespace="about"
             styles={`
-            .about-social-icon {
-              font-size: 1.5rem;
-              margin-left: .2rem;
-              margin-right: .2rem;
-              color: ${colors.blue};
-            }
+              .about-social-icon {
+                font-size: 1.5rem;
+                margin-left: .2rem;
+                margin-right: .2rem;
+                color: ${colors.blue};
+              }
 
-            .about-social-icon:hover {
-              color: ${colors.red};
-            }
-          `}
+              .about-social-icon:hover {
+                color: ${colors.red};
+              }
+            `}
           />
         </Grid>
       </Grid>
