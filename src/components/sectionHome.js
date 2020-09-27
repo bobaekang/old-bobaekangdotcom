@@ -44,13 +44,10 @@ const SectionHome = () => {
       <div className={classes.stripe} />
       <div className={classes.sectionMain}>
         <h1 className={classes.sectionTitle}>bobae kang</h1>
-        <div className={classes.typedString}>
-          <TypedStrings
-            strings={[
-              'Chicago-based social scientist turned software engineer',
-            ]}
-          />
-        </div>
+        <TypedStrings
+          className={classes.typedString}
+          strings={['Chicago-based social scientist turned software engineer']}
+        />
       </div>
       <div className={classes.stripe} />
     </Container>
