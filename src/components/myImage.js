@@ -9,7 +9,7 @@ const useStyles = makeStyles({
   image: {
     '& img': {
       borderRadius: '50%',
-      border: `3px solid ${colors.blue}`,
+      border: `2px solid ${colors.lightblue}`,
     },
   },
 })
