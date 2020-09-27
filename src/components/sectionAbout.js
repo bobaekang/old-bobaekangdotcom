@@ -26,7 +26,7 @@ const SectionAbout = () => {
   const classes = useStyles()
 
   const aboutMain = (
-    <div className={classes.sectionMain}>
+    <>
       <h2>Hi, I'm Bobae</h2>
       <p>
         I started out as a researcher and data analyst, and later fell in love
@@ -54,7 +54,7 @@ const SectionAbout = () => {
         </a>{' '}
         or <a href="mailto:hello@bobaekang.com">email</a>!
       </p>
-    </div>
+    </>
   )
 
   return (
@@ -63,7 +63,7 @@ const SectionAbout = () => {
       maxWidth="md"
     >
       <Grid container justify="space-between">
-        <Grid item xs={12} md={6}>
+        <Grid item xs={12} md={6} className={classes.sectionMain}>
           {aboutMain}
         </Grid>
         <Grid item xs={12} md={3} style={{ maxWidth: '240px' }}>

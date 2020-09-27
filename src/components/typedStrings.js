@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import Typed from 'typed.js'
 
 class TypedStrings extends React.Component {
@@ -15,8 +16,16 @@ class TypedStrings extends React.Component {
   }
 
   render() {
-    return <span ref={el => (this.el = el)} />
+    return (
+      <div className={this.props.className}>
+        <span ref={el => (this.el = el)} />
+      </div>
+    )
   }
+}
+
+TypedStrings.propTypes = {
+  className: PropTypes.string,
 }
 
 export default TypedStrings

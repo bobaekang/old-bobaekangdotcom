@@ -1,46 +1,38 @@
 import React from 'react'
+import Container from '@material-ui/core/Container'
 import { makeStyles } from '@material-ui/core/styles'
 
 import TypedStrings from '../components/typedStrings'
 import colors from '../styles/colors.js'
 
 const useStyles = makeStyles({
-  sectionBody: {
-    fontSize: '1.2em',
-    margin: '0 2em',
-    color: colors.darkgrey,
+  sectionContainer: {
+    height: '100vh',
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'space-between',
+  },
+  sectionMain: {
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'center',
+    height: '34%',
+    textAlign: 'center',
   },
   sectionTitle: {
     fontSize: 'calc(2em + 6vw)',
     color: colors.red,
     marginBottom: '0.2rem',
   },
-  stripeBottom: {
-    backgroundColor: colors.lightblue,
-    bottom: '16.5%',
-    height: '16.5%',
-    left: 'calc(50vw - 456px)',
-    position: 'absolute',
-    width: 'min(50vw + 456px, 912px)',
-  },
-  stripeTop: {
+  stripe: {
     backgroundColor: colors.lightblue,
     height: '16.5%',
-    left: 'calc(50vw - 456px)',
-    position: 'absolute',
-    top: '16.5%',
-    width: 'min(50vw + 456px, 912px)',
-  },
-  textCenter: {
-    textAlign: 'center',
-    position: 'absolute',
-    height: '34%',
-    top: '33%',
     width: '100%',
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center',
-    justifyContent: 'center',
+  },
+  typedString: {
+    fontSize: '1.2em',
+    color: colors.darkgrey,
   },
 })
 
@@ -48,20 +40,17 @@ const SectionHome = () => {
   const classes = useStyles()
 
   return (
-    <div>
-      <div className={classes.stripeTop}></div>
-      <div className={classes.textCenter}>
+    <Container className={classes.sectionContainer} maxWidth="md">
+      <div className={classes.stripe} />
+      <div className={classes.sectionMain}>
         <h1 className={classes.sectionTitle}>bobae kang</h1>
-        <div className={classes.sectionBody}>
-          <TypedStrings
-            strings={[
-              'Chicago-based social scientist turned software engineer',
-            ]}
-          />
-        </div>
+        <TypedStrings
+          className={classes.typedString}
+          strings={['Chicago-based social scientist turned software engineer']}
+        />
       </div>
-      <div className={classes.stripeBottom}></div>
-    </div>
+      <div className={classes.stripe} />
+    </Container>
   )
 }
 
