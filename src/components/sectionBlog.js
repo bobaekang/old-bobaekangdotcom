@@ -60,7 +60,11 @@ const SectionBlog = () => {
     <Container className={classes.sectionContainer} maxWidth="md">
       <h2 className={classes.sectionTitle}>Latest writings</h2>
       {edges.map(({ node }) => (
-        <BlogPreview postNode={node} showAll={false}></BlogPreview>
+        <BlogPreview
+          key={node.id}
+          postNode={node}
+          showAll={false}
+        ></BlogPreview>
       ))}
       <Link to={'/blog'} className={classes.readMore}>
         <h3>Read more...</h3>
