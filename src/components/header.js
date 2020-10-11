@@ -58,9 +58,9 @@ const Header = ({ currentPage }) => {
   const navItemClass = active =>
     [classes.navItem, active ? classes.navActiveItem : undefined].join(' ')
   const navIndex = indexSections.map(s => (
-    <Link className={navItemClass(activeSection === s)} key={s} to={`/#${s}`}>
+    <a className={navItemClass(activeSection === s)} key={s} href={`/#${s}`}>
       {s}
-    </Link>
+    </a>
   ))
 
   useEffect(() => {
