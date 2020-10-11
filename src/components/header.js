@@ -46,9 +46,9 @@ const Header = ({ currentPage }) => {
   // logo
   const [hideLogo, setHideLogo] = useState(currentPage === 'index')
   const logo = (
-    <Link to="/" className={classes.logo}>
+    <a href="/#home" className={classes.logo}>
       bobae kang
-    </Link>
+    </a>
   )
 
   // index page
