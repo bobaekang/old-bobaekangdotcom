@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { Link, graphql } from 'gatsby'
+import { graphql } from 'gatsby'
 import Container from '@material-ui/core/Container'
 import { makeStyles } from '@material-ui/core/styles'
 
@@ -8,19 +8,10 @@ import BlogPreview from '../components/blogPreview'
 import Layout from '../components/layout'
 import LinkBackTo from '../components/linkBackTo'
 import SEO from '../components/seo'
-import colors from '../styles/colors'
 
 const useStyles = makeStyles({
   blog: {
     marginTop: '5rem',
-  },
-  preview: {
-    marginBottom: '2rem',
-    '&:hover': {
-      '& h3': {
-        color: colors.red,
-      },
-    },
   },
 })
 
@@ -33,19 +24,15 @@ const Tags = ({ pageContext, data }) => {
     totalCount === 1 ? '' : 's'
   } tagged with "${tag}"`
 
-  const blogPosts = edges.map(({ node }) => (
-    <Link to={node.fields.slug} key={node.id}>
-      <BlogPreview postNode={node}></BlogPreview>
-    </Link>
-  ))
-
   return (
     <Layout currentPage={'blog'}>
       <SEO title={`Blog #${tag}`} />
       <Container className={classes.blog} maxWidth="md">
         <LinkBackTo to={{ name: 'All tags', path: '/blog/tags' }}></LinkBackTo>
         <h4>{tagHeader}</h4>
-        {blogPosts}
+        {edges.map(({ node }) => (
+          <BlogPreview key={node.id} postNode={node} />
+        ))}
       </Container>
     </Layout>
   )

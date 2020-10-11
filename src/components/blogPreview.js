@@ -22,10 +22,10 @@ const BlogPreview = ({ postNode, showAll }) => {
   const { excerpt, fields, frontmatter } = postNode
 
   return (
-    <div className={classes.preview}>
+    <div>
       <span className="date">{fields.date}</span>
       <BlogTags tags={frontmatter.tags} showAll={showAll}></BlogTags>
-      <Link to={fields.slug}>
+      <Link to={fields.slug} className={classes.preview}>
         <h3>{frontmatter.title}</h3>
         <p>{excerpt}</p>
       </Link>

@@ -46,9 +46,9 @@ const Header = ({ currentPage }) => {
   // logo
   const [hideLogo, setHideLogo] = useState(currentPage === 'index')
   const logo = (
-    <Link to="/" className={classes.logo}>
+    <a href="/#home" className={classes.logo}>
       bobae kang
-    </Link>
+    </a>
   )
 
   // index page
@@ -58,9 +58,9 @@ const Header = ({ currentPage }) => {
   const navItemClass = active =>
     [classes.navItem, active ? classes.navActiveItem : undefined].join(' ')
   const navIndex = indexSections.map(s => (
-    <Link className={navItemClass(activeSection === s)} key={s} to={`/#${s}`}>
+    <a className={navItemClass(activeSection === s)} key={s} href={`/#${s}`}>
       {s}
-    </Link>
+    </a>
   ))
 
   useEffect(() => {
