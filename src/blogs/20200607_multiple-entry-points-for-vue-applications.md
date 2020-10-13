@@ -39,4 +39,6 @@ import(`${path}`).then(({ default: App }) =>
 
 That's it. And the code is self-explanatory.
 
-I also created [this GitHub repo](https://github.com/bobaekang/vue-multiple-entry-points) to demonstrate how to set up the multiple entry points trick for a Vue project. Feel free to check out the repo and share your feedback!
+I also created [this GitHub repo](https://github.com/bobaekang/vue-multiple-entry-points) to demonstrate how to set up the multiple entry points trick for a Vue project. Feel free to check out the repo and share your feedback![^1]
+
+> **Update**: The current post and the related GitHub repo are for Vue 2 applications. For Vue 3 implementation, please check out [this repository](https://github.com/bobaekang/vue3-multiple-entry-points).
