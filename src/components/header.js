@@ -44,7 +44,6 @@ const Header = ({ currentPage }) => {
   const classes = useStyles()
 
   // logo
-  const [hideLogo, setHideLogo] = useState(currentPage === 'index')
   const logo = (
     <a href="/#home" className={classes.logo}>
       bobae kang
@@ -69,10 +68,8 @@ const Header = ({ currentPage }) => {
         if (
           document.querySelector(`#${s}`).getBoundingClientRect().top <
           e.target.documentElement.scrollTop
-        ) {
+        )
           setActiveSection(s)
-          setHideLogo(activeSection === 'home')
-        }
       })
     }
 
@@ -91,7 +88,9 @@ const Header = ({ currentPage }) => {
     <header className={classes.header}>
       <Container maxWidth="md">
         <Grid container direction="row" justify="space-between">
-          <Grid item>{!hideLogo && logo}</Grid>
+          <Grid item>
+            {(currentPage !== 'index' || activeSection !== 'home') && logo}
+          </Grid>
           <Grid item>
             <Hidden xsDown>{currentPage === 'index' && navIndex}</Hidden>
             {currentPage === 'blog' && navBlog}
