@@ -44,9 +44,8 @@ const Header = ({ currentPage }) => {
   const classes = useStyles()
 
   // logo
-  const [hideLogo, setHideLogo] = useState(currentPage === 'index')
   const logo = (
-    <a href="/#home" className={classes.logo}>
+    <a href="#home" className={classes.logo}>
       bobae kang
     </a>
   )
@@ -55,10 +54,10 @@ const Header = ({ currentPage }) => {
   const [activeSection, setActiveSection] = useState('home')
   const indexSections = ['home', 'about', 'blog']
 
-  const navItemClass = active =>
-    [classes.navItem, active ? classes.navActiveItem : undefined].join(' ')
+  const navItemClass = isActive =>
+    [classes.navItem, isActive ? classes.navActiveItem : undefined].join(' ')
   const navIndex = indexSections.map(s => (
-    <a className={navItemClass(activeSection === s)} key={s} href={`/#${s}`}>
+    <a className={navItemClass(activeSection === s)} key={s} href={`#${s}`}>
       {s}
     </a>
   ))
@@ -69,16 +68,14 @@ const Header = ({ currentPage }) => {
         if (
           document.querySelector(`#${s}`).getBoundingClientRect().top <
           e.target.documentElement.scrollTop
-        ) {
+        )
           setActiveSection(s)
-          setHideLogo(activeSection === 'home')
-        }
       })
     }
 
     if (currentPage === 'index') window.addEventListener('scroll', onScroll)
     return () => window.removeEventListener('scroll', onScroll)
-  }, [activeSection, currentPage, indexSections])
+  }, [currentPage, indexSections])
 
   // blog page
   const navBlog = (
@@ -91,7 +88,9 @@ const Header = ({ currentPage }) => {
     <header className={classes.header}>
       <Container maxWidth="md">
         <Grid container direction="row" justify="space-between">
-          <Grid item>{!hideLogo && logo}</Grid>
+          <Grid item>
+            {(currentPage !== 'index' || activeSection !== 'home') && logo}
+          </Grid>
           <Grid item>
             <Hidden xsDown>{currentPage === 'index' && navIndex}</Hidden>
             {currentPage === 'blog' && navBlog}
