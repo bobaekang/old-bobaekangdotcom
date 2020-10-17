@@ -45,7 +45,7 @@ const Header = ({ currentPage }) => {
 
   // logo
   const logo = (
-    <a href="/#home" className={classes.logo}>
+    <a href="#home" className={classes.logo}>
       bobae kang
     </a>
   )
@@ -57,7 +57,7 @@ const Header = ({ currentPage }) => {
   const navItemClass = active =>
     [classes.navItem, active ? classes.navActiveItem : undefined].join(' ')
   const navIndex = indexSections.map(s => (
-    <a className={navItemClass(activeSection === s)} key={s} href={`/#${s}`}>
+    <a className={navItemClass(activeSection === s)} key={s} href={`#${s}`}>
       {s}
     </a>
   ))
