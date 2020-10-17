@@ -54,8 +54,8 @@ const Header = ({ currentPage }) => {
   const [activeSection, setActiveSection] = useState('home')
   const indexSections = ['home', 'about', 'blog']
 
-  const navItemClass = active =>
-    [classes.navItem, active ? classes.navActiveItem : undefined].join(' ')
+  const navItemClass = isActive =>
+    [classes.navItem, isActive ? classes.navActiveItem : undefined].join(' ')
   const navIndex = indexSections.map(s => (
     <a className={navItemClass(activeSection === s)} key={s} href={`#${s}`}>
       {s}
