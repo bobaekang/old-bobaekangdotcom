@@ -75,7 +75,7 @@ const Header = ({ currentPage }) => {
 
     if (currentPage === 'index') window.addEventListener('scroll', onScroll)
     return () => window.removeEventListener('scroll', onScroll)
-  }, [activeSection, currentPage, indexSections])
+  }, [currentPage, indexSections])
 
   // blog page
   const navBlog = (
