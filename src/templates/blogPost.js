@@ -22,14 +22,8 @@ const useStyles = makeStyles({
     '& a': {
       color: colors.blue,
       textDecoration: 'underline',
-      '& code': {
-        color: colors.blue,
-      },
       '&:hover': {
         color: colors.red,
-        '& code': {
-          color: colors.red,
-        },
       },
     },
     '& .footnotes': {
