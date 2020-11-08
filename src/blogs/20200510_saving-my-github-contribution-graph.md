@@ -1,6 +1,6 @@
 ---
 title: 'Saving my GitHub contribution graph'
-tags: ['project', 'trick']
+tags: ['GitHub', 'project', 'trick']
 ---
 
 Last Friday was my last day at Illinois Criminal Justice Information Authority (ICJIA) as a Research Analyst. Fortunately, I'm not simply being let go but moving on to another great opportunity. I have been extremely lucky to find this new position--especially given the current health and economic situations. And, of course, there is always a lot to talk about switching jobs.
