@@ -70,3 +70,7 @@ yarn-error.log
 .pnp.js
 # Yarn Integrity file
 .yarn-integrity
+
+# generated blog files
+src/blogs
+static/images/blog
