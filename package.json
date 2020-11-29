@@ -29,6 +29,8 @@
     "typed.js": "^2.0.11"
   },
   "devDependencies": {
+    "dotenv": "^8.2.0",
+    "node-fetch": "^2.6.1",
     "prettier": "^1.19.1"
   },
   "keywords": [
@@ -36,7 +38,10 @@
   ],
   "license": "MIT",
   "scripts": {
+    "fetch-blog-src": "node ./fetchBlogSrc.js",
+    "prebuild": "npm run fetch-blog-src",
     "build": "gatsby build",
+    "predevelop": "npm run fetch-blog-src",
     "develop": "gatsby develop",
     "format": "prettier --write src/**/*.{js,jsx}",
     "start": "npm run develop",
