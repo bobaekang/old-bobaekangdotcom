@@ -1,6 +1,8 @@
 const path = require(`path`)
 const { createFilePath } = require(`gatsby-source-filesystem`)
 
+exports.onPreBootstrap = require('./fetchBlogSrc')
+
 exports.onCreateNode = ({ node, getNode, actions }) => {
   const { createNodeField } = actions
   if (node.internal.type === `MarkdownRemark`) {
@@ -17,12 +19,12 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
 exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions
 
-  const blogPostTemplate = path.resolve("src/templates/blogPost.js")
-  const blogTagTemplate = path.resolve("src/templates/blogTags.js")
+  const blogPostTemplate = path.resolve('src/templates/blogPost.js')
+  const blogTagTemplate = path.resolve('src/templates/blogTags.js')
   const result = await graphql(`
     {
-      postsRemark: allMarkdownRemark (
-        sort: {order: ASC, fields: [fields___date]}
+      postsRemark: allMarkdownRemark(
+        sort: { order: ASC, fields: [fields___date] }
       ) {
         edges {
           node {
@@ -48,7 +50,7 @@ exports.createPages = async ({ graphql, actions }) => {
     reporter.panicOnBuild(`Error while running GraphQL query.`)
     return
   }
-  
+
   const posts = result.data.postsRemark.edges
   posts.forEach(({ node }, index) => {
     createPage({
@@ -59,7 +61,7 @@ exports.createPages = async ({ graphql, actions }) => {
         // in page queries as GraphQL variables.
         slug: node.fields.slug,
         prev: index === 0 ? null : posts[index - 1].node,
-        next: index === (posts.length - 1) ? null : posts[index + 1].node,
+        next: index === posts.length - 1 ? null : posts[index + 1].node,
       },
     })
   })

@@ -47,15 +47,18 @@ function writeFilesFromGitHub(url, dirname = '') {
     })
 }
 
-try {
-  const postsSrcUrl = `${process.env.BLOG_SRC_URL}/posts`
-  const postsPath = '/src/blogs'
-  writeFilesFromGitHub(postsSrcUrl, postsPath)
+module.exports = function() {
+  console.log('Fetch blog source files...')
+  try {
+    const postsSrcUrl = `${process.env.BLOG_SRC_URL}/posts`
+    const postsPath = '/src/blogs'
+    writeFilesFromGitHub(postsSrcUrl, postsPath)
 
-  const imagesSrcUrl = `${process.env.BLOG_SRC_URL}/assets/images`
-  const imagesPath = '/static/images/blog'
-  writeFilesFromGitHub(imagesSrcUrl, imagesPath)
-} catch (e) {
-  console.error('fetchBlogSrc', e)
-  process.exit(1)
+    const imagesSrcUrl = `${process.env.BLOG_SRC_URL}/assets/images`
+    const imagesPath = '/static/images/blog'
+    writeFilesFromGitHub(imagesSrcUrl, imagesPath)
+  } catch (e) {
+    console.error('fetchBlogSrc', e)
+    process.exit(1)
+  }
 }
