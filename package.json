@@ -38,7 +38,10 @@
   ],
   "license": "MIT",
   "scripts": {
+    "fetch-blog-src": "node ./fetchBlogSrc.js",
+    "prebuild": "npm run fetch-blog-src",
     "build": "gatsby build",
+    "predevelop": "npm run fetch-blog-src",
     "develop": "gatsby develop",
     "format": "prettier --write src/**/*.{js,jsx}",
     "start": "npm run develop",
