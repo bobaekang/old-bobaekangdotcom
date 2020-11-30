@@ -21,10 +21,8 @@ function fetchFromGitHub(url) {
 }
 
 function writeFromGithub(url, filename) {
-  fetchFromGitHub(url)
-    .then(res => {
-      promisify(pipeline)(res.body, fs.createWriteStream(filename))
-    })
+  return fetchFromGitHub(url)
+    .then(res => promisify(pipeline)(res.body, fs.createWriteStream(filename)))
     .catch(e => {
       console.error('writeFromGithub', e)
       throw e
@@ -35,28 +33,31 @@ function writeFilesFromGitHub(url, dirname = '') {
   if (dirname !== '' && !fs.existsSync(path.join(__dirname, dirname)))
     fs.mkdirSync(path.join(__dirname, dirname), { recursive: true })
 
-  fetchFromGitHub(url)
+  return fetchFromGitHub(url)
     .then(res => res.json())
-    .then(files => {
-      for (const { download_url: url, name } of files)
-        writeFromGithub(url, path.join(__dirname, dirname, name))
-    })
+    .then(files =>
+      Promise.all(
+        files.map(({ download_url: url, name }) =>
+          writeFromGithub(url, path.join(__dirname, dirname, name))
+        )
+      )
+    )
     .catch(e => {
       console.error('writeFromGitHub', e)
       throw e
     })
 }
 
-module.exports = function() {
+module.exports = async function() {
   console.log('Fetch blog source files...')
   try {
     const postsSrcUrl = `${process.env.BLOG_SRC_URL}/posts`
     const postsPath = '/src/blogs'
-    writeFilesFromGitHub(postsSrcUrl, postsPath)
+    await writeFilesFromGitHub(postsSrcUrl, postsPath)
 
     const imagesSrcUrl = `${process.env.BLOG_SRC_URL}/assets/images`
     const imagesPath = '/static/images/blog'
-    writeFilesFromGitHub(imagesSrcUrl, imagesPath)
+    await writeFilesFromGitHub(imagesSrcUrl, imagesPath)
   } catch (e) {
     console.error('fetchBlogSrc', e)
     process.exit(1)
