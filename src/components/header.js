@@ -45,7 +45,7 @@ const Header = ({ currentPage }) => {
 
   // logo
   const logo = (
-    <a href="#home" className={classes.logo}>
+    <a href="/" className={classes.logo}>
       bobae kang
     </a>
   )
