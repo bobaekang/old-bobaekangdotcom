@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import PropTypes from 'prop-types'
-import { Link } from 'gatsby'
+import { Link, navigate } from 'gatsby'
 import Container from '@material-ui/core/Container'
 import Grid from '@material-ui/core/Grid'
 import Hidden from '@material-ui/core/Hidden'
@@ -45,7 +45,7 @@ const Header = ({ currentPage }) => {
 
   // logo
   const logo = (
-    <a href="#home" className={classes.logo}>
+    <a href="/" className={classes.logo}>
       bobae kang
     </a>
   )
@@ -57,7 +57,12 @@ const Header = ({ currentPage }) => {
   const navItemClass = isActive =>
     [classes.navItem, isActive ? classes.navActiveItem : undefined].join(' ')
   const navIndex = indexSections.map(s => (
-    <a className={navItemClass(activeSection === s)} key={s} href={`#${s}`}>
+    <a
+      className={navItemClass(activeSection === s)}
+      key={s}
+      href={`#${s}`}
+      onClick={() => navigate(`#${s}`)}
+    >
       {s}
     </a>
   ))
