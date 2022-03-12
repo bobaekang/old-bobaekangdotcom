@@ -46,6 +46,14 @@ const SectionAbout = () => {
         </a>
         ,{' '}
         <a
+          href="https://twitter.com/bobaekang"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Twitter
+        </a>
+        ,{' '}
+        <a
           href="https://www.linkedin.com/in/bobaekang"
           target="_blank"
           rel="noopener noreferrer"

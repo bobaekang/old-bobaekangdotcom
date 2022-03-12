@@ -3,6 +3,7 @@ import { makeStyles } from '@material-ui/core/styles'
 import GitHubIcon from '@material-ui/icons/GitHub'
 import LinkedInIcon from '@material-ui/icons/LinkedIn'
 import EmailIcon from '@material-ui/icons/Email'
+import TwitterIcon from '@material-ui/icons/Twitter'
 
 import colors from '../styles/colors'
 
@@ -38,6 +39,15 @@ const Footer = () => {
           rel="noopener noreferrer"
         >
           <GitHubIcon fontSize="small" />
+        </a>
+        <a
+          className={classes.social}
+          href="https://twitter.com/bobaekang"
+          aria-label="See my Twitter profile"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <TwitterIcon fontSize="small" />
         </a>
         <a
           className={classes.social}
