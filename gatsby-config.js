@@ -3,7 +3,7 @@ module.exports = {
     title: `bobaekang`,
     description: `Hello World! I am a Chicago-based social scientist turned software engineer. I built this place to share my experience & reflections on software development.`,
     author: `Bobae Kang`,
-    image: `/images/home.png`,
+    image: `/images/home-20220421.png`,
     url: `https://bobaekang.com`,
   },
   plugins: [
