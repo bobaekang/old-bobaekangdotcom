@@ -2,7 +2,6 @@ import React from 'react'
 import Container from '@material-ui/core/Container'
 import { makeStyles } from '@material-ui/core/styles'
 
-import TypedStrings from '../components/typedStrings'
 import colors from '../styles/colors.js'
 
 const useStyles = makeStyles({
@@ -13,25 +12,13 @@ const useStyles = makeStyles({
     justifyContent: 'center',
     alignItems: 'space-between',
   },
-  sectionMain: {
-    display: 'flex',
-    flexDirection: 'column',
-    justifyContent: 'center',
-    height: '34%',
-    textAlign: 'center',
-  },
   sectionTitle: {
-    fontSize: 'calc(2em + 6vw)',
+    fontSize: '5rem',
+    lineHeight: '.8em',
     color: colors.red,
-    marginBottom: '0.2rem',
   },
-  stripe: {
-    backgroundColor: colors.lightblue,
-    height: '16.5%',
-    width: '100%',
-  },
-  typedString: {
-    fontSize: '1.2em',
+  sectionSubtitle: {
+    fontSize: '1.25em',
     color: colors.darkgrey,
   },
 })
@@ -41,15 +28,12 @@ const SectionHome = () => {
 
   return (
     <Container className={classes.sectionContainer} maxWidth="md">
-      <div className={classes.stripe} />
       <div className={classes.sectionMain}>
         <h1 className={classes.sectionTitle}>bobae kang</h1>
-        <TypedStrings
-          className={classes.typedString}
-          strings={['Chicago-based social scientist turned software engineer']}
-        />
+        <p className={classes.sectionSubtitle}>
+          social scientist turned software engineer
+        </p>
       </div>
-      <div className={classes.stripe} />
     </Container>
   )
 }
