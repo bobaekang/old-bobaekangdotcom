@@ -1,7 +1,7 @@
 const path = require(`path`)
 const { createFilePath } = require(`gatsby-source-filesystem`)
 
-exports.onPluginInit = require('./fetchBlogSrc')
+exports.onPreInit = require('./fetchBlogSrc')
 
 exports.onCreateNode = ({ node, getNode, actions }) => {
   const { createNodeField } = actions
