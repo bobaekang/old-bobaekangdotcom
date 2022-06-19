@@ -49,5 +49,6 @@ module.exports = {
     {
       resolve: `gatsby-plugin-material-ui`,
     },
+    'gatsby-plugin-postcss',
   ],
 }
