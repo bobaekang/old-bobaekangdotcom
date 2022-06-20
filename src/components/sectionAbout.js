@@ -1,13 +1,12 @@
 import React from 'react'
 import { Link } from 'gatsby'
-import Grid from '@material-ui/core/Grid'
 import MyImage from './myImage'
 
 const SectionAbout = () => {
   return (
     <div className="my-16">
-      <Grid container justify="space-between">
-        <Grid item xs={12} md={6}>
+      <div className="sm:flex sm:justify-between">
+        <div className="sm:basis-1/2">
           <h2 className="text-red">Hi, I'm Bobae</h2>
           <p>
             I started out as a researcher and data analyst, and later fell in
@@ -58,11 +57,11 @@ const SectionAbout = () => {
             </a>
             !
           </p>
-        </Grid>
-        <Grid item xs={12} md={3} className="max-w-[240px]">
+        </div>
+        <div className="sm:basis-1/2 max-w-[240px]">
           <MyImage />
-        </Grid>
-      </Grid>
+        </div>
+      </div>
     </div>
   )
 }

@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import PropTypes from 'prop-types'
 import { Link, navigate } from 'gatsby'
-import Grid from '@material-ui/core/Grid'
 
 const Header = ({ currentPage }) => {
   // logo
@@ -59,15 +58,15 @@ const Header = ({ currentPage }) => {
   return (
     <header className="bg-white font-['Ubuntu'] font-bold h-[2.4rem] fixed w-full z-50">
       <div className="max-w-[960px] mx-auto px-[24px]">
-        <Grid container direction="row" justify="space-between">
-          <Grid item>
+        <div className="flex justify-between">
+          <div>
             {(currentPage !== 'index' || activeSection !== 'home') && logo}
-          </Grid>
-          <Grid item>
+          </div>
+          <div className="">
             {currentPage === 'index' && navIndex}
             {currentPage === 'blog' && navBlog}
-          </Grid>
-        </Grid>
+          </div>
+        </div>
       </div>
     </header>
   )

@@ -1,7 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { graphql, Link } from 'gatsby'
-import Grid from '@material-ui/core/Grid'
 import KeyboardArrowLeftIcon from '@material-ui/icons/KeyboardArrowLeft'
 import KeyboardArrowRightIcon from '@material-ui/icons/KeyboardArrowRight'
 import BlogTags from '../components/blogTags'
@@ -28,37 +27,25 @@ const BlogPost = ({ data, pageContext }) => {
   )
   const toPrevPost = prev && (
     <Link className="text-blue hover:text-red" to={prev.fields.slug}>
-      <Grid container direction="row" alignItems="center">
-        <Grid item xs={2}>
-          <KeyboardArrowLeftIcon className="relative top-1" />
-        </Grid>
-        <Grid item xs={10}>
-          <h4 style={{ marginBottom: '0' }}>{prev.frontmatter.title}</h4>
-        </Grid>
-      </Grid>
+      <div className="flex items-center justify-start">
+        <KeyboardArrowLeftIcon className="relative top-1" />
+        <h4 className="-mb-1 ml-1">{prev.frontmatter.title}</h4>
+      </div>
     </Link>
   )
   const toNextPost = next && (
     <Link className="text-blue hover:text-red text-right" to={next.fields.slug}>
-      <Grid container direction="row" alignItems="center">
-        <Grid item xs={10}>
-          <h4 style={{ marginBottom: '0' }}>{next.frontmatter.title}</h4>
-        </Grid>
-        <Grid item xs={2}>
-          <KeyboardArrowRightIcon className="relative top-1" />
-        </Grid>
-      </Grid>
+      <div className="flex items-center justify-end">
+        <h4 className="-mb-1 mr-1">{next.frontmatter.title}</h4>
+        <KeyboardArrowRightIcon className="relative top-1" />
+      </div>
     </Link>
   )
   const blogNavigation = (
-    <Grid container direction="row" justify="space-between" alignItems="center">
-      <Grid item xs={5}>
-        {toPrevPost}
-      </Grid>
-      <Grid item xs={5}>
-        {toNextPost}
-      </Grid>
-    </Grid>
+    <div className="flex space-x-8 justfy-between items-center">
+      <div className="flex-1">{toPrevPost}</div>
+      <div className="flex-1">{toNextPost}</div>
+    </div>
   )
 
   return (
