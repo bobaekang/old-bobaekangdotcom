@@ -5,9 +5,6 @@
   "version": "0.1.0",
   "author": "Bobae Kang <hello@bobaekang.com>",
   "dependencies": {
-    "@material-ui/core": "^4.12.1",
-    "@material-ui/icons": "^4.11.2",
-    "@material-ui/styles": "^4.11.4",
     "autoprefixer": "^10.4.7",
     "gatsby": "^4.16.0",
     "gatsby-image": "^3.11.0",
