@@ -1,8 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { graphql, Link } from 'gatsby'
-import KeyboardArrowLeftIcon from '@material-ui/icons/KeyboardArrowLeft'
-import KeyboardArrowRightIcon from '@material-ui/icons/KeyboardArrowRight'
+import { ChevronLeft, ChevronRight } from 'react-feather'
 import BlogTags from '../components/blogTags'
 import Layout from '../components/layout'
 import LinkBackTo from '../components/linkBackTo'
@@ -28,7 +27,7 @@ const BlogPost = ({ data, pageContext }) => {
   const toPrevPost = prev && (
     <Link className="text-blue hover:text-red" to={prev.fields.slug}>
       <div className="flex items-center justify-start">
-        <KeyboardArrowLeftIcon className="relative top-1" />
+        <ChevronLeft className="relative top-1" />
         <h4 className="-mb-1 ml-1">{prev.frontmatter.title}</h4>
       </div>
     </Link>
@@ -37,7 +36,7 @@ const BlogPost = ({ data, pageContext }) => {
     <Link className="text-blue hover:text-red text-right" to={next.fields.slug}>
       <div className="flex items-center justify-end">
         <h4 className="-mb-1 mr-1">{next.frontmatter.title}</h4>
-        <KeyboardArrowRightIcon className="relative top-1" />
+        <ChevronRight className="relative top-1" />
       </div>
     </Link>
   )

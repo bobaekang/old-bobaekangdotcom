@@ -1,8 +1,5 @@
 import React from 'react'
-import GitHubIcon from '@material-ui/icons/GitHub'
-import LinkedInIcon from '@material-ui/icons/LinkedIn'
-import EmailIcon from '@material-ui/icons/Email'
-import TwitterIcon from '@material-ui/icons/Twitter'
+import { GitHub, Linkedin, Mail, Twitter } from 'react-feather'
 
 const Footer = () => {
   return (
@@ -15,7 +12,7 @@ const Footer = () => {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <GitHubIcon fontSize="small" />
+          <GitHub className="inline" size="1.2rem" />
         </a>
         <a
           className="mx-1 hover:text-red"
@@ -24,7 +21,7 @@ const Footer = () => {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <TwitterIcon fontSize="small" />
+          <Twitter className="inline" size="1.2rem" />
         </a>
         <a
           className="mx-1 hover:text-red"
@@ -33,14 +30,14 @@ const Footer = () => {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <LinkedInIcon fontSize="small" />
+          <Linkedin className="inline" size="1.2rem" />
         </a>
         <a
           className="mx-1 hover:text-red"
           href="mailto:hello@bobaekang.com"
           aria-label="Send me an email"
         >
-          <EmailIcon fontSize="small" />
+          <Mail className="inline" size="1.2rem" />
         </a>
       </div>
       <div>
