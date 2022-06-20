@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react'
 import PropTypes from 'prop-types'
 import { Link, navigate } from 'gatsby'
 import Grid from '@material-ui/core/Grid'
-import Hidden from '@material-ui/core/Hidden'
 
 const Header = ({ currentPage }) => {
   // logo
@@ -21,7 +20,7 @@ const Header = ({ currentPage }) => {
 
   const navItemClass = isActive =>
     [
-      'float-left list-none pt-[0.1rem] text-[1.2rem] pl-8 hover:text-red',
+      'float-left list-none pt-[0.1rem] text-[1.2rem] pl-8 hover:text-red hidden sm:inline',
       isActive ? 'text-red' : 'text-blue',
     ].join(' ')
   const navIndex = indexSections.map(s => (
@@ -65,7 +64,7 @@ const Header = ({ currentPage }) => {
             {(currentPage !== 'index' || activeSection !== 'home') && logo}
           </Grid>
           <Grid item>
-            <Hidden xsDown>{currentPage === 'index' && navIndex}</Hidden>
+            {currentPage === 'index' && navIndex}
             {currentPage === 'blog' && navBlog}
           </Grid>
         </Grid>
