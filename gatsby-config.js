@@ -46,9 +46,6 @@ module.exports = {
         icon: `src/images/logo-icon.png`,
       },
     },
-    {
-      resolve: `gatsby-plugin-material-ui`,
-    },
     'gatsby-plugin-postcss',
   ],
 }
