@@ -1,5 +1,4 @@
 import React from 'react'
-import { Container } from '@material-ui/core'
 import Layout from '../components/layout'
 import LinkBackTo from '../components/linkBackTo'
 import SEO from '../components/seo'
@@ -8,7 +7,7 @@ const NotFoundPage = () => {
   return (
     <Layout currentPage={'404'}>
       <SEO title="404: Not found" />
-      <Container className="mt-20" maxWidth="md">
+      <div className="max-w-[960px] mx-auto px-[24px] mt-20">
         <LinkBackTo to={{ name: 'Home', path: '/' }}></LinkBackTo>
         <h1 className="text-red">
           page not found{' '}
@@ -17,7 +16,7 @@ const NotFoundPage = () => {
           </span>
         </h1>
         <p>The page you're looking for does not exist (404 Error).</p>
-      </Container>
+      </div>
     </Layout>
   )
 }

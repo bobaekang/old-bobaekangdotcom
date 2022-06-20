@@ -1,7 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
-import Container from '@material-ui/core/Container'
 import Layout from '../../components/layout'
 import BlogPreview from '../../components/blogPreview'
 import LinkBackTo from '../../components/linkBackTo'
@@ -17,11 +16,11 @@ const BlogPage = ({ data }) => {
   return (
     <Layout currentPage={'blog'}>
       <SEO title="Blog" />
-      <Container className="mt-20" maxWidth="md">
+      <div className="max-w-[960px] mx-auto px-[24px] mt-20">
         <LinkBackTo to={{ name: 'Home', path: '/' }}></LinkBackTo>
         <h4>{totalCount} posts</h4>
         {blogPosts}
-      </Container>
+      </div>
     </Layout>
   )
 }

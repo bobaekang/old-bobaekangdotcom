@@ -1,6 +1,5 @@
 import React from 'react'
 import { Link, graphql, useStaticQuery } from 'gatsby'
-import Container from '@material-ui/core/Container'
 import BlogPreview from '../components/blogPreview'
 
 const SectionBlog = () => {
@@ -33,7 +32,7 @@ const SectionBlog = () => {
   )
 
   return (
-    <Container className="my-16" maxWidth="md">
+    <div className="my-16">
       <h2 className="text-red">Latest writings</h2>
       {edges.map(({ node }) => (
         <BlogPreview
@@ -45,7 +44,7 @@ const SectionBlog = () => {
       <Link to={'/blog'}>
         <h3 className="mt-10 hover:text-red">Read more...</h3>
       </Link>
-    </Container>
+    </div>
   )
 }
 

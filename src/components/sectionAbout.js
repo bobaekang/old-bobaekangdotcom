@@ -1,12 +1,11 @@
 import React from 'react'
 import { Link } from 'gatsby'
-import Container from '@material-ui/core/Container'
 import Grid from '@material-ui/core/Grid'
 import MyImage from './myImage'
 
 const SectionAbout = () => {
   return (
-    <Container className="my-16" maxWidth="md">
+    <div className="my-16">
       <Grid container justify="space-between">
         <Grid item xs={12} md={6}>
           <h2 className="text-red">Hi, I'm Bobae</h2>
@@ -64,7 +63,7 @@ const SectionAbout = () => {
           <MyImage />
         </Grid>
       </Grid>
-    </Container>
+    </div>
   )
 }
 

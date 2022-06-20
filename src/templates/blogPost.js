@@ -1,7 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { graphql, Link } from 'gatsby'
-import Container from '@material-ui/core/Container'
 import Grid from '@material-ui/core/Grid'
 import KeyboardArrowLeftIcon from '@material-ui/icons/KeyboardArrowLeft'
 import KeyboardArrowRightIcon from '@material-ui/icons/KeyboardArrowRight'
@@ -65,12 +64,12 @@ const BlogPost = ({ data, pageContext }) => {
   return (
     <Layout currentPage={'blog'}>
       <SEO title={post.frontmatter.title} description={post.excerpt} />
-      <Container className="py-20" maxWidth="md">
+      <div className="max-w-[960px] mx-auto px-[24px] py-20">
         <LinkBackTo to={{ name: 'Blog', path: '/blog' }}></LinkBackTo>
         {blogHeader}
         {blogBody}
         {blogNavigation}
-      </Container>
+      </div>
     </Layout>
   )
 }

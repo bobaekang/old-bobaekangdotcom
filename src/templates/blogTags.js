@@ -1,7 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
-import Container from '@material-ui/core/Container'
 import BlogPreview from '../components/blogPreview'
 import Layout from '../components/layout'
 import LinkBackTo from '../components/linkBackTo'
@@ -17,13 +16,13 @@ const Tags = ({ pageContext, data }) => {
   return (
     <Layout currentPage={'blog'}>
       <SEO title={`Blog #${tag}`} />
-      <Container className="mt-20" maxWidth="md">
+      <div className="max-w-[960px] mx-auto px-[24px] mt-20">
         <LinkBackTo to={{ name: 'All tags', path: '/blog/tags' }}></LinkBackTo>
         <h4>{tagHeader}</h4>
         {edges.map(({ node }) => (
           <BlogPreview key={node.id} postNode={node} />
         ))}
-      </Container>
+      </div>
     </Layout>
   )
 }

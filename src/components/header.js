@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import PropTypes from 'prop-types'
 import { Link, navigate } from 'gatsby'
-import Container from '@material-ui/core/Container'
 import Grid from '@material-ui/core/Grid'
 import Hidden from '@material-ui/core/Hidden'
 
@@ -60,7 +59,7 @@ const Header = ({ currentPage }) => {
 
   return (
     <header className="bg-white font-['Ubuntu'] font-bold h-[2.4rem] fixed w-full z-50">
-      <Container maxWidth="md">
+      <div className="max-w-[960px] mx-auto px-[24px]">
         <Grid container direction="row" justify="space-between">
           <Grid item>
             {(currentPage !== 'index' || activeSection !== 'home') && logo}
@@ -70,7 +69,7 @@ const Header = ({ currentPage }) => {
             {currentPage === 'blog' && navBlog}
           </Grid>
         </Grid>
-      </Container>
+      </div>
     </header>
   )
 }

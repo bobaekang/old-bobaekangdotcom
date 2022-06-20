@@ -6,7 +6,8 @@ import SectionHome from '../components/sectionHome'
 import SEO from '../components/seo'
 
 const IndexPage = () => {
-  const sectionClassName = 'flex flex-wrap min-h-screen items-center'
+  const sectionClassName =
+    'flex flex-wrap min-h-screen items-center max-w-[960px] mx-auto px-[24px]'
   return (
     <Layout currentPage={'index'}>
       <SEO title="Home" />
