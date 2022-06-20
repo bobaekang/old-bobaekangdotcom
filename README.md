@@ -5,8 +5,7 @@
 
 The source repository for my personal website/blog: [bobaekang.com](http://bobaekang.com).
 
-**Powered by** <img src="https://www.gatsbyjs.org/icons/icon-48x48.png" alt="https://www.gatsbyjs.org/icons/icon-48x48.png" height="25" class="transparent"> <img src="https://material-ui.com/static/favicon.ico" alt="https://material-ui.com/static/favicon.ico" height="25" class="transparent">
-
+**Powered by** <img src="https://www.gatsbyjs.org/icons/icon-48x48.png" alt="https://www.gatsbyjs.org/icons/icon-48x48.png" height="25" class="transparent"> <img src="https://tailwindcss.com/favicons/favicon.ico" alt="https://tailwindcss.com/favicons/favicon.ico" height="25" class="transparent">
 
 ## Project Setup
 
