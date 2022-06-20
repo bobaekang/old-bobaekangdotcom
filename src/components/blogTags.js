@@ -1,35 +1,11 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { Link } from 'gatsby'
-import { makeStyles } from '@material-ui/core/styles'
-
-import colors from '../styles/colors'
-
-const useStyles = makeStyles({
-  tag: {
-    '&:after': {
-      content: '" "',
-    },
-    '&:hover': {
-      color: colors.red,
-      textDecoration: 'underline',
-    },
-  },
-  tags: {
-    color: colors.darkgrey,
-    fontSize: '16px',
-    '&:before': {
-      content: '" · "',
-    },
-  },
-})
 
 const BlogTags = ({ tags, showAll = true }) => {
-  const classes = useStyles()
-
   const tagLink = tag => (
     <Link
-      className={classes.tag}
+      className="hover:text-red hover:underline ml-1"
       key={tag}
       to={`/blog/tags/${tag.replace(' ', '-')}`}
     >
@@ -41,9 +17,11 @@ const BlogTags = ({ tags, showAll = true }) => {
     tags &&
     tags.length > 0 &&
     (showAll ? (
-      <span className={classes.tags}>{tags.map(tag => tagLink(tag))}</span>
+      <span className="text-darkgrey text-[16px] before:content-['·'] before:ml-1">
+        {tags.map(tag => tagLink(tag))}
+      </span>
     ) : (
-      <span className={classes.tags}>
+      <span className="text-darkgrey text-[16px] before:content-['·'] before:ml-1">
         {tagLink(tags[0])}
         {tags.length > 1 && `+${tags.length - 1}`}
       </span>

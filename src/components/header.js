@@ -4,48 +4,14 @@ import { Link, navigate } from 'gatsby'
 import Container from '@material-ui/core/Container'
 import Grid from '@material-ui/core/Grid'
 import Hidden from '@material-ui/core/Hidden'
-import { makeStyles } from '@material-ui/core/styles'
-
-import colors from '../styles/colors'
-
-const useStyles = makeStyles({
-  header: {
-    backgroundColor: 'white',
-    fontFamily: 'Ubuntu, san-serif',
-    fontWeight: '700',
-    height: '2.4rem',
-    position: 'fixed',
-    width: '100%',
-    zIndex: '99',
-  },
-  logo: {
-    backgroundColor: colors.red,
-    color: 'white',
-    fontSize: '1.6rem',
-    padding: '0 0.15rem 0.8rem',
-  },
-  navItem: {
-    float: 'left',
-    listStyleType: 'none',
-    paddingTop: '0.1rem',
-    fontSize: '1.2rem',
-    color: colors.blue,
-    paddingLeft: '2.0rem',
-    '&:hover': {
-      color: colors.red,
-    },
-  },
-  navActiveItem: {
-    color: colors.red,
-  },
-})
 
 const Header = ({ currentPage }) => {
-  const classes = useStyles()
-
   // logo
   const logo = (
-    <a href="/" className={classes.logo}>
+    <a
+      href="/"
+      className="bg-red text-white text-[1.6rem] px-[0.15rem] pb-[0.8rem]"
+    >
       bobae kang
     </a>
   )
@@ -55,7 +21,10 @@ const Header = ({ currentPage }) => {
   const indexSections = ['home', 'about', 'blog']
 
   const navItemClass = isActive =>
-    [classes.navItem, isActive ? classes.navActiveItem : undefined].join(' ')
+    [
+      'float-left list-none pt-[0.1rem] text-[1.2rem] pl-8 hover:text-red',
+      isActive ? 'text-red' : 'text-blue',
+    ].join(' ')
   const navIndex = indexSections.map(s => (
     <a
       className={navItemClass(activeSection === s)}
@@ -90,7 +59,7 @@ const Header = ({ currentPage }) => {
   )
 
   return (
-    <header className={classes.header}>
+    <header className="bg-white font-['Ubuntu'] font-bold h-[2.4rem] fixed w-full z-50">
       <Container maxWidth="md">
         <Grid container direction="row" justify="space-between">
           <Grid item>

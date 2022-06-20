@@ -1,34 +1,22 @@
 import React from 'react'
-import { makeStyles } from '@material-ui/core/styles'
-
 import Layout from '../components/layout'
 import SectionAbout from '../components/sectionAbout'
 import SectionBlog from '../components/sectionBlog'
 import SectionHome from '../components/sectionHome'
 import SEO from '../components/seo'
 
-const useStyles = makeStyles({
-  section: {
-    minHeight: '100vh',
-    alignContent: 'center',
-    display: 'flex',
-    flexWrap: 'wrap',
-  },
-})
-
 const IndexPage = () => {
-  const classes = useStyles()
-
+  const sectionClassName = 'flex flex-wrap min-h-screen items-center'
   return (
     <Layout currentPage={'index'}>
       <SEO title="Home" />
-      <div id="home" className={classes.section}>
+      <div id="home" className={sectionClassName}>
         <SectionHome />
       </div>
-      <div id="about" className={classes.section}>
+      <div id="about" className={sectionClassName}>
         <SectionAbout />
       </div>
-      <div id="blog" className={classes.section}>
+      <div id="blog" className={sectionClassName}>
         <SectionBlog />
       </div>
     </Layout>

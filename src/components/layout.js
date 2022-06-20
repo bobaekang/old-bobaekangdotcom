@@ -1,29 +1,14 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { makeStyles } from '@material-ui/core/styles'
-
 import Header from './header'
 import Footer from './footer'
 import '../styles/layout.css'
 
-const useStyles = makeStyles({
-  site: {
-    display: 'flex',
-    minHeight: '100vh',
-    flexDirection: 'column',
-  },
-  siteMain: {
-    flexGrow: '1',
-  },
-})
-
 const Layout = ({ children, currentPage }) => {
-  const classes = useStyles()
-
   return (
-    <div className={classes.site}>
+    <div className="flex min-h-screen flex-col">
       <Header currentPage={currentPage} />
-      <main className={classes.siteMain}>{children}</main>
+      <main className="flex-1">{children}</main>
       <Footer />
     </div>
   )

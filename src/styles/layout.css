@@ -630,17 +630,26 @@ code .token.operator {
   margin-bottom: 1.45rem;
   overflow: auto;
 }
-
 .gatsby-highlight pre[class*='language-'].line-numbers {
   padding: 0;
   padding-left: 2.8em;
   overflow: initial;
 }
-.footnotes p {
-  display: contents;
+.blog-body a {
+  color: #66c3e5;
+  text-decoration: underline;
+}
+.blog-body a:hover {
+  color: #ff240e;
 }
 .date {
   color: #999;
   font-family: Ubuntu, san-serif;
   font-size: 16px;
+}
+.footnotes {
+  font-size: 0.8rem;
+}
+.footnotes ol {
+  list-style-type: decimal;
 }

@@ -1,22 +1,8 @@
 import React from 'react'
 import { StaticQuery, graphql } from 'gatsby'
 import Img from 'gatsby-image'
-import { makeStyles } from '@material-ui/core/styles'
-
-import colors from '../styles/colors'
-
-const useStyles = makeStyles({
-  image: {
-    '& img': {
-      borderRadius: '50%',
-      border: `2px solid ${colors.lightblue}`,
-    },
-  },
-})
 
 const MyImage = () => {
-  const classes = useStyles()
-
   return (
     <StaticQuery
       query={graphql`
@@ -32,7 +18,7 @@ const MyImage = () => {
       `}
       render={data => (
         <Img
-          className={classes.image}
+          className="[&>img]:rounded-full [&>picture>img]:rounded-full"
           fluid={data.placeholderImage.childImageSharp.fluid}
         />
       )}

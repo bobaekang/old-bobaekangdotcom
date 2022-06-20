@@ -3,56 +3,19 @@ import PropTypes from 'prop-types'
 import { graphql, Link } from 'gatsby'
 import Container from '@material-ui/core/Container'
 import Grid from '@material-ui/core/Grid'
-import { makeStyles } from '@material-ui/core/styles'
 import KeyboardArrowLeftIcon from '@material-ui/icons/KeyboardArrowLeft'
 import KeyboardArrowRightIcon from '@material-ui/icons/KeyboardArrowRight'
-
 import BlogTags from '../components/blogTags'
 import Layout from '../components/layout'
 import LinkBackTo from '../components/linkBackTo'
 import SEO from '../components/seo'
-import colors from '../styles/colors'
-
-const useStyles = makeStyles({
-  blog: {
-    paddingTop: '5rem',
-    paddingBottom: '5rem',
-  },
-  blogBody: {
-    '& a': {
-      color: colors.blue,
-      textDecoration: 'underline',
-      '&:hover': {
-        color: colors.red,
-      },
-    },
-    '& .footnotes': {
-      fontSize: '.8rem',
-    },
-  },
-  blogHeader: {
-    paddingBottom: '1rem',
-  },
-  navIcon: {
-    position: 'relative',
-    top: '.25rem',
-  },
-  navLink: {
-    color: colors.blue,
-    '&:hover': {
-      color: colors.red,
-    },
-  },
-})
 
 const BlogPost = ({ data, pageContext }) => {
-  const classes = useStyles()
-
   const post = data.markdownRemark
   const { next, prev } = pageContext
 
   const blogHeader = (
-    <div className={classes.blogHeader}>
+    <div className="pb-4">
       <span className="date">{post.fields.date}</span>
       <BlogTags tags={post.frontmatter.tags}></BlogTags>
       <h1>{post.frontmatter.title}</h1>
@@ -60,15 +23,15 @@ const BlogPost = ({ data, pageContext }) => {
   )
   const blogBody = (
     <div
-      className={classes.blogBody}
+      className="blog-body"
       dangerouslySetInnerHTML={{ __html: post.html }}
     />
   )
   const toPrevPost = prev && (
-    <Link className={classes.navLink} to={prev.fields.slug}>
+    <Link className="text-blue hover:text-red" to={prev.fields.slug}>
       <Grid container direction="row" alignItems="center">
         <Grid item xs={2}>
-          <KeyboardArrowLeftIcon className={classes.navIcon} />
+          <KeyboardArrowLeftIcon className="relative top-1" />
         </Grid>
         <Grid item xs={10}>
           <h4 style={{ marginBottom: '0' }}>{prev.frontmatter.title}</h4>
@@ -77,17 +40,13 @@ const BlogPost = ({ data, pageContext }) => {
     </Link>
   )
   const toNextPost = next && (
-    <Link
-      className={classes.navLink}
-      style={{ textAlign: 'right' }}
-      to={next.fields.slug}
-    >
+    <Link className="text-blue hover:text-red text-right" to={next.fields.slug}>
       <Grid container direction="row" alignItems="center">
         <Grid item xs={10}>
           <h4 style={{ marginBottom: '0' }}>{next.frontmatter.title}</h4>
         </Grid>
         <Grid item xs={2}>
-          <KeyboardArrowRightIcon className={classes.navIcon} />
+          <KeyboardArrowRightIcon className="relative top-1" />
         </Grid>
       </Grid>
     </Link>
@@ -106,7 +65,7 @@ const BlogPost = ({ data, pageContext }) => {
   return (
     <Layout currentPage={'blog'}>
       <SEO title={post.frontmatter.title} description={post.excerpt} />
-      <Container className={classes.blog} maxWidth="md">
+      <Container className="py-20" maxWidth="md">
         <LinkBackTo to={{ name: 'Blog', path: '/blog' }}></LinkBackTo>
         {blogHeader}
         {blogBody}

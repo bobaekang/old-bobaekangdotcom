@@ -2,22 +2,12 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
 import Container from '@material-ui/core/Container'
-import { makeStyles } from '@material-ui/core/styles'
-
 import BlogPreview from '../components/blogPreview'
 import Layout from '../components/layout'
 import LinkBackTo from '../components/linkBackTo'
 import SEO from '../components/seo'
 
-const useStyles = makeStyles({
-  blog: {
-    marginTop: '5rem',
-  },
-})
-
 const Tags = ({ pageContext, data }) => {
-  const classes = useStyles()
-
   const { tag } = pageContext
   const { edges, totalCount } = data.allMarkdownRemark
   const tagHeader = `${totalCount} post${
@@ -27,7 +17,7 @@ const Tags = ({ pageContext, data }) => {
   return (
     <Layout currentPage={'blog'}>
       <SEO title={`Blog #${tag}`} />
-      <Container className={classes.blog} maxWidth="md">
+      <Container className="mt-20" maxWidth="md">
         <LinkBackTo to={{ name: 'All tags', path: '/blog/tags' }}></LinkBackTo>
         <h4>{tagHeader}</h4>
         {edges.map(({ node }) => (
