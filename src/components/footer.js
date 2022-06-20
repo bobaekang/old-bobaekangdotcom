@@ -54,11 +54,11 @@ const Footer = () => {
         {` & `}
         <a
           className="underline hover:text-red"
-          href="https://material-ui.com/"
+          href="https://tailwindcss.com/"
           target="_blank"
           rel="noreferrer noopener"
         >
-          Material UI
+          Tailwind CSS
         </a>
       </div>
     </footer>
