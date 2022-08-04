@@ -1,0 +1,109 @@
+@font-face {
+  font-family: 'Circular Spotify Text';
+  src: url('../fonts/CircularSpotifyTxT-Black.woff2');
+  font-weight: bolder;
+}
+
+@font-face {
+  font-family: 'Circular Spotify Text';
+  src: url('../fonts//CircularSpotifyTxT-Book.woff2');
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: 'Circular Spotify Text';
+  src: url('../fonts/CircularSpotifyTxT-Bold.woff2');
+  font-weight: bold;
+}
+
+.fade-in {
+  animation-name: fadein;
+  animation-delay: 0;
+  animation-duration: 500ms;
+  animation-iteration-count: 1;
+  animation-timing-function: ease;
+}
+
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.psst {
+  animation-name: psst;
+  animation-delay: 1000ms;
+  animation-duration: 100ms;
+  animation-iteration-count: 6;
+  animation-timing-function: ease;
+}
+
+@keyframes psst {
+  0%,
+  50% {
+    transform: translateY(0px);
+  }
+  25% {
+    transform: translateY(2px);
+  }
+  75% {
+    transform: translateY(-2px);
+  }
+}
+
+@-webkit-keyframes psst {
+  0%,
+  50% {
+    transform: translateY(0px);
+  }
+  25% {
+    transform: translateY(1px);
+  }
+  75% {
+    transform: translateY(-1px);
+  }
+}
+
+.wave-hand {
+  animation-name: wave;
+  animation-delay: 1000ms;
+  animation-duration: 2500ms;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in;
+}
+
+@keyframes wave {
+  0%,
+  20%,
+  40% {
+    transform: rotate(0deg);
+  }
+  10%,
+  30% {
+    transform: rotate(-25deg);
+  }
+}
+
+@-webkit-keyframes wave {
+  0%,
+  20%,
+  40% {
+    transform: rotate(0deg);
+  }
+  10%,
+  30% {
+    transform: rotate(-25deg);
+  }
+}
