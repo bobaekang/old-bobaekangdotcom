@@ -4,6 +4,7 @@ import SectionAbout from '../components/sectionAbout'
 import SectionBlog from '../components/sectionBlog'
 import SectionHome from '../components/sectionHome'
 import SEO from '../components/seo'
+import AreYouInterviewer from '../components/AreYouInterviewer'
 
 const IndexPage = () => {
   const sectionClassName =
@@ -11,6 +12,7 @@ const IndexPage = () => {
   return (
     <Layout currentPage={'index'}>
       <SEO title="Home" />
+      <AreYouInterviewer />
       <div id="home" className={sectionClassName}>
         <SectionHome />
       </div>
