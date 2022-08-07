@@ -6,7 +6,7 @@ import '../styles/spotify.css'
 const meetings = [
   {
     name: 'web domain',
-    interviewers: ['Mithun', 'Sean'],
+    interviewers: ['Piper', 'Sean'],
     time: new Date('2022-08-08T10:30-04:00'),
   },
   {
